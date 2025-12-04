@@ -3,6 +3,7 @@ import { Camera, CameraOff } from 'lucide-react';
 
 const VIDEO_URL = '10.60.74.66:8000/video';
 
+
 export const VideoFeed = ({ isRunning }) => {
     const [hasError, setHasError] = useState(false);
 
