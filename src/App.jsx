@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Header } from './components/Header';
 import { StatusBadge } from './components/StatusBadge';
 import { ControlPanel } from './components/ControlPanel';
+import { ManualControl } from './components/ManualControl';
 import { VideoFeed } from './components/VideoFeed';
 import { useWebSocket } from './hooks/useWebSocket';
 
 function App() {
   const { isConnected, status, lastMessage, connect, disconnect, sendCommand } = useWebSocket();
   const [isRunning, setIsRunning] = useState(false);
+  const [controlMode, setControlMode] = useState('auto');
 
   // Handle messages from backend to update state
   useEffect(() => {
@@ -17,6 +19,8 @@ function App() {
           setIsRunning(true);
         } else if (lastMessage.status === 'stopped') {
           setIsRunning(false);
+        } else if (lastMessage.status === 'mode_changed') {
+          setControlMode(lastMessage.mode);
         }
       }
     }
@@ -55,13 +59,22 @@ function App() {
           <VideoFeed isRunning={isRunning} />
 
           {/* Controls */}
-          <ControlPanel
-            isConnected={isConnected}
-            isRunning={isRunning}
-            onConnect={connect}
-            onRun={handleRun}
-            onStop={handleStop}
-          />
+          {/* Controls */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <ControlPanel
+              isConnected={isConnected}
+              isRunning={isRunning}
+              onConnect={connect}
+              onRun={handleRun}
+              onStop={handleStop}
+            />
+            <ManualControl
+              isConnected={isConnected}
+              isRunning={isRunning}
+              controlMode={controlMode}
+              onSendCommand={sendCommand}
+            />
+          </div>
 
           {/* Debug Info (Optional, hidden in prod usually but good for dev) */}
           <div className="mt-8 p-4 bg-gray-100 rounded-xl text-xs font-mono text-gray-500 overflow-auto max-h-32">
