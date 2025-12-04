@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Camera, CameraOff } from 'lucide-react';
 
-const VIDEO_URL = '10.60.74.66:8000/video';
+const VIDEO_URL = '100.114.119.34:8000/video';
 
 
 export const VideoFeed = ({ isRunning }) => {
