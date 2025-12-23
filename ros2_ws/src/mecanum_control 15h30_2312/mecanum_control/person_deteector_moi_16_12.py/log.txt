@@ -1,0 +1,83 @@
+==================================================
+=== RESULTS: V1 (Shape Only) ===
+==================================================
+Total frames: 881
+Total time: 38.4s
+
+--- State Distribution ---
+LOCKED: 96.3% (848 frames)
+LOST/SEARCHING: 3.7%
+
+--- Tracking Stability ---
+Track Fragmentations: 0
+Longest Track: 12.9s
+
+--- Re-ID Performance ---
+Lost Events: 7
+Re-acquired: 8
+Re-ID Success Rate: 114.3%
+
+--- Similarity Statistics ---
+Mean: 0.823 ± 0.056
+Min: 0.648 | Max: 0.976
+
+--- Performance ---
+Avg Processing Time: 28.4 ms
+FPS: 35.2
+==================================================
+
+==================================================
+=== RESULTS: V2 (Shape + Depth) ===
+==================================================
+Total frames: 881
+Total time: 38.7s
+
+--- State Distribution ---
+LOCKED: 96.3% (848 frames)
+LOST/SEARCHING: 3.7%
+
+--- Tracking Stability ---
+Track Fragmentations: 0
+Longest Track: 12.9s
+
+--- Re-ID Performance ---
+Lost Events: 7
+Re-acquired: 8
+Re-ID Success Rate: 114.3%
+
+--- Similarity Statistics ---
+Mean: 0.823 ± 0.056
+Min: 0.648 | Max: 0.976
+
+--- Performance ---
+Avg Processing Time: 29.2 ms
+FPS: 34.2
+==================================================
+
+==================================================
+=== RESULTS: V3 (Full: Shape + Depth + HSV) ===
+==================================================
+Total frames: 881
+Total time: 38.6s
+
+--- State Distribution ---
+LOCKED: 98.6% (869 frames)
+LOST/SEARCHING: 1.4%
+
+--- Tracking Stability ---
+Track Fragmentations: 0
+Longest Track: 12.9s
+
+--- Re-ID Performance ---
+Lost Events: 5
+Re-acquired: 6
+Re-ID Success Rate: 120.0%
+
+--- Similarity Statistics ---
+Mean: 0.832 ± 0.057
+Min: 0.603 | Max: 0.980
+
+--- Performance ---
+Avg Processing Time: 29.2 ms
+FPS: 34.3
+==================================================

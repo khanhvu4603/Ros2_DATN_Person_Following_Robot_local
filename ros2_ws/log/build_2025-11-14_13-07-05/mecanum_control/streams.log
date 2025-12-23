@@ -1,0 +1,24 @@
+[2.012s] Invoking command in '/home/orangepi/ros2_ws/build/mecanum_control': PYTHONPATH=/home/orangepi/ros2_ws/build/mecanum_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/orangepi/ros2_ws/build/mecanum_control/build --no-deps symlink_data
+[2.467s] running develop
+[2.828s] running egg_info
+[2.831s] writing mecanum_control.egg-info/PKG-INFO
+[2.831s] writing dependency_links to mecanum_control.egg-info/dependency_links.txt
+[2.832s] writing entry points to mecanum_control.egg-info/entry_points.txt
+[2.833s] writing requirements to mecanum_control.egg-info/requires.txt
+[2.833s] writing top-level names to mecanum_control.egg-info/top_level.txt
+[2.836s] reading manifest file 'mecanum_control.egg-info/SOURCES.txt'
+[2.837s] writing manifest file 'mecanum_control.egg-info/SOURCES.txt'
+[2.946s] running build_ext
+[2.946s] Creating /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum-control.egg-link (link to .)
+[2.948s] Installing imu_raw_publisher script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[2.948s] Installing lidar_processor script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[2.948s] Installing mecanum_controller script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[2.949s] Installing opencv_camera_node script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[2.949s] Installing opencv_view_node script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[2.949s] Installing person_detector script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[2.949s] Installing stm32_communicator script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[2.949s] Installing velocity_arbiter script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[2.949s] 
+[2.950s] Installed /home/orangepi/ros2_ws/build/mecanum_control
+[2.950s] running symlink_data
+[3.105s] Invoked command in '/home/orangepi/ros2_ws/build/mecanum_control' returned '0': PYTHONPATH=/home/orangepi/ros2_ws/build/mecanum_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/orangepi/ros2_ws/build/mecanum_control/build --no-deps symlink_data

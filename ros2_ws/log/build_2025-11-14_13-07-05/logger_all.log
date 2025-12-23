@@ -1,0 +1,457 @@
+[0.189s] [34mcolcon[0m [1;30mDEBUG[0m [32mCommand line arguments: ['/usr/bin/colcon', 'build', '--symlink-install'][0m
+[0.189s] [34mcolcon[0m [1;30mDEBUG[0m [32mParsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7fb8e59c00>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fb8e59570>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fb8e59570>>, mixin_verb=('build',))[0m
+[0.470s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) check parameters
+[0.471s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) check parameters
+[0.471s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) check parameters
+[0.471s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) check parameters
+[0.471s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) discover
+[0.471s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) discover
+[0.471s] [34mcolcon.colcon_core.package_discovery[0m [1;30mINFO[0m Crawling recursively for packages in '/home/orangepi/ros2_ws'
+[0.471s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.471s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore'
+[0.472s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore_ament_install'
+[0.472s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_pkg']
+[0.472s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_pkg'
+[0.472s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_meta']
+[0.472s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_meta'
+[0.472s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ros']
+[0.472s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ros'
+[0.529s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['cmake', 'python']
+[0.529s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'cmake'
+[0.529s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python'
+[0.529s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['python_setup_py']
+[0.530s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python_setup_py'
+[0.530s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.530s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extension 'ignore'
+[0.530s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) ignored
+[0.530s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.530s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extension 'ignore'
+[0.530s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) ignored
+[0.531s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.531s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extension 'ignore'
+[0.531s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) ignored
+[0.531s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.531s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ignore'
+[0.531s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ignore_ament_install'
+[0.531s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['colcon_pkg']
+[0.531s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'colcon_pkg'
+[0.531s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['colcon_meta']
+[0.531s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'colcon_meta'
+[0.531s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['ros']
+[0.531s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ros'
+[0.531s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['cmake', 'python']
+[0.531s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'cmake'
+[0.532s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'python'
+[0.532s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['python_setup_py']
+[0.532s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'python_setup_py'
+[0.532s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/mecanum_control) by extensions ['ignore', 'ignore_ament_install']
+[0.532s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/mecanum_control) by extension 'ignore'
+[0.532s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/mecanum_control) by extension 'ignore_ament_install'
+[0.532s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/mecanum_control) by extensions ['colcon_pkg']
+[0.532s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/mecanum_control) by extension 'colcon_pkg'
+[0.532s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/mecanum_control) by extensions ['colcon_meta']
+[0.532s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/mecanum_control) by extension 'colcon_meta'
+[0.532s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/mecanum_control) by extensions ['ros']
+[0.532s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/mecanum_control) by extension 'ros'
+[0.539s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/mecanum_control' with type 'ros.ament_python' and name 'mecanum_control'[0m
+[0.539s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros) by extensions ['ignore', 'ignore_ament_install']
+[0.539s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros) by extension 'ignore'
+[0.540s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros) by extension 'ignore_ament_install'
+[0.540s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros) by extensions ['colcon_pkg']
+[0.540s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros) by extension 'colcon_pkg'
+[0.540s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros) by extensions ['colcon_meta']
+[0.540s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros) by extension 'colcon_meta'
+[0.540s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros) by extensions ['ros']
+[0.540s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros) by extension 'ros'
+[0.540s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros) by extensions ['cmake', 'python']
+[0.540s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros) by extension 'cmake'
+[0.540s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros) by extension 'python'
+[0.540s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros) by extensions ['python_setup_py']
+[0.540s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros) by extension 'python_setup_py'
+[0.540s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_camera) by extensions ['ignore', 'ignore_ament_install']
+[0.540s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_camera) by extension 'ignore'
+[0.541s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_camera) by extension 'ignore_ament_install'
+[0.541s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_camera) by extensions ['colcon_pkg']
+[0.541s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_camera) by extension 'colcon_pkg'
+[0.541s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_camera) by extensions ['colcon_meta']
+[0.541s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_camera) by extension 'colcon_meta'
+[0.541s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_camera) by extensions ['ros']
+[0.541s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_camera) by extension 'ros'
+[0.549s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/realsense-ros/realsense2_camera' with type 'ros.ament_cmake' and name 'realsense2_camera'[0m
+[0.550s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_camera_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.550s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_camera_msgs) by extension 'ignore'
+[0.550s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_camera_msgs) by extension 'ignore_ament_install'
+[0.550s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_camera_msgs) by extensions ['colcon_pkg']
+[0.550s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_camera_msgs) by extension 'colcon_pkg'
+[0.550s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_camera_msgs) by extensions ['colcon_meta']
+[0.550s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_camera_msgs) by extension 'colcon_meta'
+[0.550s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_camera_msgs) by extensions ['ros']
+[0.550s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_camera_msgs) by extension 'ros'
+[0.552s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/realsense-ros/realsense2_camera_msgs' with type 'ros.ament_cmake' and name 'realsense2_camera_msgs'[0m
+[0.552s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_description) by extensions ['ignore', 'ignore_ament_install']
+[0.552s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_description) by extension 'ignore'
+[0.552s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_description) by extension 'ignore_ament_install'
+[0.552s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_description) by extensions ['colcon_pkg']
+[0.552s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_description) by extension 'colcon_pkg'
+[0.552s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_description) by extensions ['colcon_meta']
+[0.552s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_description) by extension 'colcon_meta'
+[0.552s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_description) by extensions ['ros']
+[0.552s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_description) by extension 'ros'
+[0.554s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/realsense-ros/realsense2_description' with type 'ros.ament_cmake' and name 'realsense2_description'[0m
+[0.554s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_rgbd_plugin) by extensions ['ignore', 'ignore_ament_install']
+[0.554s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_rgbd_plugin) by extension 'ignore'
+[0.554s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_rgbd_plugin) by extension 'ignore_ament_install'
+[0.554s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_rgbd_plugin) by extensions ['colcon_pkg']
+[0.554s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_rgbd_plugin) by extension 'colcon_pkg'
+[0.554s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_rgbd_plugin) by extensions ['colcon_meta']
+[0.554s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_rgbd_plugin) by extension 'colcon_meta'
+[0.554s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_rgbd_plugin) by extensions ['ros']
+[0.554s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_rgbd_plugin) by extension 'ros'
+[0.556s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/realsense-ros/realsense2_rgbd_plugin' with type 'ros.ament_cmake' and name 'realsense2_rviz_plugin'[0m
+[0.556s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_ros_mqtt_bridge) by extensions ['ignore', 'ignore_ament_install']
+[0.556s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_ros_mqtt_bridge) by extension 'ignore'
+[0.556s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_ros_mqtt_bridge) by extension 'ignore_ament_install'
+[0.556s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_ros_mqtt_bridge) by extensions ['colcon_pkg']
+[0.556s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_ros_mqtt_bridge) by extension 'colcon_pkg'
+[0.556s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_ros_mqtt_bridge) by extensions ['colcon_meta']
+[0.556s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_ros_mqtt_bridge) by extension 'colcon_meta'
+[0.556s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_ros_mqtt_bridge) by extensions ['ros']
+[0.556s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/realsense2_ros_mqtt_bridge) by extension 'ros'
+[0.557s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/realsense-ros/realsense2_ros_mqtt_bridge' with type 'ros.ament_python' and name 'realsense2_ros_mqtt_bridge'[0m
+[0.557s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/res) by extensions ['ignore', 'ignore_ament_install']
+[0.557s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/res) by extension 'ignore'
+[0.557s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/res) by extension 'ignore_ament_install'
+[0.557s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/res) by extensions ['colcon_pkg']
+[0.557s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/res) by extension 'colcon_pkg'
+[0.557s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/res) by extensions ['colcon_meta']
+[0.557s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/res) by extension 'colcon_meta'
+[0.558s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/res) by extensions ['ros']
+[0.558s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/res) by extension 'ros'
+[0.558s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/res) by extensions ['cmake', 'python']
+[0.558s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/res) by extension 'cmake'
+[0.558s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/res) by extension 'python'
+[0.558s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/res) by extensions ['python_setup_py']
+[0.558s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/res) by extension 'python_setup_py'
+[0.558s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/scripts) by extensions ['ignore', 'ignore_ament_install']
+[0.558s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/scripts) by extension 'ignore'
+[0.558s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/scripts) by extension 'ignore_ament_install'
+[0.558s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/scripts) by extensions ['colcon_pkg']
+[0.558s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/scripts) by extension 'colcon_pkg'
+[0.558s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/scripts) by extensions ['colcon_meta']
+[0.558s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/scripts) by extension 'colcon_meta'
+[0.558s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/scripts) by extensions ['ros']
+[0.558s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/scripts) by extension 'ros'
+[0.559s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/scripts) by extensions ['cmake', 'python']
+[0.559s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/scripts) by extension 'cmake'
+[0.559s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/scripts) by extension 'python'
+[0.559s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/scripts) by extensions ['python_setup_py']
+[0.559s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/realsense-ros/scripts) by extension 'python_setup_py'
+[0.559s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) using defaults
+[0.559s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) discover
+[0.559s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) using defaults
+[0.559s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) discover
+[0.559s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) using defaults
+[0.588s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'mecanum_control' build argument 'cmake_args' from command line to 'None'
+[0.588s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'mecanum_control' build argument 'cmake_target' from command line to 'None'
+[0.589s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'mecanum_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.589s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'mecanum_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.589s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'mecanum_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.589s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'mecanum_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.589s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'mecanum_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.589s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'mecanum_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.589s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'mecanum_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.589s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'mecanum_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/orangepi/ros2_ws/build/mecanum_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/orangepi/ros2_ws/install/mecanum_control', 'merge_install': False, 'path': '/home/orangepi/ros2_ws/src/mecanum_control', 'symlink_install': True, 'test_result_base': None}[0m
+[0.589s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_camera_msgs' build argument 'cmake_args' from command line to 'None'
+[0.589s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_camera_msgs' build argument 'cmake_target' from command line to 'None'
+[0.589s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_camera_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.590s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_camera_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.590s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_camera_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.590s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_camera_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.590s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_camera_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.590s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_camera_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.590s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_camera_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.590s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'realsense2_camera_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/orangepi/ros2_ws/build/realsense2_camera_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/orangepi/ros2_ws/install/realsense2_camera_msgs', 'merge_install': False, 'path': '/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera_msgs', 'symlink_install': True, 'test_result_base': None}[0m
+[0.590s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_ros_mqtt_bridge' build argument 'cmake_args' from command line to 'None'
+[0.590s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_ros_mqtt_bridge' build argument 'cmake_target' from command line to 'None'
+[0.590s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_ros_mqtt_bridge' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.590s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_ros_mqtt_bridge' build argument 'cmake_clean_cache' from command line to 'False'
+[0.590s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_ros_mqtt_bridge' build argument 'cmake_clean_first' from command line to 'False'
+[0.590s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_ros_mqtt_bridge' build argument 'cmake_force_configure' from command line to 'False'
+[0.590s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_ros_mqtt_bridge' build argument 'ament_cmake_args' from command line to 'None'
+[0.590s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_ros_mqtt_bridge' build argument 'catkin_cmake_args' from command line to 'None'
+[0.590s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_ros_mqtt_bridge' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.590s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'realsense2_ros_mqtt_bridge' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/orangepi/ros2_ws/build/realsense2_ros_mqtt_bridge', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge', 'merge_install': False, 'path': '/home/orangepi/ros2_ws/src/realsense-ros/realsense2_ros_mqtt_bridge', 'symlink_install': True, 'test_result_base': None}[0m
+[0.591s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_camera' build argument 'cmake_args' from command line to 'None'
+[0.591s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_camera' build argument 'cmake_target' from command line to 'None'
+[0.591s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_camera' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.591s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_camera' build argument 'cmake_clean_cache' from command line to 'False'
+[0.591s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_camera' build argument 'cmake_clean_first' from command line to 'False'
+[0.591s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_camera' build argument 'cmake_force_configure' from command line to 'False'
+[0.591s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_camera' build argument 'ament_cmake_args' from command line to 'None'
+[0.591s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_camera' build argument 'catkin_cmake_args' from command line to 'None'
+[0.591s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_camera' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.591s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'realsense2_camera' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/orangepi/ros2_ws/build/realsense2_camera', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/orangepi/ros2_ws/install/realsense2_camera', 'merge_install': False, 'path': '/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera', 'symlink_install': True, 'test_result_base': None}[0m
+[0.592s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_description' build argument 'cmake_args' from command line to 'None'
+[0.592s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_description' build argument 'cmake_target' from command line to 'None'
+[0.592s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.592s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.592s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.592s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.592s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.592s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.592s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.592s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'realsense2_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/orangepi/ros2_ws/build/realsense2_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/orangepi/ros2_ws/install/realsense2_description', 'merge_install': False, 'path': '/home/orangepi/ros2_ws/src/realsense-ros/realsense2_description', 'symlink_install': True, 'test_result_base': None}[0m
+[0.592s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_rviz_plugin' build argument 'cmake_args' from command line to 'None'
+[0.592s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_rviz_plugin' build argument 'cmake_target' from command line to 'None'
+[0.592s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_rviz_plugin' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.593s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_rviz_plugin' build argument 'cmake_clean_cache' from command line to 'False'
+[0.593s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_rviz_plugin' build argument 'cmake_clean_first' from command line to 'False'
+[0.593s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_rviz_plugin' build argument 'cmake_force_configure' from command line to 'False'
+[0.593s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_rviz_plugin' build argument 'ament_cmake_args' from command line to 'None'
+[0.593s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_rviz_plugin' build argument 'catkin_cmake_args' from command line to 'None'
+[0.593s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'realsense2_rviz_plugin' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.593s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'realsense2_rviz_plugin' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/orangepi/ros2_ws/build/realsense2_rviz_plugin', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin', 'merge_install': False, 'path': '/home/orangepi/ros2_ws/src/realsense-ros/realsense2_rgbd_plugin', 'symlink_install': True, 'test_result_base': None}[0m
+[0.593s] [34mcolcon.colcon_core.executor[0m [1;30mINFO[0m Executing jobs using 'parallel' executor
+[0.595s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete[0m
+[0.595s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera_msgs' with build type 'ament_cmake'
+[0.596s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera_msgs'
+[0.600s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.600s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.600s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.608s] [34mcolcon.colcon_ros.task.ament_python.build[0m [1;30mINFO[0m Building ROS package in '/home/orangepi/ros2_ws/src/mecanum_control' with build type 'ament_python'
+[0.609s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('mecanum_control', 'ament_prefix_path')
+[0.609s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/mecanum_control/share/mecanum_control/hook/ament_prefix_path.ps1'
+[0.611s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/orangepi/ros2_ws/install/mecanum_control/share/mecanum_control/hook/ament_prefix_path.dsv'
+[0.614s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/mecanum_control/share/mecanum_control/hook/ament_prefix_path.sh'
+[0.616s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.616s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.622s] [34mcolcon.colcon_ros.task.ament_python.build[0m [1;30mINFO[0m Building ROS package in '/home/orangepi/ros2_ws/src/realsense-ros/realsense2_ros_mqtt_bridge' with build type 'ament_python'
+[0.622s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('realsense2_ros_mqtt_bridge', 'ament_prefix_path')
+[0.623s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/share/realsense2_ros_mqtt_bridge/hook/ament_prefix_path.ps1'
+[0.624s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/share/realsense2_ros_mqtt_bridge/hook/ament_prefix_path.dsv'
+[0.625s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/share/realsense2_ros_mqtt_bridge/hook/ament_prefix_path.sh'
+[0.626s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.626s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.642s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/orangepi/ros2_ws/build/realsense2_camera_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge:/home/orangepi/ros2_ws/install/mecanum_control:/opt/ros/humble /usr/bin/cmake --build /home/orangepi/ros2_ws/build/realsense2_camera_msgs -- -j8 -l8[0m
+[1.179s] [34mcolcon.colcon_core.task.python.build[0m [1;30mINFO[0m Building Python package in '/home/orangepi/ros2_ws/src/mecanum_control'
+[1.179s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.180s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[1.649s] [34mcolcon.colcon_core.task.python.build[0m [1;30mINFO[0m Building Python package in '/home/orangepi/ros2_ws/src/realsense-ros/realsense2_ros_mqtt_bridge'
+[1.651s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.651s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[1.683s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/orangepi/ros2_ws/build/realsense2_camera_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge:/home/orangepi/ros2_ws/install/mecanum_control:/opt/ros/humble /usr/bin/cmake --build /home/orangepi/ros2_ws/build/realsense2_camera_msgs -- -j8 -l8[0m
+[1.718s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/orangepi/ros2_ws/build/realsense2_camera_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge:/home/orangepi/ros2_ws/install/mecanum_control:/opt/ros/humble /usr/bin/cmake --install /home/orangepi/ros2_ws/build/realsense2_camera_msgs[0m
+[2.059s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(realsense2_camera_msgs)
+[2.073s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/orangepi/ros2_ws/build/realsense2_camera_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge:/home/orangepi/ros2_ws/install/mecanum_control:/opt/ros/humble /usr/bin/cmake --install /home/orangepi/ros2_ws/build/realsense2_camera_msgs[0m
+[2.075s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera_msgs' for CMake module files
+[2.079s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera_msgs' for CMake config files
+[2.089s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('realsense2_camera_msgs', 'cmake_prefix_path')
+[2.091s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/cmake_prefix_path.ps1'
+[2.093s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/cmake_prefix_path.dsv'
+[2.096s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/cmake_prefix_path.sh'
+[2.102s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/lib'
+[2.103s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('realsense2_camera_msgs', 'ld_library_path_lib')
+[2.105s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/ld_library_path_lib.ps1'
+[2.108s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/ld_library_path_lib.dsv'
+[2.112s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/ld_library_path_lib.sh'
+[2.115s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/bin'
+[2.115s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/lib/pkgconfig/realsense2_camera_msgs.pc'
+[2.117s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/lib/python3.10/site-packages'
+[2.119s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/bin'
+[2.121s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.ps1'
+[2.126s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.dsv'
+[2.130s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.sh'
+[2.134s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.bash'
+[2.139s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.zsh'
+[2.143s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/colcon-core/packages/realsense2_camera_msgs)
+[2.146s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(realsense2_camera_msgs)
+[2.148s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera_msgs' for CMake module files
+[2.152s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera_msgs' for CMake config files
+[2.162s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('realsense2_camera_msgs', 'cmake_prefix_path')
+[2.163s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/cmake_prefix_path.ps1'
+[2.166s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/cmake_prefix_path.dsv'
+[2.168s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/cmake_prefix_path.sh'
+[2.172s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/lib'
+[2.173s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('realsense2_camera_msgs', 'ld_library_path_lib')
+[2.174s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/ld_library_path_lib.ps1'
+[2.176s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/ld_library_path_lib.dsv'
+[2.180s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/hook/ld_library_path_lib.sh'
+[2.181s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/bin'
+[2.181s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/lib/pkgconfig/realsense2_camera_msgs.pc'
+[2.181s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/lib/python3.10/site-packages'
+[2.182s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/bin'
+[2.182s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.ps1'
+[2.183s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.dsv'
+[2.184s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.sh'
+[2.185s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.bash'
+[2.186s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/package.zsh'
+[2.187s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/colcon-core/packages/realsense2_camera_msgs)
+[2.189s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera' with build type 'ament_cmake'
+[2.189s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera'
+[2.190s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.191s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[2.206s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/orangepi/ros2_ws/src/realsense-ros/realsense2_description' with build type 'ament_cmake'
+[2.206s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/orangepi/ros2_ws/src/realsense-ros/realsense2_description'
+[2.207s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.207s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[2.224s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/orangepi/ros2_ws/src/realsense-ros/realsense2_rgbd_plugin' with build type 'ament_cmake'
+[2.225s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/orangepi/ros2_ws/src/realsense-ros/realsense2_rgbd_plugin'
+[2.225s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.225s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[2.240s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/orangepi/ros2_ws/build/realsense2_camera': CMAKE_PREFIX_PATH=/home/orangepi/ros2_ws/install/realsense2_camera_msgs:/home/orangepi/ros2_ws/install/realsense2_rviz_plugin:/home/orangepi/ros2_ws/install/realsense2_description:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge:/home/orangepi/ros2_ws/install/mecanum_control:/opt/ros/humble /usr/bin/cmake --build /home/orangepi/ros2_ws/build/realsense2_camera -- -j8 -l8[0m
+[2.261s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/orangepi/ros2_ws/build/realsense2_description': CMAKE_PREFIX_PATH=/home/orangepi/ros2_ws/install/realsense2_camera_msgs:/home/orangepi/ros2_ws/install/realsense2_rviz_plugin:/home/orangepi/ros2_ws/install/realsense2_description:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge:/home/orangepi/ros2_ws/install/mecanum_control:/opt/ros/humble /usr/bin/cmake --build /home/orangepi/ros2_ws/build/realsense2_description -- -j8 -l8[0m
+[2.279s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/orangepi/ros2_ws/build/realsense2_rviz_plugin': CMAKE_PREFIX_PATH=/home/orangepi/ros2_ws/install/realsense2_camera_msgs:/home/orangepi/ros2_ws/install/realsense2_rviz_plugin:/home/orangepi/ros2_ws/install/realsense2_description:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge:/home/orangepi/ros2_ws/install/mecanum_control:/opt/ros/humble /usr/bin/cmake --build /home/orangepi/ros2_ws/build/realsense2_rviz_plugin -- -j8 -l8[0m
+[2.421s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/orangepi/ros2_ws/build/realsense2_rviz_plugin' returned '0': CMAKE_PREFIX_PATH=/home/orangepi/ros2_ws/install/realsense2_camera_msgs:/home/orangepi/ros2_ws/install/realsense2_rviz_plugin:/home/orangepi/ros2_ws/install/realsense2_description:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge:/home/orangepi/ros2_ws/install/mecanum_control:/opt/ros/humble /usr/bin/cmake --build /home/orangepi/ros2_ws/build/realsense2_rviz_plugin -- -j8 -l8[0m
+[2.422s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/orangepi/ros2_ws/build/realsense2_rviz_plugin': CMAKE_PREFIX_PATH=/home/orangepi/ros2_ws/install/realsense2_camera_msgs:/home/orangepi/ros2_ws/install/realsense2_rviz_plugin:/home/orangepi/ros2_ws/install/realsense2_description:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge:/home/orangepi/ros2_ws/install/mecanum_control:/opt/ros/humble /usr/bin/cmake --install /home/orangepi/ros2_ws/build/realsense2_rviz_plugin[0m
+[2.458s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/orangepi/ros2_ws/build/realsense2_description' returned '0': CMAKE_PREFIX_PATH=/home/orangepi/ros2_ws/install/realsense2_camera_msgs:/home/orangepi/ros2_ws/install/realsense2_rviz_plugin:/home/orangepi/ros2_ws/install/realsense2_description:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge:/home/orangepi/ros2_ws/install/mecanum_control:/opt/ros/humble /usr/bin/cmake --build /home/orangepi/ros2_ws/build/realsense2_description -- -j8 -l8[0m
+[2.461s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/orangepi/ros2_ws/build/realsense2_description': CMAKE_PREFIX_PATH=/home/orangepi/ros2_ws/install/realsense2_camera_msgs:/home/orangepi/ros2_ws/install/realsense2_rviz_plugin:/home/orangepi/ros2_ws/install/realsense2_description:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge:/home/orangepi/ros2_ws/install/mecanum_control:/opt/ros/humble /usr/bin/cmake --install /home/orangepi/ros2_ws/build/realsense2_description[0m
+[2.480s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(realsense2_rviz_plugin)
+[2.483s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin' for CMake module files
+[2.485s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/orangepi/ros2_ws/build/realsense2_rviz_plugin' returned '0': CMAKE_PREFIX_PATH=/home/orangepi/ros2_ws/install/realsense2_camera_msgs:/home/orangepi/ros2_ws/install/realsense2_rviz_plugin:/home/orangepi/ros2_ws/install/realsense2_description:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge:/home/orangepi/ros2_ws/install/mecanum_control:/opt/ros/humble /usr/bin/cmake --install /home/orangepi/ros2_ws/build/realsense2_rviz_plugin[0m
+[2.486s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin' for CMake config files
+[2.487s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('realsense2_rviz_plugin', 'cmake_prefix_path')
+[2.487s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/hook/cmake_prefix_path.ps1'
+[2.488s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/hook/cmake_prefix_path.dsv'
+[2.489s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/hook/cmake_prefix_path.sh'
+[2.490s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/bin'
+[2.491s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/lib/pkgconfig/realsense2_rviz_plugin.pc'
+[2.491s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/lib/python3.10/site-packages'
+[2.492s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/bin'
+[2.493s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/package.ps1'
+[2.494s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/package.dsv'
+[2.495s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/package.sh'
+[2.496s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/package.bash'
+[2.497s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/package.zsh'
+[2.498s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/colcon-core/packages/realsense2_rviz_plugin)
+[2.499s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(realsense2_rviz_plugin)
+[2.500s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin' for CMake module files
+[2.501s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin' for CMake config files
+[2.502s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('realsense2_rviz_plugin', 'cmake_prefix_path')
+[2.502s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/hook/cmake_prefix_path.ps1'
+[2.504s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/hook/cmake_prefix_path.dsv'
+[2.504s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/hook/cmake_prefix_path.sh'
+[2.506s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/bin'
+[2.506s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/lib/pkgconfig/realsense2_rviz_plugin.pc'
+[2.507s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/lib/python3.10/site-packages'
+[2.507s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/bin'
+[2.508s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/package.ps1'
+[2.509s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/package.dsv'
+[2.510s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/package.sh'
+[2.538s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/package.bash'
+[2.555s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/package.zsh'
+[2.560s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/colcon-core/packages/realsense2_rviz_plugin)
+[2.608s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(realsense2_description)
+[2.611s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_description' for CMake module files
+[2.616s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_description' for CMake config files
+[2.622s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/orangepi/ros2_ws/build/mecanum_control': PYTHONPATH=/home/orangepi/ros2_ws/build/mecanum_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/orangepi/ros2_ws/build/mecanum_control/build --no-deps symlink_data[0m
+[2.633s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/orangepi/ros2_ws/build/realsense2_description' returned '0': CMAKE_PREFIX_PATH=/home/orangepi/ros2_ws/install/realsense2_camera_msgs:/home/orangepi/ros2_ws/install/realsense2_rviz_plugin:/home/orangepi/ros2_ws/install/realsense2_description:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge:/home/orangepi/ros2_ws/install/mecanum_control:/opt/ros/humble /usr/bin/cmake --install /home/orangepi/ros2_ws/build/realsense2_description[0m
+[2.636s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('realsense2_description', 'cmake_prefix_path')
+[2.639s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_description/share/realsense2_description/hook/cmake_prefix_path.ps1'
+[2.644s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/orangepi/ros2_ws/install/realsense2_description/share/realsense2_description/hook/cmake_prefix_path.dsv'
+[2.646s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_description/share/realsense2_description/hook/cmake_prefix_path.sh'
+[2.649s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_description/bin'
+[2.650s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_description/lib/pkgconfig/realsense2_description.pc'
+[2.651s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_description/lib/python3.10/site-packages'
+[2.653s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_description/bin'
+[2.655s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_description/share/realsense2_description/package.ps1'
+[2.658s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/orangepi/ros2_ws/install/realsense2_description/share/realsense2_description/package.dsv'
+[2.660s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_description/share/realsense2_description/package.sh'
+[2.662s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_description/share/realsense2_description/package.bash'
+[2.665s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_description/share/realsense2_description/package.zsh'
+[2.667s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/orangepi/ros2_ws/install/realsense2_description/share/colcon-core/packages/realsense2_description)
+[2.670s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(realsense2_description)
+[2.672s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_description' for CMake module files
+[2.675s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_description' for CMake config files
+[2.678s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('realsense2_description', 'cmake_prefix_path')
+[2.680s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_description/share/realsense2_description/hook/cmake_prefix_path.ps1'
+[2.683s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/orangepi/ros2_ws/install/realsense2_description/share/realsense2_description/hook/cmake_prefix_path.dsv'
+[2.686s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_description/share/realsense2_description/hook/cmake_prefix_path.sh'
+[2.689s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_description/bin'
+[2.689s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_description/lib/pkgconfig/realsense2_description.pc'
+[2.690s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_description/lib/python3.10/site-packages'
+[2.690s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_description/bin'
+[2.691s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_description/share/realsense2_description/package.ps1'
+[2.692s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/orangepi/ros2_ws/install/realsense2_description/share/realsense2_description/package.dsv'
+[2.692s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_description/share/realsense2_description/package.sh'
+[2.693s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_description/share/realsense2_description/package.bash'
+[2.694s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_description/share/realsense2_description/package.zsh'
+[2.695s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/orangepi/ros2_ws/install/realsense2_description/share/colcon-core/packages/realsense2_description)
+[2.717s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/orangepi/ros2_ws/build/realsense2_ros_mqtt_bridge': PYTHONPATH=/home/orangepi/ros2_ws/build/realsense2_ros_mqtt_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/orangepi/ros2_ws/build/realsense2_ros_mqtt_bridge/build --no-deps symlink_data[0m
+[3.712s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('mecanum_control', 'pythonpath_develop')
+[3.712s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/build/mecanum_control/share/mecanum_control/hook/pythonpath_develop.ps1'
+[3.713s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/orangepi/ros2_ws/build/mecanum_control/share/mecanum_control/hook/pythonpath_develop.dsv'
+[3.714s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/orangepi/ros2_ws/build/mecanum_control' returned '0': PYTHONPATH=/home/orangepi/ros2_ws/build/mecanum_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/orangepi/ros2_ws/build/mecanum_control/build --no-deps symlink_data[0m
+[3.714s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/build/mecanum_control/share/mecanum_control/hook/pythonpath_develop.sh'
+[3.715s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/mecanum_control' for CMake module files
+[3.716s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/mecanum_control' for CMake config files
+[3.716s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/mecanum_control/lib'
+[3.717s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/mecanum_control/bin'
+[3.717s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/mecanum_control/lib/pkgconfig/mecanum_control.pc'
+[3.717s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages'
+[3.717s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('mecanum_control', 'pythonpath')
+[3.718s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/mecanum_control/share/mecanum_control/hook/pythonpath.ps1'
+[3.718s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/orangepi/ros2_ws/install/mecanum_control/share/mecanum_control/hook/pythonpath.dsv'
+[3.719s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/mecanum_control/share/mecanum_control/hook/pythonpath.sh'
+[3.720s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/mecanum_control/bin'
+[3.720s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(mecanum_control)
+[3.721s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/mecanum_control/share/mecanum_control/package.ps1'
+[3.721s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/orangepi/ros2_ws/install/mecanum_control/share/mecanum_control/package.dsv'
+[3.722s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/mecanum_control/share/mecanum_control/package.sh'
+[3.723s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/mecanum_control/share/mecanum_control/package.bash'
+[3.723s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/mecanum_control/share/mecanum_control/package.zsh'
+[3.724s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/orangepi/ros2_ws/install/mecanum_control/share/colcon-core/packages/mecanum_control)
+[5.020s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('realsense2_ros_mqtt_bridge', 'pythonpath_develop')
+[5.022s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/build/realsense2_ros_mqtt_bridge/share/realsense2_ros_mqtt_bridge/hook/pythonpath_develop.ps1'
+[5.025s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/orangepi/ros2_ws/build/realsense2_ros_mqtt_bridge/share/realsense2_ros_mqtt_bridge/hook/pythonpath_develop.dsv'
+[5.031s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/orangepi/ros2_ws/build/realsense2_ros_mqtt_bridge' returned '0': PYTHONPATH=/home/orangepi/ros2_ws/build/realsense2_ros_mqtt_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/orangepi/ros2_ws/build/realsense2_ros_mqtt_bridge/build --no-deps symlink_data[0m
+[5.033s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/build/realsense2_ros_mqtt_bridge/share/realsense2_ros_mqtt_bridge/hook/pythonpath_develop.sh'
+[5.038s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge' for CMake module files
+[5.042s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge' for CMake config files
+[5.045s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/lib'
+[5.046s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/bin'
+[5.046s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/lib/pkgconfig/realsense2_ros_mqtt_bridge.pc'
+[5.048s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/lib/python3.10/site-packages'
+[5.048s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('realsense2_ros_mqtt_bridge', 'pythonpath')
+[5.050s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/share/realsense2_ros_mqtt_bridge/hook/pythonpath.ps1'
+[5.053s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/share/realsense2_ros_mqtt_bridge/hook/pythonpath.dsv'
+[5.055s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/share/realsense2_ros_mqtt_bridge/hook/pythonpath.sh'
+[5.061s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/bin'
+[5.062s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(realsense2_ros_mqtt_bridge)
+[5.064s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/share/realsense2_ros_mqtt_bridge/package.ps1'
+[5.068s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/share/realsense2_ros_mqtt_bridge/package.dsv'
+[5.073s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/share/realsense2_ros_mqtt_bridge/package.sh'
+[5.079s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/share/realsense2_ros_mqtt_bridge/package.bash'
+[5.083s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/share/realsense2_ros_mqtt_bridge/package.zsh'
+[5.087s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/share/colcon-core/packages/realsense2_ros_mqtt_bridge)
+[27.706s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/orangepi/ros2_ws/build/realsense2_camera' returned '2': CMAKE_PREFIX_PATH=/home/orangepi/ros2_ws/install/realsense2_camera_msgs:/home/orangepi/ros2_ws/install/realsense2_rviz_plugin:/home/orangepi/ros2_ws/install/realsense2_description:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge:/home/orangepi/ros2_ws/install/mecanum_control:/opt/ros/humble /usr/bin/cmake --build /home/orangepi/ros2_ws/build/realsense2_camera -- -j8 -l8[0m
+[27.709s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(realsense2_camera)
+[27.710s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera' for CMake module files
+[27.712s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera' for CMake config files
+[27.713s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera/bin'
+[27.714s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera/lib/pkgconfig/realsense2_camera.pc'
+[27.715s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera/lib/python3.10/site-packages'
+[27.717s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/orangepi/ros2_ws/install/realsense2_camera/bin'
+[27.718s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_camera/share/realsense2_camera/package.ps1'
+[27.720s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/orangepi/ros2_ws/install/realsense2_camera/share/realsense2_camera/package.dsv'
+[27.722s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_camera/share/realsense2_camera/package.sh'
+[27.724s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_camera/share/realsense2_camera/package.bash'
+[27.725s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/orangepi/ros2_ws/install/realsense2_camera/share/realsense2_camera/package.zsh'
+[27.727s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/orangepi/ros2_ws/install/realsense2_camera/share/colcon-core/packages/realsense2_camera)
+[27.728s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mclosing loop[0m
+[27.732s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mloop closed[0m
+[27.733s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete finished with '2'[0m
+[27.733s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoining thread[0m
+[28.094s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[28.095s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[28.095s] [34mcolcon.colcon_notification.desktop_notification[0m [1;30mINFO[0m Sending desktop notification using 'notify2'
+[28.117s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoined thread[0m
+[28.120s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/orangepi/ros2_ws/install/local_setup.ps1'
+[28.125s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/orangepi/ros2_ws/install/_local_setup_util_ps1.py'
+[28.135s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/orangepi/ros2_ws/install/setup.ps1'
+[28.142s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/orangepi/ros2_ws/install/local_setup.sh'
+[28.145s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/orangepi/ros2_ws/install/_local_setup_util_sh.py'
+[28.148s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/orangepi/ros2_ws/install/setup.sh'
+[28.155s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/orangepi/ros2_ws/install/local_setup.bash'
+[28.158s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/orangepi/ros2_ws/install/setup.bash'
+[28.164s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/orangepi/ros2_ws/install/local_setup.zsh'
+[28.167s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/orangepi/ros2_ws/install/setup.zsh'

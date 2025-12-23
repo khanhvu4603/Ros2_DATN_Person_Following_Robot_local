@@ -1,0 +1,12 @@
+[console_scripts]
+dynamic_obstacle_tracker = mecanum_control.dynamic_obstacle_tracker:main
+imu_raw_publisher = mecanum_control.imu_raw_publisher:main
+lidar_processor = mecanum_control.lidar_processor:main
+manual_bridge = mecanum_control.manual_bridge:main
+mecanum_controller = mecanum_control.mecanum_controller:main
+opencv_camera_node = mecanum_control.opencv_camera_node:main
+opencv_view_node = mecanum_control.opencv_view_node:main
+person_detector = mecanum_control.person_detector:main
+stm32_communicator = mecanum_control.stm32_communicator:main
+velocity_arbiter = mecanum_control.velocity_arbiter:main
+

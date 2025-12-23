@@ -1,0 +1,53 @@
+running develop
+Removing /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum-control.egg-link (link to .)
+running egg_info
+writing ../../build/mecanum_control/mecanum_control.egg-info/PKG-INFO
+writing dependency_links to ../../build/mecanum_control/mecanum_control.egg-info/dependency_links.txt
+writing entry points to ../../build/mecanum_control/mecanum_control.egg-info/entry_points.txt
+writing requirements to ../../build/mecanum_control/mecanum_control.egg-info/requires.txt
+writing top-level names to ../../build/mecanum_control/mecanum_control.egg-info/top_level.txt
+reading manifest file '../../build/mecanum_control/mecanum_control.egg-info/SOURCES.txt'
+writing manifest file '../../build/mecanum_control/mecanum_control.egg-info/SOURCES.txt'
+running build
+running build_py
+copying mecanum_control/person_detector.py -> /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control
+copying mecanum_control/lidar_processor.py -> /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control
+running install
+running install_lib
+copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/mecanum_controller.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/__init__.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/opencv_view_node.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/person_detector.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/lidar_processor.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/stm32_communicator.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/imu_raw_publisher.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/person_detector_Khanh.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/opencv_camera_node.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/velocity_arbiter.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/mecanum_controller.py to mecanum_controller.cpython-310.pyc
+byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/opencv_view_node.py to opencv_view_node.cpython-310.pyc
+byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/person_detector.py to person_detector.cpython-310.pyc
+byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/lidar_processor.py to lidar_processor.cpython-310.pyc
+byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/stm32_communicator.py to stm32_communicator.cpython-310.pyc
+byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/imu_raw_publisher.py to imu_raw_publisher.cpython-310.pyc
+byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/person_detector_Khanh.py to person_detector_Khanh.cpython-310.pyc
+byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/opencv_camera_node.py to opencv_camera_node.cpython-310.pyc
+byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/velocity_arbiter.py to velocity_arbiter.cpython-310.pyc
+running install_data
+copying resource/mecanum_control -> /home/orangepi/ros2_ws/install/mecanum_control/share/ament_index/resource_index/packages
+copying package.xml -> /home/orangepi/ros2_ws/install/mecanum_control/share/mecanum_control
+copying launch/mecanum.launch.py -> /home/orangepi/ros2_ws/install/mecanum_control/share/mecanum_control/launch
+copying launch/detect_only_opencv.launch.py -> /home/orangepi/ros2_ws/install/mecanum_control/share/mecanum_control/launch
+running install_egg_info
+Copying ../../build/mecanum_control/mecanum_control.egg-info to /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control-0.0.0-py3.10.egg-info
+running install_scripts
+Installing imu_raw_publisher script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+Installing lidar_processor script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+Installing mecanum_controller script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+Installing opencv_camera_node script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+Installing opencv_view_node script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+Installing person_detector script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+Installing stm32_communicator script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+Installing velocity_arbiter script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+writing list of installed files to '/home/orangepi/ros2_ws/build/mecanum_control/install.log'

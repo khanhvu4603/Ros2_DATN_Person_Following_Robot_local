@@ -1,0 +1,19 @@
+[35m[1mConsolidate compiler generated dependencies of target realsense2_camera[0m
+[  3%] [32mBuilding CXX object CMakeFiles/realsense2_camera_node.dir/rclcpp_components/node_main_realsense2_camera_node.cpp.o[0m
+[  7%] [32mBuilding CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o[0m
+[ 11%] [32mBuilding CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o[0m
+[ 15%] [32mBuilding CXX object CMakeFiles/realsense2_camera.dir/src/base_realsense_node.cpp.o[0m
+[ 19%] [32mBuilding CXX object CMakeFiles/realsense2_camera.dir/src/realsense_node_factory.cpp.o[0m
+[ 23%] [32mBuilding CXX object CMakeFiles/realsense2_camera.dir/src/rs_node_setup.cpp.o[0m
+[ 26%] [32mBuilding CXX object CMakeFiles/realsense2_camera.dir/src/parameters.cpp.o[0m
+[ 30%] [32mBuilding CXX object CMakeFiles/realsense2_camera.dir/src/ros_sensor.cpp.o[0m
+[ 34%] [32m[1mLinking CXX static library libgtest_main.a[0m
+[ 34%] Built target gtest_main
+[ 38%] [32mBuilding CXX object CMakeFiles/realsense2_camera.dir/src/ros_utils.cpp.o[0m
+[ 42%] [32m[1mLinking CXX executable realsense2_camera_node[0m
+[ 42%] Built target realsense2_camera_node
+[ 46%] [32m[1mLinking CXX static library libgtest.a[0m
+[ 46%] Built target gtest
+[ 50%] [32mBuilding CXX object CMakeFiles/gtest_template.dir/test/gtest_template.cpp.o[0m
+[ 53%] [32m[1mLinking CXX executable gtest_template[0m
+[ 53%] Built target gtest_template

@@ -1,0 +1,69 @@
+[1.598s] Invoking command in '/home/orangepi/ros2_ws/build/mecanum_control': PYTHONPATH=/home/orangepi/ros2_ws/build/mecanum_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/orangepi/ros2_ws/build/mecanum_control/build
+[2.063s] running develop
+[2.325s] Removing /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum-control.egg-link (link to .)
+[2.464s] Invoked command in '/home/orangepi/ros2_ws/build/mecanum_control' returned '0': PYTHONPATH=/home/orangepi/ros2_ws/build/mecanum_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/orangepi/ros2_ws/build/mecanum_control/build
+[2.470s] Invoking command in '/home/orangepi/ros2_ws/src/mecanum_control': PYTHONPATH=/home/orangepi/ros2_ws/build/mecanum_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/mecanum_control build --build-base /home/orangepi/ros2_ws/build/mecanum_control/build install --record /home/orangepi/ros2_ws/build/mecanum_control/install.log --single-version-externally-managed install_data --force
+[2.895s] running egg_info
+[2.896s] writing ../../build/mecanum_control/mecanum_control.egg-info/PKG-INFO
+[2.897s] writing dependency_links to ../../build/mecanum_control/mecanum_control.egg-info/dependency_links.txt
+[2.897s] writing entry points to ../../build/mecanum_control/mecanum_control.egg-info/entry_points.txt
+[2.898s] writing requirements to ../../build/mecanum_control/mecanum_control.egg-info/requires.txt
+[2.899s] writing top-level names to ../../build/mecanum_control/mecanum_control.egg-info/top_level.txt
+[2.904s] reading manifest file '../../build/mecanum_control/mecanum_control.egg-info/SOURCES.txt'
+[2.905s] writing manifest file '../../build/mecanum_control/mecanum_control.egg-info/SOURCES.txt'
+[2.906s] running build
+[2.906s] running build_py
+[2.906s] creating /home/orangepi/ros2_ws/build/mecanum_control/build
+[2.907s] creating /home/orangepi/ros2_ws/build/mecanum_control/build/lib
+[2.907s] creating /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control
+[2.907s] copying mecanum_control/mecanum_controller.py -> /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control
+[2.907s] copying mecanum_control/__init__.py -> /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control
+[2.908s] copying mecanum_control/opencv_view_node.py -> /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control
+[2.908s] copying mecanum_control/person_detector.py -> /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control
+[2.908s] copying mecanum_control/lidar_processor.py -> /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control
+[2.908s] copying mecanum_control/stm32_communicator.py -> /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control
+[2.908s] copying mecanum_control/imu_raw_publisher.py -> /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control
+[2.908s] copying mecanum_control/person_detector_Khanh.py -> /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control
+[2.908s] copying mecanum_control/opencv_camera_node.py -> /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control
+[2.909s] copying mecanum_control/velocity_arbiter.py -> /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control
+[2.909s] running install
+[2.909s] running install_lib
+[2.910s] creating /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+[2.910s] copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/mecanum_controller.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+[2.910s] copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/__init__.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+[2.910s] copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/opencv_view_node.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+[2.911s] copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/person_detector.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+[2.911s] copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/lidar_processor.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+[2.911s] copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/stm32_communicator.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+[2.911s] copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/imu_raw_publisher.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+[2.911s] copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/person_detector_Khanh.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+[2.912s] copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/opencv_camera_node.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+[2.912s] copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/velocity_arbiter.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+[2.912s] byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/mecanum_controller.py to mecanum_controller.cpython-310.pyc
+[2.914s] byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/__init__.py to __init__.cpython-310.pyc
+[2.914s] byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/opencv_view_node.py to opencv_view_node.cpython-310.pyc
+[2.915s] byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/person_detector.py to person_detector.cpython-310.pyc
+[2.930s] byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/lidar_processor.py to lidar_processor.cpython-310.pyc
+[2.934s] byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/stm32_communicator.py to stm32_communicator.cpython-310.pyc
+[2.936s] byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/imu_raw_publisher.py to imu_raw_publisher.cpython-310.pyc
+[2.938s] byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/person_detector_Khanh.py to person_detector_Khanh.cpython-310.pyc
+[2.947s] byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/opencv_camera_node.py to opencv_camera_node.cpython-310.pyc
+[2.947s] byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/velocity_arbiter.py to velocity_arbiter.cpython-310.pyc
+[2.949s] running install_data
+[2.949s] copying resource/mecanum_control -> /home/orangepi/ros2_ws/install/mecanum_control/share/ament_index/resource_index/packages
+[2.950s] copying package.xml -> /home/orangepi/ros2_ws/install/mecanum_control/share/mecanum_control
+[2.950s] copying launch/mecanum.launch.py -> /home/orangepi/ros2_ws/install/mecanum_control/share/mecanum_control/launch
+[2.950s] copying launch/detect_only_opencv.launch.py -> /home/orangepi/ros2_ws/install/mecanum_control/share/mecanum_control/launch
+[2.950s] running install_egg_info
+[2.954s] Copying ../../build/mecanum_control/mecanum_control.egg-info to /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control-0.0.0-py3.10.egg-info
+[2.955s] running install_scripts
+[2.989s] Installing imu_raw_publisher script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[2.990s] Installing lidar_processor script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[2.990s] Installing mecanum_controller script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[2.991s] Installing opencv_camera_node script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[2.992s] Installing opencv_view_node script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[2.992s] Installing person_detector script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[2.994s] Installing stm32_communicator script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[2.994s] Installing velocity_arbiter script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[2.996s] writing list of installed files to '/home/orangepi/ros2_ws/build/mecanum_control/install.log'
+[3.109s] Invoked command in '/home/orangepi/ros2_ws/src/mecanum_control' returned '0': PYTHONPATH=/home/orangepi/ros2_ws/build/mecanum_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/mecanum_control build --build-base /home/orangepi/ros2_ws/build/mecanum_control/build install --record /home/orangepi/ros2_ws/build/mecanum_control/install.log --single-version-externally-managed install_data --force

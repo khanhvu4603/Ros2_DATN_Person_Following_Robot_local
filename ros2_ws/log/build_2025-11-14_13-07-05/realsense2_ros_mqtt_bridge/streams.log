@@ -1,0 +1,17 @@
+[2.093s] Invoking command in '/home/orangepi/ros2_ws/build/realsense2_ros_mqtt_bridge': PYTHONPATH=/home/orangepi/ros2_ws/build/realsense2_ros_mqtt_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/orangepi/ros2_ws/build/realsense2_ros_mqtt_bridge/build --no-deps symlink_data
+[2.637s] running develop
+[3.671s] running egg_info
+[3.673s] writing realsense2_ros_mqtt_bridge.egg-info/PKG-INFO
+[3.674s] writing dependency_links to realsense2_ros_mqtt_bridge.egg-info/dependency_links.txt
+[3.675s] writing entry points to realsense2_ros_mqtt_bridge.egg-info/entry_points.txt
+[3.678s] writing requirements to realsense2_ros_mqtt_bridge.egg-info/requires.txt
+[3.680s] writing top-level names to realsense2_ros_mqtt_bridge.egg-info/top_level.txt
+[3.695s] reading manifest file 'realsense2_ros_mqtt_bridge.egg-info/SOURCES.txt'
+[3.701s] writing manifest file 'realsense2_ros_mqtt_bridge.egg-info/SOURCES.txt'
+[4.062s] running build_ext
+[4.063s] Creating /home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/lib/python3.10/site-packages/realsense2-ros-mqtt-bridge.egg-link (link to .)
+[4.067s] Installing realsense2_ros_mqtt_bridge script to /home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/lib/realsense2_ros_mqtt_bridge
+[4.069s] 
+[4.070s] Installed /home/orangepi/ros2_ws/build/realsense2_ros_mqtt_bridge
+[4.070s] running symlink_data
+[4.405s] Invoked command in '/home/orangepi/ros2_ws/build/realsense2_ros_mqtt_bridge' returned '0': PYTHONPATH=/home/orangepi/ros2_ws/build/realsense2_ros_mqtt_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/orangepi/ros2_ws/build/realsense2_ros_mqtt_bridge/build --no-deps symlink_data

@@ -1,0 +1,22 @@
+[0.050s] Invoking command in '/home/orangepi/ros2_ws/build/realsense2_rviz_plugin': CMAKE_PREFIX_PATH=/home/orangepi/ros2_ws/install/realsense2_camera_msgs:/home/orangepi/ros2_ws/install/realsense2_rviz_plugin:/home/orangepi/ros2_ws/install/realsense2_description:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge:/home/orangepi/ros2_ws/install/mecanum_control:/opt/ros/humble /usr/bin/cmake --build /home/orangepi/ros2_ws/build/realsense2_rviz_plugin -- -j8 -l8
+[0.192s] Invoked command in '/home/orangepi/ros2_ws/build/realsense2_rviz_plugin' returned '0': CMAKE_PREFIX_PATH=/home/orangepi/ros2_ws/install/realsense2_camera_msgs:/home/orangepi/ros2_ws/install/realsense2_rviz_plugin:/home/orangepi/ros2_ws/install/realsense2_description:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge:/home/orangepi/ros2_ws/install/mecanum_control:/opt/ros/humble /usr/bin/cmake --build /home/orangepi/ros2_ws/build/realsense2_rviz_plugin -- -j8 -l8
+[0.193s] Invoking command in '/home/orangepi/ros2_ws/build/realsense2_rviz_plugin': CMAKE_PREFIX_PATH=/home/orangepi/ros2_ws/install/realsense2_camera_msgs:/home/orangepi/ros2_ws/install/realsense2_rviz_plugin:/home/orangepi/ros2_ws/install/realsense2_description:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge:/home/orangepi/ros2_ws/install/mecanum_control:/opt/ros/humble /usr/bin/cmake --install /home/orangepi/ros2_ws/build/realsense2_rviz_plugin
+[0.206s] -- Install configuration: ""
+[0.207s] -- Execute custom install script
+[0.209s] -- Up-to-date symlink: /home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/config/rviz_rgbd_plugin_settings.yaml
+[0.209s] -- Up-to-date symlink: /home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/ament_index/resource_index/package_run_dependencies/realsense2_rviz_plugin
+[0.210s] -- Up-to-date symlink: /home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/ament_index/resource_index/parent_prefix_path/realsense2_rviz_plugin
+[0.210s] -- Up-to-date symlink: /home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/environment/ament_prefix_path.sh
+[0.211s] -- Up-to-date symlink: /home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/environment/ament_prefix_path.dsv
+[0.211s] -- Up-to-date symlink: /home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/environment/path.sh
+[0.212s] -- Up-to-date symlink: /home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/environment/path.dsv
+[0.212s] -- Up-to-date symlink: /home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/local_setup.bash
+[0.212s] -- Up-to-date symlink: /home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/local_setup.sh
+[0.213s] -- Up-to-date symlink: /home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/local_setup.zsh
+[0.213s] -- Up-to-date symlink: /home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/local_setup.dsv
+[0.213s] -- Symlinking: /home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/package.dsv
+[0.233s] -- Up-to-date symlink: /home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/ament_index/resource_index/packages/realsense2_rviz_plugin
+[0.234s] -- Up-to-date symlink: /home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/cmake/realsense2_rviz_pluginConfig.cmake
+[0.234s] -- Up-to-date symlink: /home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/cmake/realsense2_rviz_pluginConfig-version.cmake
+[0.235s] -- Up-to-date symlink: /home/orangepi/ros2_ws/install/realsense2_rviz_plugin/share/realsense2_rviz_plugin/package.xml
+[0.256s] Invoked command in '/home/orangepi/ros2_ws/build/realsense2_rviz_plugin' returned '0': CMAKE_PREFIX_PATH=/home/orangepi/ros2_ws/install/realsense2_camera_msgs:/home/orangepi/ros2_ws/install/realsense2_rviz_plugin:/home/orangepi/ros2_ws/install/realsense2_description:/home/orangepi/ros2_ws/install/realsense2_ros_mqtt_bridge:/home/orangepi/ros2_ws/install/mecanum_control:/opt/ros/humble /usr/bin/cmake --install /home/orangepi/ros2_ws/build/realsense2_rviz_plugin

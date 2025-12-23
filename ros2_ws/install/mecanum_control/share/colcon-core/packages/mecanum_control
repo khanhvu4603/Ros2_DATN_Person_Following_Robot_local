@@ -1,0 +1,1 @@
+cv_bridge:filterpy:geometry_msgs:image_transport:imu_filter_madgwick:nav2_bringup:nav_msgs:python3-numpy:python3-opencv:python3-pyserial:python3-tf-transformations:rclpy:rplidar_ros:sensor_msgs:serial:slam_toolbox:std_msgs:tf2_geometry_msgs:tf2_ros:torch:torchvision:ultralytics

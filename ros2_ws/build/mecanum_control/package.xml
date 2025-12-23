@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>mecanum_control</name>
+  <version>0.1.0</version>
+  <description>ROS2 package for Mecanum Wheel Robot with IMU, Lidar and Person Following</description>
+  <maintainer email="orangepi@example.com">orangepi</maintainer>
+  <license>Apache License 2.0</license>
+
+  <!-- Core ROS2 dependencies -->
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_geometry_msgs</depend>
+  
+  <!-- Vision processing -->
+  <depend>cv_bridge</depend>
+  <depend>image_transport</depend>
+  
+  <!-- Hardware communication -->
+  <depend>serial</depend>  <!-- For pyserial -->
+  
+  <!-- IMU processing -->
+  <depend>imu_filter_madgwick</depend>
+  
+  <!-- Lidar support -->
+  <depend>rplidar_ros</depend>
+  
+  <!-- Navigation (optional) -->
+  <depend>nav2_bringup</depend>
+  <depend>slam_toolbox</depend>
+
+  <!-- Python dependencies -->
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+  <exec_depend>python3-pyserial</exec_depend>
+  
+  <!-- Deep learning dependencies -->
+  <exec_depend>torch</exec_depend>
+  <exec_depend>torchvision</exec_depend>
+  <exec_depend>ultralytics</exec_depend>
+  
+  <!-- Filtering -->
+  <exec_depend>filterpy</exec_depend>
+  
+  <!-- TF transformations -->
+  <exec_depend>python3-tf-transformations</exec_depend>
+
+  <!-- Test dependencies -->
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

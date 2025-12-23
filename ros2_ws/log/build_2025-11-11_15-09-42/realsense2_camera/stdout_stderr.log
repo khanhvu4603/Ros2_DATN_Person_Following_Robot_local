@@ -1,0 +1,407 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Create Release Build.
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found builtin_interfaces: 1.2.2 (/opt/ros/humble/share/builtin_interfaces/cmake)
+-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)
+-- Found image_transport: 3.1.12 (/opt/ros/humble/share/image_transport/cmake)
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found rclcpp_action: 16.0.15 (/opt/ros/humble/share/rclcpp_action/cmake)
+-- Found rclcpp_components: 16.0.15 (/opt/ros/humble/share/rclcpp_components/cmake)
+-- Found realsense2_camera_msgs: 4.55.1 (/home/orangepi/ros2_ws/install/realsense2_camera_msgs/share/realsense2_camera_msgs/cmake)
+-- Found std_srvs: 4.9.0 (/opt/ros/humble/share/std_srvs/cmake)
+-- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+-- Found tf2_ros: 0.25.16 (/opt/ros/humble/share/tf2_ros/cmake)
+-- Found diagnostic_updater: 4.0.6 (/opt/ros/humble/share/diagnostic_updater/cmake)
+-- Found OpenCV: /usr (found version "4.5.4") found components: core 
+-- Build for ROS2 Humble
+-- Found ament_cmake_gtest: 1.3.12 (/opt/ros/humble/share/ament_cmake_gtest/cmake)
+-- Found gtest sources under '/opt/ros/humble/src/gtest_vendor': C++ tests using 'Google Test' will be built
+-- Found ament_cmake_pytest: 1.3.12 (/opt/ros/humble/share/ament_cmake_pytest/cmake)
+-- rs_device_info:
+-- Device Name                   Serial Number       Firmware Version
+Intel RealSense D455          146222252341        5.13.0.50
+
+-- D455 device found
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/orangepi/ros2_ws/build/realsense2_camera
+[  3%] [32mBuilding CXX object CMakeFiles/realsense2_camera.dir/src/realsense_node_factory.cpp.o[0m
+In file included from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_sensor.h:22[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/base_realsense_node.h:63[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/realsense_node_factory.h:19[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/src/realsense_node_factory.cpp:15[m[K:
+[01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_utils.h:36:36:[m[K [01;31m[Kerror: [m[K‘[01m[KRS2_STREAM_SAFETY[m[K’ was not declared in this scope; did you mean ‘[01m[KRS2_STREAM_ANY[m[K’?
+   36 |     const stream_index_pair SAFETY{[01;31m[KRS2_STREAM_SAFETY[m[K, 0};
+      |                                    [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+      |                                    [32m[KRS2_STREAM_ANY[m[K
+[01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_utils.h:36:56:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kstd::pair<rs2_stream, int>::pair(<brace-enclosed initializer list>)[m[K’
+   36 |     const stream_index_pair SAFETY{RS2_STREAM_SAFETY, 0[01;31m[K}[m[K;
+      |                                                        [01;31m[K^[m[K
+In file included from [01m[K/usr/include/c++/11/bits/stl_algobase.h:64[m[K,
+                 from [01m[K/usr/include/c++/11/bits/char_traits.h:39[m[K,
+                 from [01m[K/usr/include/c++/11/string:40[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/constants.h:17[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/realsense_node_factory.h:18[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/src/realsense_node_factory.cpp:15[m[K:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:452:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ... _Args1, long unsigned int ..._Indexes1, class ... _Args2, long unsigned int ..._Indexes2> std::pair<_T1, _T2>::pair(std::tuple<_Args1 ...>&, std::tuple<_Args2 ...>&, std::_Index_tuple<_Indexes1 ...>, std::_Index_tuple<_Indexes2 ...>) [with _Args1 = {_Args1 ...}; long unsigned int ..._Indexes1 = {_Indexes1 ...}; _Args2 = {_Args2 ...}; long unsigned int ..._Indexes2 = {_Indexes2 ...}; _T1 = rs2_stream; _T2 = int][m[K’
+  452 |         [01;36m[Kpair[m[K(tuple<_Args1...>&, tuple<_Args2...>&,
+      |         [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:452:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:387:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ... _Args1, class ... _Args2> std::pair<_T1, _T2>::pair(std::piecewise_construct_t, std::tuple<_Args1 ...>, std::tuple<_Args2 ...>) [with _Args1 = {_Args1 ...}; _Args2 = {_Args2 ...}; _T1 = rs2_stream; _T2 = int][m[K’
+  387 |         [01;36m[Kpair[m[K(piecewise_construct_t, tuple<_Args1...>, tuple<_Args2...>);
+      |         [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:387:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:381:28:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_MoveConstructiblePair<_U1, _U2>() && (! std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_ImplicitlyMoveConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(std::pair<_U1, _U2>&&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_MoveConstructiblePair<_U1, _U2>() && (! std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_ImplicitlyMoveConvertiblePair<_U1, _U2>())), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  381 |         explicit constexpr [01;36m[Kpair[m[K(pair<_U1, _U2>&& __p)
+      |                            [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:381:28:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:371:19:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_MoveConstructiblePair<_U1, _U2>() && std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(std::pair<_U1, _U2>&&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_MoveConstructiblePair<_U1, _U2>() && std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  371 |         constexpr [01;36m[Kpair[m[K(pair<_U1, _U2>&& __p)
+      |                   [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:371:19:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:361:28:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(_MoveConstructiblePair<_U1, _U2>() && (! _ImplicitlyMoveConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, _U2&&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<true, _T1, _T2>::_MoveConstructiblePair<_U1, _U2>() && (! std::_PCC<true, _T1, _T2>::_ImplicitlyMoveConvertiblePair<_U1, _U2>())), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  361 |         explicit constexpr [01;36m[Kpair[m[K(_U1&& __x, _U2&& __y)
+      |                            [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:361:28:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:352:19:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(_MoveConstructiblePair<_U1, _U2>() && _ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, _U2&&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<true, _T1, _T2>::_MoveConstructiblePair<_U1, _U2>() && std::_PCC<true, _T1, _T2>::_ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  352 |         constexpr [01;36m[Kpair[m[K(_U1&& __x, _U2&& __y)
+      |                   [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:352:19:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:343:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U2, typename std::enable_if<_CopyMovePair<false, rs2_stream, _U2>(), bool>::type <anonymous> > std::pair<_T1, _T2>::pair(const _T1&, _U2&&) [with _U2 = _U2; typename std::enable_if<std::_PCC<true, _T1, _T2>::_CopyMovePair<false, _T1, _U2>(), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  343 |        explicit [01;36m[Kpair[m[K(const _T1& __x, _U2&& __y)
+      |                 [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:343:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:336:18:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U2, typename std::enable_if<_CopyMovePair<true, rs2_stream, _U2>(), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const _T1&, _U2&&) [with _U2 = _U2; typename std::enable_if<std::_PCC<true, _T1, _T2>::_CopyMovePair<true, _T1, _U2>(), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  336 |        constexpr [01;36m[Kpair[m[K(const _T1& __x, _U2&& __y)
+      |                  [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:336:18:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:329:27:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, typename std::enable_if<_MoveCopyPair<false, _U1, int>(), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, const _T2&) [with _U1 = _U1; typename std::enable_if<std::_PCC<true, _T1, _T2>::_MoveCopyPair<false, _U1, _T2>(), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  329 |        explicit constexpr [01;36m[Kpair[m[K(_U1&& __x, const _T2& __y)
+      |                           [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:329:27:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:322:18:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, typename std::enable_if<_MoveCopyPair<true, _U1, int>(), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, const _T2&) [with _U1 = _U1; typename std::enable_if<std::_PCC<true, _T1, _T2>::_MoveCopyPair<true, _U1, _T2>(), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  322 |        constexpr [01;36m[Kpair[m[K(_U1&& __x, const _T2& __y)
+      |                  [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:322:18:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:309:28:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_ConstructiblePair<_U1, _U2>() && (! std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_ImplicitlyConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const std::pair<_U1, _U2>&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_ConstructiblePair<_U1, _U2>() && (! std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_ImplicitlyConvertiblePair<_U1, _U2>())), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  309 |         explicit constexpr [01;36m[Kpair[m[K(const pair<_U1, _U2>& __p)
+      |                            [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:309:28:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:300:19:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_ConstructiblePair<_U1, _U2>() && std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_ImplicitlyConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const std::pair<_U1, _U2>&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_ConstructiblePair<_U1, _U2>() && std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_ImplicitlyConvertiblePair<_U1, _U2>()), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  300 |         constexpr [01;36m[Kpair[m[K(const pair<_U1, _U2>& __p)
+      |                   [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:300:19:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:276:26:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(_ConstructiblePair<_U1, _U2>() && (! _ImplicitlyConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const _T1&, const _T2&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<true, _T1, _T2>::_ConstructiblePair<_U1, _U2>() && (! std::_PCC<true, _T1, _T2>::_ImplicitlyConvertiblePair<_U1, _U2>())), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  276 |       explicit constexpr [01;36m[Kpair[m[K(const _T1& __a, const _T2& __b)
+      |                          [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:276:26:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:266:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(_ConstructiblePair<_U1, _U2>() && _ImplicitlyConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const _T1&, const _T2&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<true, _T1, _T2>::_ConstructiblePair<_U1, _U2>() && std::_PCC<true, _T1, _T2>::_ImplicitlyConvertiblePair<_U1, _U2>()), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  266 |       constexpr [01;36m[Kpair[m[K(const _T1& __a, const _T2& __b)
+      |                 [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:266:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:245:26:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<std::__and_<std::is_default_constructible<_U1>, std::is_default_constructible<_Dp>, std::__not_<std::__and_<std::__is_implicitly_default_constructible<_U1>, std::__is_implicitly_default_constructible<_U2> > > >::value, bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair() [with _U1 = _U1; _U2 = _U2; typename std::enable_if<std::__and_<std::is_default_constructible<_U1>, std::is_default_constructible<_U2>, std::__not_<std::__and_<std::__is_implicitly_default_constructible<_U1>, std::__is_implicitly_default_constructible<_U2> > > >::value, bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  245 |       explicit constexpr [01;36m[Kpair[m[K()
+      |                          [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:245:26:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+In file included from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_sensor.h:22[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/base_realsense_node.h:63[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/realsense_node_factory.h:19[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/src/realsense_node_factory.cpp:15[m[K:
+[01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_utils.h:36:56:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 2 provided
+   36 |     const stream_index_pair SAFETY{RS2_STREAM_SAFETY, 0[01;36m[K}[m[K;
+      |                                                        [01;36m[K^[m[K
+In file included from [01m[K/usr/include/c++/11/bits/stl_algobase.h:64[m[K,
+                 from [01m[K/usr/include/c++/11/bits/char_traits.h:39[m[K,
+                 from [01m[K/usr/include/c++/11/string:40[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/constants.h:17[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/realsense_node_factory.h:18[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/src/realsense_node_factory.cpp:15[m[K:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:232:26:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<std::__and_<std::__is_implicitly_default_constructible<_U1>, std::__is_implicitly_default_constructible<_U2> >::value, bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair() [with _U1 = _U1; _U2 = _U2; typename std::enable_if<std::__and_<std::__is_implicitly_default_constructible<_U1>, std::__is_implicitly_default_constructible<_U2> >::value, bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  232 |       _GLIBCXX_CONSTEXPR [01;36m[Kpair[m[K()
+      |                          [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:232:26:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+In file included from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_sensor.h:22[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/base_realsense_node.h:63[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/realsense_node_factory.h:19[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/src/realsense_node_factory.cpp:15[m[K:
+[01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_utils.h:36:56:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 2 provided
+   36 |     const stream_index_pair SAFETY{RS2_STREAM_SAFETY, 0[01;36m[K}[m[K;
+      |                                                        [01;36m[K^[m[K
+In file included from [01m[K/usr/include/c++/11/bits/stl_algobase.h:64[m[K,
+                 from [01m[K/usr/include/c++/11/bits/char_traits.h:39[m[K,
+                 from [01m[K/usr/include/c++/11/string:40[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/constants.h:17[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/realsense_node_factory.h:18[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/src/realsense_node_factory.cpp:15[m[K:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:315:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::pair<_T1, _T2>::pair(std::pair<_T1, _T2>&&) [with _T1 = rs2_stream; _T2 = int][m[K’
+  315 |       constexpr [01;36m[Kpair[m[K(pair&&) = default;         ///< Move constructor
+      |                 [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:315:17:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[K/usr/include/c++/11/bits/stl_pair.h:314:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::pair<_T1, _T2>::pair(const std::pair<_T1, _T2>&) [with _T1 = rs2_stream; _T2 = int][m[K’
+  314 |       constexpr [01;36m[Kpair[m[K(const pair&) = default;    ///< Copy constructor
+      |                 [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:314:17:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+In file included from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_sensor.h:22[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/base_realsense_node.h:63[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/realsense_node_factory.h:19[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/src/realsense_node_factory.cpp:15[m[K:
+[01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_utils.h:37:49:[m[K [01;31m[Kerror: [m[K‘[01m[KRS2_STREAM_LABELED_POINT_CLOUD[m[K’ was not declared in this scope
+   37 |     const stream_index_pair LABELED_POINT_CLOUD{[01;31m[KRS2_STREAM_LABELED_POINT_CLOUD[m[K, 0};
+      |                                                 [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_utils.h:37:82:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kstd::pair<rs2_stream, int>::pair(<brace-enclosed initializer list>)[m[K’
+   37 |     const stream_index_pair LABELED_POINT_CLOUD{RS2_STREAM_LABELED_POINT_CLOUD, 0[01;31m[K}[m[K;
+      |                                                                                  [01;31m[K^[m[K
+In file included from [01m[K/usr/include/c++/11/bits/stl_algobase.h:64[m[K,
+                 from [01m[K/usr/include/c++/11/bits/char_traits.h:39[m[K,
+                 from [01m[K/usr/include/c++/11/string:40[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/constants.h:17[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/realsense_node_factory.h:18[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/src/realsense_node_factory.cpp:15[m[K:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:452:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ... _Args1, long unsigned int ..._Indexes1, class ... _Args2, long unsigned int ..._Indexes2> std::pair<_T1, _T2>::pair(std::tuple<_Args1 ...>&, std::tuple<_Args2 ...>&, std::_Index_tuple<_Indexes1 ...>, std::_Index_tuple<_Indexes2 ...>) [with _Args1 = {_Args1 ...}; long unsigned int ..._Indexes1 = {_Indexes1 ...}; _Args2 = {_Args2 ...}; long unsigned int ..._Indexes2 = {_Indexes2 ...}; _T1 = rs2_stream; _T2 = int][m[K’
+  452 |         [01;36m[Kpair[m[K(tuple<_Args1...>&, tuple<_Args2...>&,
+      |         [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:452:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:387:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ... _Args1, class ... _Args2> std::pair<_T1, _T2>::pair(std::piecewise_construct_t, std::tuple<_Args1 ...>, std::tuple<_Args2 ...>) [with _Args1 = {_Args1 ...}; _Args2 = {_Args2 ...}; _T1 = rs2_stream; _T2 = int][m[K’
+  387 |         [01;36m[Kpair[m[K(piecewise_construct_t, tuple<_Args1...>, tuple<_Args2...>);
+      |         [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:387:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:381:28:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_MoveConstructiblePair<_U1, _U2>() && (! std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_ImplicitlyMoveConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(std::pair<_U1, _U2>&&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_MoveConstructiblePair<_U1, _U2>() && (! std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_ImplicitlyMoveConvertiblePair<_U1, _U2>())), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  381 |         explicit constexpr [01;36m[Kpair[m[K(pair<_U1, _U2>&& __p)
+      |                            [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:381:28:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:371:19:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_MoveConstructiblePair<_U1, _U2>() && std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(std::pair<_U1, _U2>&&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_MoveConstructiblePair<_U1, _U2>() && std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  371 |         constexpr [01;36m[Kpair[m[K(pair<_U1, _U2>&& __p)
+      |                   [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:371:19:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:361:28:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(_MoveConstructiblePair<_U1, _U2>() && (! _ImplicitlyMoveConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, _U2&&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<true, _T1, _T2>::_MoveConstructiblePair<_U1, _U2>() && (! std::_PCC<true, _T1, _T2>::_ImplicitlyMoveConvertiblePair<_U1, _U2>())), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  361 |         explicit constexpr [01;36m[Kpair[m[K(_U1&& __x, _U2&& __y)
+      |                            [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:361:28:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:352:19:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(_MoveConstructiblePair<_U1, _U2>() && _ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, _U2&&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<true, _T1, _T2>::_MoveConstructiblePair<_U1, _U2>() && std::_PCC<true, _T1, _T2>::_ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  352 |         constexpr [01;36m[Kpair[m[K(_U1&& __x, _U2&& __y)
+      |                   [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:352:19:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:343:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U2, typename std::enable_if<_CopyMovePair<false, rs2_stream, _U2>(), bool>::type <anonymous> > std::pair<_T1, _T2>::pair(const _T1&, _U2&&) [with _U2 = _U2; typename std::enable_if<std::_PCC<true, _T1, _T2>::_CopyMovePair<false, _T1, _U2>(), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  343 |        explicit [01;36m[Kpair[m[K(const _T1& __x, _U2&& __y)
+      |                 [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:343:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:336:18:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U2, typename std::enable_if<_CopyMovePair<true, rs2_stream, _U2>(), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const _T1&, _U2&&) [with _U2 = _U2; typename std::enable_if<std::_PCC<true, _T1, _T2>::_CopyMovePair<true, _T1, _U2>(), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  336 |        constexpr [01;36m[Kpair[m[K(const _T1& __x, _U2&& __y)
+      |                  [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:336:18:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:329:27:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, typename std::enable_if<_MoveCopyPair<false, _U1, int>(), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, const _T2&) [with _U1 = _U1; typename std::enable_if<std::_PCC<true, _T1, _T2>::_MoveCopyPair<false, _U1, _T2>(), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  329 |        explicit constexpr [01;36m[Kpair[m[K(_U1&& __x, const _T2& __y)
+      |                           [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:329:27:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:322:18:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, typename std::enable_if<_MoveCopyPair<true, _U1, int>(), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, const _T2&) [with _U1 = _U1; typename std::enable_if<std::_PCC<true, _T1, _T2>::_MoveCopyPair<true, _U1, _T2>(), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  322 |        constexpr [01;36m[Kpair[m[K(_U1&& __x, const _T2& __y)
+      |                  [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:322:18:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:309:28:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_ConstructiblePair<_U1, _U2>() && (! std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_ImplicitlyConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const std::pair<_U1, _U2>&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_ConstructiblePair<_U1, _U2>() && (! std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_ImplicitlyConvertiblePair<_U1, _U2>())), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  309 |         explicit constexpr [01;36m[Kpair[m[K(const pair<_U1, _U2>& __p)
+      |                            [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:309:28:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:300:19:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_ConstructiblePair<_U1, _U2>() && std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_ImplicitlyConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const std::pair<_U1, _U2>&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_ConstructiblePair<_U1, _U2>() && std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_ImplicitlyConvertiblePair<_U1, _U2>()), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  300 |         constexpr [01;36m[Kpair[m[K(const pair<_U1, _U2>& __p)
+      |                   [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:300:19:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:276:26:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(_ConstructiblePair<_U1, _U2>() && (! _ImplicitlyConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const _T1&, const _T2&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<true, _T1, _T2>::_ConstructiblePair<_U1, _U2>() && (! std::_PCC<true, _T1, _T2>::_ImplicitlyConvertiblePair<_U1, _U2>())), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  276 |       explicit constexpr [01;36m[Kpair[m[K(const _T1& __a, const _T2& __b)
+      |                          [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:276:26:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:266:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(_ConstructiblePair<_U1, _U2>() && _ImplicitlyConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const _T1&, const _T2&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<true, _T1, _T2>::_ConstructiblePair<_U1, _U2>() && std::_PCC<true, _T1, _T2>::_ImplicitlyConvertiblePair<_U1, _U2>()), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  266 |       constexpr [01;36m[Kpair[m[K(const _T1& __a, const _T2& __b)
+      |                 [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:266:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:245:26:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<std::__and_<std::is_default_constructible<_U1>, std::is_default_constructible<_Dp>, std::__not_<std::__and_<std::__is_implicitly_default_constructible<_U1>, std::__is_implicitly_default_constructible<_U2> > > >::value, bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair() [with _U1 = _U1; _U2 = _U2; typename std::enable_if<std::__and_<std::is_default_constructible<_U1>, std::is_default_constructible<_U2>, std::__not_<std::__and_<std::__is_implicitly_default_constructible<_U1>, std::__is_implicitly_default_constructible<_U2> > > >::value, bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  245 |       explicit constexpr [01;36m[Kpair[m[K()
+      |                          [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:245:26:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+In file included from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_sensor.h:22[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/base_realsense_node.h:63[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/realsense_node_factory.h:19[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/src/realsense_node_factory.cpp:15[m[K:
+[01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_utils.h:37:82:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 2 provided
+   37 |     const stream_index_pair LABELED_POINT_CLOUD{RS2_STREAM_LABELED_POINT_CLOUD, 0[01;36m[K}[m[K;
+      |                                                                                  [01;36m[K^[m[K
+In file included from [01m[K/usr/include/c++/11/bits/stl_algobase.h:64[m[K,
+                 from [01m[K/usr/include/c++/11/bits/char_traits.h:39[m[K,
+                 from [01m[K/usr/include/c++/11/string:40[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/constants.h:17[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/realsense_node_factory.h:18[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/src/realsense_node_factory.cpp:15[m[K:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:232:26:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<std::__and_<std::__is_implicitly_default_constructible<_U1>, std::__is_implicitly_default_constructible<_U2> >::value, bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair() [with _U1 = _U1; _U2 = _U2; typename std::enable_if<std::__and_<std::__is_implicitly_default_constructible<_U1>, std::__is_implicitly_default_constructible<_U2> >::value, bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  232 |       _GLIBCXX_CONSTEXPR [01;36m[Kpair[m[K()
+      |                          [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:232:26:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+In file included from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_sensor.h:22[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/base_realsense_node.h:63[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/realsense_node_factory.h:19[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/src/realsense_node_factory.cpp:15[m[K:
+[01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_utils.h:37:82:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 2 provided
+   37 |     const stream_index_pair LABELED_POINT_CLOUD{RS2_STREAM_LABELED_POINT_CLOUD, 0[01;36m[K}[m[K;
+      |                                                                                  [01;36m[K^[m[K
+In file included from [01m[K/usr/include/c++/11/bits/stl_algobase.h:64[m[K,
+                 from [01m[K/usr/include/c++/11/bits/char_traits.h:39[m[K,
+                 from [01m[K/usr/include/c++/11/string:40[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/constants.h:17[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/realsense_node_factory.h:18[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/src/realsense_node_factory.cpp:15[m[K:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:315:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::pair<_T1, _T2>::pair(std::pair<_T1, _T2>&&) [with _T1 = rs2_stream; _T2 = int][m[K’
+  315 |       constexpr [01;36m[Kpair[m[K(pair&&) = default;         ///< Move constructor
+      |                 [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:315:17:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[K/usr/include/c++/11/bits/stl_pair.h:314:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::pair<_T1, _T2>::pair(const std::pair<_T1, _T2>&) [with _T1 = rs2_stream; _T2 = int][m[K’
+  314 |       constexpr [01;36m[Kpair[m[K(const pair&) = default;    ///< Copy constructor
+      |                 [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:314:17:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+In file included from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_sensor.h:22[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/base_realsense_node.h:63[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/realsense_node_factory.h:19[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/src/realsense_node_factory.cpp:15[m[K:
+[01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_utils.h:38:39:[m[K [01;31m[Kerror: [m[K‘[01m[KRS2_STREAM_OCCUPANCY[m[K’ was not declared in this scope; did you mean ‘[01m[KRS2_STREAM_COUNT[m[K’?
+   38 |     const stream_index_pair OCCUPANCY{[01;31m[KRS2_STREAM_OCCUPANCY[m[K, 0};
+      |                                       [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                       [32m[KRS2_STREAM_COUNT[m[K
+[01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_utils.h:38:62:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kstd::pair<rs2_stream, int>::pair(<brace-enclosed initializer list>)[m[K’
+   38 |     const stream_index_pair OCCUPANCY{RS2_STREAM_OCCUPANCY, 0[01;31m[K}[m[K;
+      |                                                              [01;31m[K^[m[K
+In file included from [01m[K/usr/include/c++/11/bits/stl_algobase.h:64[m[K,
+                 from [01m[K/usr/include/c++/11/bits/char_traits.h:39[m[K,
+                 from [01m[K/usr/include/c++/11/string:40[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/constants.h:17[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/realsense_node_factory.h:18[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/src/realsense_node_factory.cpp:15[m[K:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:452:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ... _Args1, long unsigned int ..._Indexes1, class ... _Args2, long unsigned int ..._Indexes2> std::pair<_T1, _T2>::pair(std::tuple<_Args1 ...>&, std::tuple<_Args2 ...>&, std::_Index_tuple<_Indexes1 ...>, std::_Index_tuple<_Indexes2 ...>) [with _Args1 = {_Args1 ...}; long unsigned int ..._Indexes1 = {_Indexes1 ...}; _Args2 = {_Args2 ...}; long unsigned int ..._Indexes2 = {_Indexes2 ...}; _T1 = rs2_stream; _T2 = int][m[K’
+  452 |         [01;36m[Kpair[m[K(tuple<_Args1...>&, tuple<_Args2...>&,
+      |         [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:452:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:387:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ... _Args1, class ... _Args2> std::pair<_T1, _T2>::pair(std::piecewise_construct_t, std::tuple<_Args1 ...>, std::tuple<_Args2 ...>) [with _Args1 = {_Args1 ...}; _Args2 = {_Args2 ...}; _T1 = rs2_stream; _T2 = int][m[K’
+  387 |         [01;36m[Kpair[m[K(piecewise_construct_t, tuple<_Args1...>, tuple<_Args2...>);
+      |         [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:387:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:381:28:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_MoveConstructiblePair<_U1, _U2>() && (! std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_ImplicitlyMoveConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(std::pair<_U1, _U2>&&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_MoveConstructiblePair<_U1, _U2>() && (! std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_ImplicitlyMoveConvertiblePair<_U1, _U2>())), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  381 |         explicit constexpr [01;36m[Kpair[m[K(pair<_U1, _U2>&& __p)
+      |                            [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:381:28:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:371:19:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_MoveConstructiblePair<_U1, _U2>() && std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(std::pair<_U1, _U2>&&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_MoveConstructiblePair<_U1, _U2>() && std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  371 |         constexpr [01;36m[Kpair[m[K(pair<_U1, _U2>&& __p)
+      |                   [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:371:19:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:361:28:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(_MoveConstructiblePair<_U1, _U2>() && (! _ImplicitlyMoveConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, _U2&&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<true, _T1, _T2>::_MoveConstructiblePair<_U1, _U2>() && (! std::_PCC<true, _T1, _T2>::_ImplicitlyMoveConvertiblePair<_U1, _U2>())), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  361 |         explicit constexpr [01;36m[Kpair[m[K(_U1&& __x, _U2&& __y)
+      |                            [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:361:28:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:352:19:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(_MoveConstructiblePair<_U1, _U2>() && _ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, _U2&&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<true, _T1, _T2>::_MoveConstructiblePair<_U1, _U2>() && std::_PCC<true, _T1, _T2>::_ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  352 |         constexpr [01;36m[Kpair[m[K(_U1&& __x, _U2&& __y)
+      |                   [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:352:19:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:343:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U2, typename std::enable_if<_CopyMovePair<false, rs2_stream, _U2>(), bool>::type <anonymous> > std::pair<_T1, _T2>::pair(const _T1&, _U2&&) [with _U2 = _U2; typename std::enable_if<std::_PCC<true, _T1, _T2>::_CopyMovePair<false, _T1, _U2>(), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  343 |        explicit [01;36m[Kpair[m[K(const _T1& __x, _U2&& __y)
+      |                 [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:343:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:336:18:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U2, typename std::enable_if<_CopyMovePair<true, rs2_stream, _U2>(), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const _T1&, _U2&&) [with _U2 = _U2; typename std::enable_if<std::_PCC<true, _T1, _T2>::_CopyMovePair<true, _T1, _U2>(), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  336 |        constexpr [01;36m[Kpair[m[K(const _T1& __x, _U2&& __y)
+      |                  [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:336:18:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:329:27:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, typename std::enable_if<_MoveCopyPair<false, _U1, int>(), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, const _T2&) [with _U1 = _U1; typename std::enable_if<std::_PCC<true, _T1, _T2>::_MoveCopyPair<false, _U1, _T2>(), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  329 |        explicit constexpr [01;36m[Kpair[m[K(_U1&& __x, const _T2& __y)
+      |                           [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:329:27:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:322:18:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, typename std::enable_if<_MoveCopyPair<true, _U1, int>(), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(_U1&&, const _T2&) [with _U1 = _U1; typename std::enable_if<std::_PCC<true, _T1, _T2>::_MoveCopyPair<true, _U1, _T2>(), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  322 |        constexpr [01;36m[Kpair[m[K(_U1&& __x, const _T2& __y)
+      |                  [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:322:18:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:309:28:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_ConstructiblePair<_U1, _U2>() && (! std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_ImplicitlyConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const std::pair<_U1, _U2>&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_ConstructiblePair<_U1, _U2>() && (! std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_ImplicitlyConvertiblePair<_U1, _U2>())), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  309 |         explicit constexpr [01;36m[Kpair[m[K(const pair<_U1, _U2>& __p)
+      |                            [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:309:28:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:300:19:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_ConstructiblePair<_U1, _U2>() && std::_PCC<((! std::is_same<rs2_stream, _U1>::value) || (! std::is_same<int, _U2>::value)), rs2_stream, int>::_ImplicitlyConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const std::pair<_U1, _U2>&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_ConstructiblePair<_U1, _U2>() && std::_PCC<((! std::is_same<_T1, _U1>::value) || (! std::is_same<_T2, _U2>::value)), _T1, _T2>::_ImplicitlyConvertiblePair<_U1, _U2>()), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  300 |         constexpr [01;36m[Kpair[m[K(const pair<_U1, _U2>& __p)
+      |                   [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:300:19:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:276:26:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(_ConstructiblePair<_U1, _U2>() && (! _ImplicitlyConvertiblePair<_U1, _U2>())), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const _T1&, const _T2&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<true, _T1, _T2>::_ConstructiblePair<_U1, _U2>() && (! std::_PCC<true, _T1, _T2>::_ImplicitlyConvertiblePair<_U1, _U2>())), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  276 |       explicit constexpr [01;36m[Kpair[m[K(const _T1& __a, const _T2& __b)
+      |                          [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:276:26:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:266:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<(_ConstructiblePair<_U1, _U2>() && _ImplicitlyConvertiblePair<_U1, _U2>()), bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair(const _T1&, const _T2&) [with _U1 = _U1; _U2 = _U2; typename std::enable_if<(std::_PCC<true, _T1, _T2>::_ConstructiblePair<_U1, _U2>() && std::_PCC<true, _T1, _T2>::_ImplicitlyConvertiblePair<_U1, _U2>()), bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  266 |       constexpr [01;36m[Kpair[m[K(const _T1& __a, const _T2& __b)
+      |                 [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:266:17:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:245:26:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<std::__and_<std::is_default_constructible<_U1>, std::is_default_constructible<_Dp>, std::__not_<std::__and_<std::__is_implicitly_default_constructible<_U1>, std::__is_implicitly_default_constructible<_U2> > > >::value, bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair() [with _U1 = _U1; _U2 = _U2; typename std::enable_if<std::__and_<std::is_default_constructible<_U1>, std::is_default_constructible<_U2>, std::__not_<std::__and_<std::__is_implicitly_default_constructible<_U1>, std::__is_implicitly_default_constructible<_U2> > > >::value, bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  245 |       explicit constexpr [01;36m[Kpair[m[K()
+      |                          [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:245:26:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+In file included from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_sensor.h:22[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/base_realsense_node.h:63[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/realsense_node_factory.h:19[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/src/realsense_node_factory.cpp:15[m[K:
+[01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_utils.h:38:62:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 2 provided
+   38 |     const stream_index_pair OCCUPANCY{RS2_STREAM_OCCUPANCY, 0[01;36m[K}[m[K;
+      |                                                              [01;36m[K^[m[K
+In file included from [01m[K/usr/include/c++/11/bits/stl_algobase.h:64[m[K,
+                 from [01m[K/usr/include/c++/11/bits/char_traits.h:39[m[K,
+                 from [01m[K/usr/include/c++/11/string:40[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/constants.h:17[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/realsense_node_factory.h:18[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/src/realsense_node_factory.cpp:15[m[K:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:232:26:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _U1, class _U2, typename std::enable_if<std::__and_<std::__is_implicitly_default_constructible<_U1>, std::__is_implicitly_default_constructible<_U2> >::value, bool>::type <anonymous> > constexpr std::pair<_T1, _T2>::pair() [with _U1 = _U1; _U2 = _U2; typename std::enable_if<std::__and_<std::__is_implicitly_default_constructible<_U1>, std::__is_implicitly_default_constructible<_U2> >::value, bool>::type <anonymous> = <anonymous>; _T1 = rs2_stream; _T2 = int][m[K’
+  232 |       _GLIBCXX_CONSTEXPR [01;36m[Kpair[m[K()
+      |                          [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:232:26:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+In file included from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_sensor.h:22[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/base_realsense_node.h:63[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/realsense_node_factory.h:19[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/src/realsense_node_factory.cpp:15[m[K:
+[01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/ros_utils.h:38:62:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 2 provided
+   38 |     const stream_index_pair OCCUPANCY{RS2_STREAM_OCCUPANCY, 0[01;36m[K}[m[K;
+      |                                                              [01;36m[K^[m[K
+In file included from [01m[K/usr/include/c++/11/bits/stl_algobase.h:64[m[K,
+                 from [01m[K/usr/include/c++/11/bits/char_traits.h:39[m[K,
+                 from [01m[K/usr/include/c++/11/string:40[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/constants.h:17[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/realsense_node_factory.h:18[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/src/realsense_node_factory.cpp:15[m[K:
+[01m[K/usr/include/c++/11/bits/stl_pair.h:315:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::pair<_T1, _T2>::pair(std::pair<_T1, _T2>&&) [with _T1 = rs2_stream; _T2 = int][m[K’
+  315 |       constexpr [01;36m[Kpair[m[K(pair&&) = default;         ///< Move constructor
+      |                 [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:315:17:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[K/usr/include/c++/11/bits/stl_pair.h:314:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::pair<_T1, _T2>::pair(const std::pair<_T1, _T2>&) [with _T1 = rs2_stream; _T2 = int][m[K’
+  314 |       constexpr [01;36m[Kpair[m[K(const pair&) = default;    ///< Copy constructor
+      |                 [01;36m[K^~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_pair.h:314:17:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+In file included from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/realsense_node_factory.h:19[m[K,
+                 from [01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/src/realsense_node_factory.cpp:15[m[K:
+[01m[K/home/orangepi/ros2_ws/src/realsense-ros/realsense2_camera/include/base_realsense_node.h:277:39:[m[K [01;31m[Kerror: [m[K‘[01m[Krs2::labeled_points[m[K’ has not been declared
+  277 |         void publishLabeledPointCloud([01;31m[Krs2[m[K::labeled_points lpc, const rclcpp::Time& t);
+      |                                       [01;31m[K^~~[m[K
+gmake[2]: *** [CMakeFiles/realsense2_camera.dir/build.make:76: CMakeFiles/realsense2_camera.dir/src/realsense_node_factory.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:159: CMakeFiles/realsense2_camera.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

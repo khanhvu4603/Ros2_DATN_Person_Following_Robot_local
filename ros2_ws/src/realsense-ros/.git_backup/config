@@ -1,0 +1,12 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/IntelRealSense/realsense-ros.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "ros2-development"]
+	remote = origin
+	merge = refs/heads/ros2-development
+	vscode-merge-base = origin/ros2-master

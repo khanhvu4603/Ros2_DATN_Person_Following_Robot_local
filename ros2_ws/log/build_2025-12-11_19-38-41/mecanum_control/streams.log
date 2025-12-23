@@ -1,0 +1,35 @@
+[1.368s] Invoking command in '/home/orangepi/ros2_ws/src/mecanum_control': PYTHONPATH=/home/orangepi/ros2_ws/build/mecanum_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/mecanum_control build --build-base /home/orangepi/ros2_ws/build/mecanum_control/build install --record /home/orangepi/ros2_ws/build/mecanum_control/install.log --single-version-externally-managed install_data
+[1.809s] running egg_info
+[1.810s] writing ../../build/mecanum_control/mecanum_control.egg-info/PKG-INFO
+[1.810s] writing dependency_links to ../../build/mecanum_control/mecanum_control.egg-info/dependency_links.txt
+[1.814s] writing entry points to ../../build/mecanum_control/mecanum_control.egg-info/entry_points.txt
+[1.815s] writing requirements to ../../build/mecanum_control/mecanum_control.egg-info/requires.txt
+[1.815s] writing top-level names to ../../build/mecanum_control/mecanum_control.egg-info/top_level.txt
+[1.822s] reading manifest file '../../build/mecanum_control/mecanum_control.egg-info/SOURCES.txt'
+[1.824s] writing manifest file '../../build/mecanum_control/mecanum_control.egg-info/SOURCES.txt'
+[1.824s] running build
+[1.825s] running build_py
+[1.825s] copying mecanum_control/person_detector.py -> /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control
+[1.827s] copying mecanum_control/sounds/run_viet.wav -> /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/sounds
+[1.829s] running install
+[1.830s] running install_lib
+[1.832s] copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/person_detector.py -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control
+[1.833s] copying /home/orangepi/ros2_ws/build/mecanum_control/build/lib/mecanum_control/sounds/run_viet.wav -> /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/sounds
+[1.836s] byte-compiling /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control/person_detector.py to person_detector.cpython-310.pyc
+[1.846s] running install_data
+[1.847s] running install_egg_info
+[1.849s] removing '/home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control-0.0.0-py3.10.egg-info' (and everything under it)
+[1.850s] Copying ../../build/mecanum_control/mecanum_control.egg-info to /home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages/mecanum_control-0.0.0-py3.10.egg-info
+[1.851s] running install_scripts
+[1.888s] Installing dynamic_obstacle_tracker script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[1.889s] Installing imu_raw_publisher script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[1.889s] Installing lidar_processor script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[1.891s] Installing manual_bridge script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[1.891s] Installing mecanum_controller script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[1.893s] Installing opencv_camera_node script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[1.893s] Installing opencv_view_node script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[1.894s] Installing person_detector script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[1.895s] Installing stm32_communicator script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[1.896s] Installing velocity_arbiter script to /home/orangepi/ros2_ws/install/mecanum_control/lib/mecanum_control
+[1.898s] writing list of installed files to '/home/orangepi/ros2_ws/build/mecanum_control/install.log'
+[1.996s] Invoked command in '/home/orangepi/ros2_ws/src/mecanum_control' returned '0': PYTHONPATH=/home/orangepi/ros2_ws/build/mecanum_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/orangepi/ros2_ws/install/mecanum_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/mecanum_control build --build-base /home/orangepi/ros2_ws/build/mecanum_control/build install --record /home/orangepi/ros2_ws/build/mecanum_control/install.log --single-version-externally-managed install_data
