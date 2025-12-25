@@ -349,7 +349,7 @@ class PersonDetector(Node):
         self.deepsort = DeepSORTTracker(
             max_age=30,
             n_init=3,
-            max_cosine_distance=0.25,  # Stricter ReID to prevent switching
+            max_cosine_distance=0.15,  # Stricter ReID to prevent switching
             lambda_weight=0.3
         )
         self.current_track_id = None  # ID của target track
@@ -820,9 +820,30 @@ class PersonDetector(Node):
 
         # --- Main State Machine ---
         
+        # === PRE-FILTER: Remove detections too close to camera when LOCKED ===
+        # This prevents DeepSORT from matching a closer intruder with the target's track
+        filtered_pboxes = pboxes
+        if self.state == 'LOCKED' and self.last_known_depth is not None and depth_frame is not None:
+            depth_filter_margin = 0.6  # meters - reject detections >0.6m closer than target
+            filtered_pboxes = []
+            for box in pboxes:
+                det_depth = self.get_median_depth_at_box(box, depth_frame)
+                if det_depth is not None:
+                    # If this detection is significantly CLOSER than target, skip it
+                    if self.last_known_depth - det_depth > depth_filter_margin:
+                        self.get_logger().warn(
+                            f"Filtered out closer detection: depth={det_depth:.2f}m vs target={self.last_known_depth:.2f}m"
+                        )
+                        continue
+                filtered_pboxes.append(box)
+            
+            # If all detections filtered out, keep original to not break tracker
+            if len(filtered_pboxes) == 0:
+                filtered_pboxes = pboxes
+        
         # === Extract features for all detections (for DeepSORT) ===
         detection_features = []
-        for box in pboxes:
+        for box in filtered_pboxes:
             feat = enhanced_body_feature(frame, box, depth_frame, 
                                           self.mb2_sess, color_weight=self._dynamic_color_weight)
             if feat is not None:
@@ -831,7 +852,7 @@ class PersonDetector(Node):
                 detection_features.append(np.zeros(1280 + 48 + 256))  # Placeholder for failed feature
         
         # === Update DeepSORT tracker ===
-        tracks = self.deepsort.update(pboxes, detection_features)
+        tracks = self.deepsort.update(filtered_pboxes, detection_features)
         confirmed_tracks = self.deepsort.get_confirmed_tracks()
         
         if self.state == 'SEARCHING':

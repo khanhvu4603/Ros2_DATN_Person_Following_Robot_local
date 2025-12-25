@@ -1,0 +1,116 @@
+{
+  "configs": [
+    {
+      "name": "full_features",
+      "description": "MobileNetV2 + HSV + Depth",
+      "feature_type": "mobilenetv2",
+      "use_depth": true,
+      "use_hsv": true,
+      "use_shape": true
+    },
+    {
+      "name": "shape_depth",
+      "description": "MobileNetV2 + Depth (no HSV)",
+      "feature_type": "mobilenetv2",
+      "use_depth": true,
+      "use_hsv": false,
+      "use_shape": true
+    },
+    {
+      "name": "shape_only",
+      "description": "MobileNetV2 only",
+      "feature_type": "mobilenetv2",
+      "use_depth": false,
+      "use_hsv": false,
+      "use_shape": true
+    },
+    {
+      "name": "hsv_depth",
+      "description": "HSV + Depth (no CNN)",
+      "feature_type": "hsv",
+      "use_depth": true,
+      "use_hsv": true,
+      "use_shape": false
+    },
+    {
+      "name": "iou_only",
+      "description": "IoU matching only (no ReID)",
+      "feature_type": "iou",
+      "use_depth": false,
+      "use_hsv": false,
+      "use_shape": false
+    }
+  ],
+  "results": {
+    "full_features": {
+      "target_lock_rate": 0.676,
+      "mean_iou": 0.815923724123355,
+      "mota": 0.646,
+      "motp": 0.815923724123355,
+      "idf1": 0.7849331713148854,
+      "id_switches": 15,
+      "fragmentation": 12,
+      "precision": 0.9999999999704142,
+      "recall": 0.67599999998648,
+      "f1_score": 0.8066825727332381,
+      "mean_fps": 11.422377305439012,
+      "p95_latency_ms": 102.75525885823241
+    },
+    "shape_depth": {
+      "target_lock_rate": 0.72,
+      "mean_iou": 0.81313239015354,
+      "mota": 0.708,
+      "motp": 0.81313239015354,
+      "idf1": 0.8290398126366623,
+      "id_switches": 6,
+      "fragmentation": 10,
+      "precision": 0.9999999999722222,
+      "recall": 0.7199999999855999,
+      "f1_score": 0.8372092974386155,
+      "mean_fps": 12.280091638613406,
+      "p95_latency_ms": 95.67121313839522
+    },
+    "shape_only": {
+      "target_lock_rate": 0.672,
+      "mean_iou": 0.8151135933245484,
+      "mota": 0.0040000000000000036,
+      "motp": 0.8151135933245484,
+      "idf1": 0.007968127489881113,
+      "id_switches": 334,
+      "fragmentation": 11,
+      "precision": 0.999999999970238,
+      "recall": 0.67199999998656,
+      "f1_score": 0.8038277463693597,
+      "mean_fps": 12.537770245677795,
+      "p95_latency_ms": 93.28488028817127
+    },
+    "hsv_depth": {
+      "target_lock_rate": 0.658,
+      "mean_iou": 0.8161507716771071,
+      "mota": 0.03400000000000003,
+      "motp": 0.8161507716771071,
+      "idf1": 0.0657640232095597,
+      "id_switches": 312,
+      "fragmentation": 11,
+      "precision": 0.9999999999696049,
+      "recall": 0.65799999998684,
+      "f1_score": 0.7937273775820127,
+      "mean_fps": 126.51172325973984,
+      "p95_latency_ms": 9.441007986007978
+    },
+    "iou_only": {
+      "target_lock_rate": 0.726,
+      "mean_iou": 0.8178681567857526,
+      "mota": 0.03400000000000003,
+      "motp": 0.8178681567857526,
+      "idf1": 0.0657640232095597,
+      "id_switches": 346,
+      "fragmentation": 9,
+      "precision": 0.9999999999724518,
+      "recall": 0.72599999998548,
+      "f1_score": 0.841251443542199,
+      "mean_fps": 510.89516137257056,
+      "p95_latency_ms": 2.285643816606543
+    }
+  }
+}
