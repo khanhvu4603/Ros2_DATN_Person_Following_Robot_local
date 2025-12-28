@@ -793,26 +793,25 @@ class PersonDetector(Node):
 
         dbg = frame.copy()
 
-        # --- VẼ TẤT CẢ CÁC TRACKS (ID) ---
-        # Duyệt qua tất cả các track đang được theo dõi bởi DeepSORT
-        for track in self.deepsort.tracks:
-            if not track.is_confirmed() or track.time_since_update > 1:
-                continue
-                
-            # Lấy box của track
-            t_box = tuple(map(int, track.to_tlbr()))
-            t_id = track.track_id
-            
-            # Kiểm tra xem đây có phải là Target không
-            is_target = (self.current_track_id is not None and t_id == self.current_track_id)
-            
-            if is_target:
-                # Target: Vẽ màu ĐỎ, label chi tiết
+        # --- 1. VẼ TẤT CẢ DETECTION (MÀU XANH) ---
+        # Vẽ pboxes (raw detections) để thấy được mọi người, kể cả khi chưa có Track ID
+        if pboxes is not None:
+            for box in pboxes:
+                # Nếu box này trùng với target (đang Locked), bỏ qua để vẽ màu đỏ sau
+                if target_box is not None and iou(box, target_box) > 0.5:
+                    continue
+                # Vẽ người lạ / người đang enroll: Màu XANH LÁ
+                draw_labeled_box(dbg, box, color=(0,255,0), label="")
+
+        # --- 2. VẼ TARGET TRACK (MÀU ĐỎ) ---
+        # Chỉ vẽ Track của Target đang được theo dõi
+        if self.current_track_id is not None:
+            track = self.deepsort.get_track_by_id(self.current_track_id)
+            if track is not None and not track.is_deleted() and track.time_since_update <= 1:
+                t_box = tuple(map(int, track.to_tlbr()))
+                t_id = track.track_id
                 label = f"{'TARGET' if self._is_centered else 'CENTERING'} [ID: {t_id}]"
                 draw_labeled_box(dbg, t_box, color=(0,0,255), label=label)
-            else:
-                # Người lạ: Vẽ màu XANH LÁ (như cũ), chỉ hiện ID
-                draw_labeled_box(dbg, t_box, color=(0,255,0), label=f"ID: {t_id}")
 
         status = self.state
         cv2.putText(

@@ -159,7 +159,7 @@ class LidarProcessor(Node):
 
         # -------- Obstacle warning sound --------
         HERE = Path(__file__).resolve().parent
-        self.obstacle_sound_file = str(HERE / "sounds" / "warn_VatCan_viet  .wav")
+        self.obstacle_sound_file = str(HERE / "sounds" / "warn_VatCan_viet.wav")
         self.obstacle_audio_played: bool = False
 
         # -------- Dynamic obstacle state --------
