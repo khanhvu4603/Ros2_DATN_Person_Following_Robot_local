@@ -675,15 +675,26 @@ class PersonDetector(Node):
 
         dbg = frame.copy()
 
-        for pb in pboxes:
-            if target_box is not None and iou(pb, target_box) >= 0.35:
+        # --- VẼ TẤT CẢ CÁC TRACKS (ID) ---
+        # Duyệt qua tất cả các track đang được theo dõi bởi DeepSORT
+        for track in self.deepsort.tracks:
+            if not track.is_confirmed() or track.time_since_update > 1:
                 continue
-            cv2.rectangle(dbg, (pb[0], pb[1]), (pb[2], pb[3]), (0,255,0), 2)
-        
-        if target_box is not None:
-            tid = self.current_track_id if self.current_track_id is not None else "?"
-            label = f"{'TARGET' if self._is_centered else 'CENTERING'} [ID: {tid}]"
-            draw_labeled_box(dbg, target_box, color=(0,0,255), label=label)
+                
+            # Lấy box của track
+            t_box = tuple(map(int, track.to_tlbr()))
+            t_id = track.track_id
+            
+            # Kiểm tra xem đây có phải là Target không
+            is_target = (self.current_track_id is not None and t_id == self.current_track_id)
+            
+            if is_target:
+                # Target: Vẽ màu ĐỎ, label chi tiết
+                label = f"{'TARGET' if self._is_centered else 'CENTERING'} [ID: {t_id}]"
+                draw_labeled_box(dbg, t_box, color=(0,0,255), label=label)
+            else:
+                # Người lạ: Vẽ màu XANH LÁ (như cũ), chỉ hiện ID
+                draw_labeled_box(dbg, t_box, color=(0,255,0), label=f"ID: {t_id}")
 
         status = self.state
         cv2.putText(
