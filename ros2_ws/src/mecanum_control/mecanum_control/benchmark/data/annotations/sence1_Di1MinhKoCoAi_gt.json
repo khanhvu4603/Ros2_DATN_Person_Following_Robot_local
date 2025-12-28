@@ -1,0 +1,1045 @@
+{
+  "video_path": "/home/khanhvq/backup_16_12_2025/ros2_ws/src/mecanum_control/mecanum_control/benchmark/data/videos/Sence2_RGB.mp4",
+  "total_frames": 305,
+  "fps": 30.0,
+  "width": 1920,
+  "height": 1080,
+  "frames": [
+    {
+      "frame_id": 0,
+      "box": [
+        753,
+        296,
+        1107,
+        910
+      ],
+      "is_keyframe": true,
+      "target_id": 1
+    },
+    {
+      "frame_id": 1,
+      "box": [
+        753,
+        294,
+        1105,
+        910
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 2,
+      "box": [
+        753,
+        292,
+        1104,
+        910
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 3,
+      "box": [
+        753,
+        291,
+        1103,
+        910
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 4,
+      "box": [
+        753,
+        289,
+        1102,
+        910
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 5,
+      "box": [
+        753,
+        287,
+        1101,
+        911
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 6,
+      "box": [
+        753,
+        286,
+        1100,
+        911
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 7,
+      "box": [
+        753,
+        284,
+        1099,
+        911
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 8,
+      "box": [
+        753,
+        282,
+        1098,
+        911
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 9,
+      "box": [
+        753,
+        281,
+        1097,
+        911
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 10,
+      "box": [
+        753,
+        279,
+        1096,
+        912
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 11,
+      "box": [
+        753,
+        277,
+        1095,
+        912
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 12,
+      "box": [
+        753,
+        276,
+        1094,
+        912
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 13,
+      "box": [
+        754,
+        274,
+        1092,
+        912
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 14,
+      "box": [
+        754,
+        273,
+        1091,
+        912
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 15,
+      "box": [
+        754,
+        271,
+        1090,
+        913
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 16,
+      "box": [
+        754,
+        269,
+        1089,
+        913
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 17,
+      "box": [
+        754,
+        268,
+        1088,
+        913
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 18,
+      "box": [
+        754,
+        266,
+        1087,
+        913
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 19,
+      "box": [
+        754,
+        264,
+        1086,
+        913
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 20,
+      "box": [
+        754,
+        263,
+        1085,
+        914
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 21,
+      "box": [
+        754,
+        261,
+        1084,
+        914
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 22,
+      "box": [
+        754,
+        259,
+        1083,
+        914
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 23,
+      "box": [
+        754,
+        258,
+        1082,
+        914
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 24,
+      "box": [
+        754,
+        256,
+        1081,
+        914
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 25,
+      "box": [
+        755,
+        255,
+        1080,
+        915
+      ],
+      "is_keyframe": true,
+      "target_id": 1
+    },
+    {
+      "frame_id": 26,
+      "box": [
+        751,
+        254,
+        1074,
+        915
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 27,
+      "box": [
+        748,
+        254,
+        1069,
+        915
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 28,
+      "box": [
+        745,
+        253,
+        1064,
+        915
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 29,
+      "box": [
+        741,
+        253,
+        1059,
+        915
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 30,
+      "box": [
+        738,
+        253,
+        1054,
+        915
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 31,
+      "box": [
+        735,
+        252,
+        1048,
+        915
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 32,
+      "box": [
+        731,
+        252,
+        1043,
+        915
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 33,
+      "box": [
+        728,
+        251,
+        1038,
+        915
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 34,
+      "box": [
+        725,
+        251,
+        1033,
+        915
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 35,
+      "box": [
+        722,
+        251,
+        1028,
+        916
+      ],
+      "is_keyframe": true,
+      "target_id": 1
+    },
+    {
+      "frame_id": 36,
+      "box": [
+        724,
+        253,
+        1026,
+        915
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 37,
+      "box": [
+        726,
+        255,
+        1024,
+        914
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 38,
+      "box": [
+        728,
+        258,
+        1022,
+        914
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 39,
+      "box": [
+        731,
+        260,
+        1020,
+        913
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 40,
+      "box": [
+        733,
+        263,
+        1018,
+        912
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 41,
+      "box": [
+        735,
+        265,
+        1016,
+        912
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 42,
+      "box": [
+        737,
+        268,
+        1014,
+        911
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 43,
+      "box": [
+        740,
+        270,
+        1012,
+        910
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 44,
+      "box": [
+        742,
+        273,
+        1010,
+        910
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 45,
+      "box": [
+        744,
+        275,
+        1008,
+        909
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 46,
+      "box": [
+        746,
+        278,
+        1006,
+        908
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 47,
+      "box": [
+        749,
+        280,
+        1004,
+        908
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 48,
+      "box": [
+        751,
+        283,
+        1002,
+        907
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 49,
+      "box": [
+        753,
+        285,
+        1000,
+        906
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 50,
+      "box": [
+        756,
+        288,
+        999,
+        906
+      ],
+      "is_keyframe": true,
+      "target_id": 1
+    },
+    {
+      "frame_id": 51,
+      "box": [
+        758,
+        289,
+        1002,
+        907
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 52,
+      "box": [
+        760,
+        290,
+        1005,
+        908
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 53,
+      "box": [
+        763,
+        291,
+        1008,
+        909
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 54,
+      "box": [
+        765,
+        292,
+        1011,
+        910
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 55,
+      "box": [
+        767,
+        293,
+        1014,
+        911
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 56,
+      "box": [
+        770,
+        294,
+        1017,
+        913
+      ],
+      "is_keyframe": true,
+      "target_id": 1
+    },
+    {
+      "frame_id": 57,
+      "box": [
+        784,
+        296,
+        1025,
+        913
+      ],
+      "is_keyframe": true,
+      "target_id": 1
+    },
+    {
+      "frame_id": 58,
+      "box": [
+        785,
+        296,
+        1026,
+        912
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 59,
+      "box": [
+        786,
+        296,
+        1027,
+        912
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 60,
+      "box": [
+        788,
+        296,
+        1028,
+        911
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 61,
+      "box": [
+        789,
+        296,
+        1029,
+        911
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 62,
+      "box": [
+        791,
+        296,
+        1030,
+        911
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 63,
+      "box": [
+        792,
+        296,
+        1031,
+        910
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 64,
+      "box": [
+        794,
+        296,
+        1032,
+        910
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 65,
+      "box": [
+        795,
+        296,
+        1034,
+        909
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 66,
+      "box": [
+        797,
+        296,
+        1035,
+        909
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 67,
+      "box": [
+        798,
+        296,
+        1036,
+        909
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 68,
+      "box": [
+        800,
+        296,
+        1037,
+        908
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 69,
+      "box": [
+        801,
+        296,
+        1038,
+        908
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 70,
+      "box": [
+        803,
+        296,
+        1039,
+        907
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 71,
+      "box": [
+        804,
+        296,
+        1040,
+        907
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 72,
+      "box": [
+        806,
+        297,
+        1042,
+        907
+      ],
+      "is_keyframe": true,
+      "target_id": 1
+    },
+    {
+      "frame_id": 73,
+      "box": [
+        805,
+        286,
+        1030,
+        913
+      ],
+      "is_keyframe": true,
+      "target_id": 1
+    },
+    {
+      "frame_id": 74,
+      "box": [
+        805,
+        284,
+        1029,
+        912
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 75,
+      "box": [
+        805,
+        283,
+        1029,
+        912
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 76,
+      "box": [
+        805,
+        281,
+        1028,
+        911
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 77,
+      "box": [
+        805,
+        280,
+        1028,
+        911
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 78,
+      "box": [
+        805,
+        278,
+        1027,
+        910
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 79,
+      "box": [
+        805,
+        277,
+        1027,
+        910
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 80,
+      "box": [
+        806,
+        276,
+        1027,
+        910
+      ],
+      "is_keyframe": true,
+      "target_id": 1
+    },
+    {
+      "frame_id": 81,
+      "box": [
+        807,
+        274,
+        1028,
+        909
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 82,
+      "box": [
+        808,
+        272,
+        1030,
+        909
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 83,
+      "box": [
+        809,
+        270,
+        1032,
+        909
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 84,
+      "box": [
+        810,
+        268,
+        1034,
+        909
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 85,
+      "box": [
+        811,
+        266,
+        1035,
+        908
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 86,
+      "box": [
+        812,
+        264,
+        1037,
+        908
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 87,
+      "box": [
+        813,
+        262,
+        1039,
+        908
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 88,
+      "box": [
+        814,
+        260,
+        1041,
+        908
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 89,
+      "box": [
+        815,
+        258,
+        1042,
+        907
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 90,
+      "box": [
+        816,
+        256,
+        1044,
+        907
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 91,
+      "box": [
+        817,
+        254,
+        1046,
+        907
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 92,
+      "box": [
+        818,
+        252,
+        1048,
+        907
+      ],
+      "is_keyframe": false,
+      "target_id": 1
+    },
+    {
+      "frame_id": 93,
+      "box": [
+        820,
+        251,
+        1050,
+        907
+      ],
+      "is_keyframe": true,
+      "target_id": 1
+    }
+  ],
+  "keyframe_count": 10,
+  "annotated_frame_count": 94
+}

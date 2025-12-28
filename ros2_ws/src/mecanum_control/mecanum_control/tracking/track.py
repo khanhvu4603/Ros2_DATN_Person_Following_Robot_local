@@ -60,7 +60,7 @@ class Track:
         vector is added to this list.
     """
     
-    def __init__(self, mean, covariance, track_id, n_init, max_age, feature=None):
+    def __init__(self, mean, covariance, track_id, n_init, max_age, feature=None, detection_bbox=None):
         self.mean = mean
         self.covariance = covariance
         self.track_id = track_id
@@ -75,6 +75,9 @@ class Track:
         
         self._n_init = n_init
         self._max_age = max_age
+        
+        # Store raw detection bbox (x1, y1, x2, y2) - bypasses Kalman
+        self.last_bbox = detection_bbox
     
     def to_tlwh(self):
         """
@@ -94,12 +97,18 @@ class Track:
     def to_tlbr(self):
         """
         Get current position in bounding box format `(min x, min y, max x, max y)`.
+        Uses raw detection bbox if available (bypasses Kalman).
         
         Returns
         -------
         ndarray
             The bounding box.
         """
+        # Use raw detection bbox if available (Option A: bypass Kalman)
+        if self.last_bbox is not None:
+            return np.array(self.last_bbox, dtype=float)
+        
+        # Fallback to Kalman state if no detection yet
         ret = self.to_tlwh()
         ret[2:] = ret[:2] + ret[2:]
         return ret
@@ -125,11 +134,12 @@ class Track:
         kf : KalmanFilter
             The Kalman filter.
         """
+        # Kalman prediction enabled - needed for smooth tracking
         self.mean, self.covariance = kf.predict(self.mean, self.covariance)
         self.age += 1
         self.time_since_update += 1
     
-    def update(self, kf, detection, feature=None):
+    def update(self, kf, detection, feature=None, detection_bbox=None):
         """
         Perform Kalman filter measurement update step and update the feature cache.
         
@@ -141,7 +151,13 @@ class Track:
             The associated detection bounding box in format (x, y, a, h).
         feature : Optional[ndarray]
             Feature vector for this detection.
+        detection_bbox : Optional[tuple]
+            Raw detection bbox (x1, y1, x2, y2) to bypass Kalman for position.
         """
+        # === Store raw detection bbox (Option A: bypass Kalman) ===
+        if detection_bbox is not None:
+            self.last_bbox = detection_bbox
+        
         # === MOTION-ADAPTIVE: Detect sudden stop ===
         # Get predicted position and velocity before update
         predicted_pos = self.mean[:4].copy()  # [x, y, a, h]

@@ -17,7 +17,7 @@ from dataclasses import dataclass
 import numpy as np
 import cv2
 
-from tracking_metrics import TrackingEvaluator, TrackingMetrics
+from .tracking_metrics import TrackingEvaluator, TrackingMetrics
 
 
 @dataclass

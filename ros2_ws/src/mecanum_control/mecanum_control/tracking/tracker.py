@@ -74,7 +74,7 @@ class DeepSORTTracker:
             List of currently active tracks.
         """
         # Run Kalman filter prediction
-        self.predict()
+        self.predict() # Disabled by user request (Level 2: No Prediction)
         
         # Run matching cascade
         matches, unmatched_tracks, unmatched_detections = self._match(
@@ -88,7 +88,8 @@ class DeepSORTTracker:
             
             # Convert tlbr to xyah
             measurement = self._tlbr_to_xyah(detection)
-            self.tracks[track_idx].update(self.kf, measurement, feature)
+            # Pass raw detection bbox for Option A (bypass Kalman position)
+            self.tracks[track_idx].update(self.kf, measurement, feature, detection_bbox=detection)
         
         # Mark unmatched tracks as missed
         for track_idx in unmatched_tracks:
@@ -225,7 +226,8 @@ class DeepSORTTracker:
             track_id=self._next_id,
             n_init=self.n_init,
             max_age=self.max_age,
-            feature=feature
+            feature=feature,
+            detection_bbox=detection  # Pass raw bbox for Option A
         ))
         self._next_id += 1
     

@@ -20,6 +20,8 @@ LiDAR Processor (ROS2)
     * Nếu dynamic_front_unsafe == True → coi như front_unsafe.
 """
 
+import os
+from pathlib import Path
 from typing import Optional, Tuple
 import numpy as np
 
@@ -154,6 +156,11 @@ class LidarProcessor(Node):
 
         self._last_front_clear_t: Optional[float] = None
         self._last_release_t: Optional[float] = None
+
+        # -------- Obstacle warning sound --------
+        HERE = Path(__file__).resolve().parent
+        self.obstacle_sound_file = str(HERE / "sounds" / "warn_VatCan_viet  .wav")
+        self.obstacle_audio_played: bool = False
 
         # -------- Dynamic obstacle state --------
         self.dynamic_front_unsafe: bool = False
@@ -383,6 +390,13 @@ class LidarProcessor(Node):
             self.bypass_dir = +1 if left_min > right_min else -1
             self.bypass_active = True
             self.bypass_start_t = tnow
+            
+            # Play obstacle warning sound once
+            if not self.obstacle_audio_played:
+                if os.path.exists(self.obstacle_sound_file):
+                    os.system(f"aplay {self.obstacle_sound_file} &")
+                    self.get_logger().info("Playing obstacle warning sound")
+                self.obstacle_audio_played = True
 
         # ===== Strict release khi trước thoáng (theo khoảng cách) =====
         if self.bypass_active and self.release_on_clear_immediate and (not (front_min < self.min_front)):
@@ -413,6 +427,8 @@ class LidarProcessor(Node):
                 self.bypass_dir = 0
                 self.prev_vy_cmd = 0.0
                 self._last_release_t = tnow
+                # Reset audio flag when bypass ends
+                self.obstacle_audio_played = False
 
         if self.bypass_active:
             desired_vy = self.emergency_vy * float(self.bypass_dir)

@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Quantitative comparison of tracking variants. Best results in \textbf{bold}.}
+\label{tab:results}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccccc}
+\toprule
+Method & MOTA$\uparrow$ & IDF1$\uparrow$ & Lock\%$\uparrow$ & FPS$\uparrow$ & Lat.(ms)$\downarrow$ \\
+\midrule
+Iou Only & 80.6 & 99.3 & 98.6 & 60.2 & 21.9 \\
+Shape Only & 80.3 & \textbf{99.5} & \textbf{99.1} & 37.6 & 54.0 \\
+Hsv Depth & 78.8 & \textbf{99.5} & \textbf{99.1} & \textbf{66.1} & \textbf{18.2} \\
+Shape Depth & 82.8 & \textbf{99.5} & \textbf{99.1} & 38.7 & 52.8 \\
+Full Features & \textbf{85.2} & \textbf{99.5} & \textbf{99.0} & 38.4 & 55.1 \\
+Deepsort & 12.3 & 22.0 & 12.3 & 31.6 & 79.2 \\
+\bottomrule
+\end{tabular}
+\end{table}

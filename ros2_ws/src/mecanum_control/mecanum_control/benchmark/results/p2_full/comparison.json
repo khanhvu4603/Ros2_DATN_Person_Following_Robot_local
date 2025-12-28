@@ -1,0 +1,62 @@
+{
+  "iou_only": {
+    "target_lock_rate": 0.9863945578231292,
+    "mean_iou": 0.6789816256111343,
+    "mota": 0.8061224489795918,
+    "motp": 0.7293042532477848,
+    "idf1": 0.9931506849272554,
+    "id_switches": 0,
+    "fragmentation": 17,
+    "mean_fps": 60.656346228876835,
+    "p95_latency_ms": 18.88960599899292,
+    "total_frames": 1176
+  },
+  "shape_only": {
+    "target_lock_rate": 0.9906462585034014,
+    "mean_iou": 0.664992700195569,
+    "mota": 0.8027210884353742,
+    "motp": 0.7289845571457204,
+    "idf1": 0.9953011533490163,
+    "id_switches": 0,
+    "fragmentation": 15,
+    "mean_fps": 34.74648163735081,
+    "p95_latency_ms": 52.14953422546387,
+    "total_frames": 1176
+  },
+  "hsv_depth": {
+    "target_lock_rate": 0.9906462585034014,
+    "mean_iou": 0.6659342543538559,
+    "mota": 0.7882653061224489,
+    "motp": 0.7307914797481875,
+    "idf1": 0.9953011533490163,
+    "id_switches": 0,
+    "fragmentation": 18,
+    "mean_fps": 56.8316819775605,
+    "p95_latency_ms": 21.92932367324829,
+    "total_frames": 1176
+  },
+  "shape_depth": {
+    "target_lock_rate": 0.9906462585034014,
+    "mean_iou": 0.6679568235048826,
+    "mota": 0.8282312925170068,
+    "motp": 0.7306778416419021,
+    "idf1": 0.9953011533490163,
+    "id_switches": 0,
+    "fragmentation": 16,
+    "mean_fps": 34.862917399871904,
+    "p95_latency_ms": 51.10764503479004,
+    "total_frames": 1176
+  },
+  "full_features": {
+    "target_lock_rate": 0.9897959183673469,
+    "mean_iou": 0.6845360423012712,
+    "mota": 0.8520408163265306,
+    "motp": 0.7303907576331956,
+    "idf1": 0.9948717948675433,
+    "id_switches": 0,
+    "fragmentation": 17,
+    "mean_fps": 33.43553175020557,
+    "p95_latency_ms": 56.575119495391846,
+    "total_frames": 1176
+  }
+}

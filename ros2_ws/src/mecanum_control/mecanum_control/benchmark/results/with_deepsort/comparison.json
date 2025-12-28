@@ -1,0 +1,74 @@
+{
+  "iou_only": {
+    "target_lock_rate": 0.9863945578231292,
+    "mean_iou": 0.6789816256111343,
+    "mota": 0.8061224489795918,
+    "motp": 0.7293042532477848,
+    "idf1": 0.9931506849272554,
+    "id_switches": 0,
+    "fragmentation": 17,
+    "mean_fps": 60.21080695550957,
+    "p95_latency_ms": 21.883606910705566,
+    "total_frames": 1176
+  },
+  "shape_only": {
+    "target_lock_rate": 0.9906462585034014,
+    "mean_iou": 0.664992700195569,
+    "mota": 0.8027210884353742,
+    "motp": 0.7289845571457204,
+    "idf1": 0.9953011533490163,
+    "id_switches": 0,
+    "fragmentation": 15,
+    "mean_fps": 37.556299647995495,
+    "p95_latency_ms": 54.02171611785889,
+    "total_frames": 1176
+  },
+  "hsv_depth": {
+    "target_lock_rate": 0.9906462585034014,
+    "mean_iou": 0.6659342543538559,
+    "mota": 0.7882653061224489,
+    "motp": 0.7307914797481875,
+    "idf1": 0.9953011533490163,
+    "id_switches": 0,
+    "fragmentation": 18,
+    "mean_fps": 66.0543021464536,
+    "p95_latency_ms": 18.226206302642822,
+    "total_frames": 1176
+  },
+  "shape_depth": {
+    "target_lock_rate": 0.9906462585034014,
+    "mean_iou": 0.6679568235048826,
+    "mota": 0.8282312925170068,
+    "motp": 0.7306778416419021,
+    "idf1": 0.9953011533490163,
+    "id_switches": 0,
+    "fragmentation": 16,
+    "mean_fps": 38.69148982312283,
+    "p95_latency_ms": 52.81341075897217,
+    "total_frames": 1176
+  },
+  "full_features": {
+    "target_lock_rate": 0.9897959183673469,
+    "mean_iou": 0.6845360423012712,
+    "mota": 0.8520408163265306,
+    "motp": 0.7303907576331956,
+    "idf1": 0.9948717948675433,
+    "id_switches": 0,
+    "fragmentation": 17,
+    "mean_fps": 38.36513954739036,
+    "p95_latency_ms": 55.12124300003052,
+    "total_frames": 1176
+  },
+  "deepsort": {
+    "target_lock_rate": 0.12329931972789115,
+    "mean_iou": 0.7449789109508926,
+    "mota": 0.12329931972789121,
+    "motp": 0.7449789109508926,
+    "idf1": 0.21953065859031395,
+    "id_switches": 0,
+    "fragmentation": 26,
+    "mean_fps": 31.592595296935716,
+    "p95_latency_ms": 79.23132181167603,
+    "total_frames": 1176
+  }
+}

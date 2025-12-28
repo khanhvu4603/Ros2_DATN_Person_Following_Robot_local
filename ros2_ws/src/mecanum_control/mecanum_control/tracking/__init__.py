@@ -18,12 +18,14 @@ Components:
 from .kalman_filter import KalmanFilter
 from .track import Track, TrackState
 from .tracker import DeepSORTTracker
+from .single_target_tracker import SingleTargetTracker
 
 __all__ = [
     'KalmanFilter',
     'Track',
     'TrackState', 
-    'DeepSORTTracker'
+    'DeepSORTTracker',
+    'SingleTargetTracker'
 ]
 
 __version__ = '1.0.0'

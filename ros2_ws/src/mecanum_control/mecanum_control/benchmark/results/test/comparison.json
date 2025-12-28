@@ -1,0 +1,14 @@
+{
+  "iou_only": {
+    "target_lock_rate": 0.0,
+    "mean_iou": 0.0,
+    "mota": 0.0,
+    "motp": 0.0,
+    "idf1": 0.0,
+    "id_switches": 0,
+    "fragmentation": 0,
+    "mean_fps": 77.22471860958898,
+    "p95_latency_ms": 16.795992851257324,
+    "total_frames": 500
+  }
+}
