@@ -251,14 +251,14 @@ class PersonDetector(Node):
 
             # Detector/ReID thresholds
             ('person_conf', 0.35),
-            ('accept_threshold', 0.75),
-            ('reject_threshold', 0.6),
+            ('accept_threshold', 0.78),
+            ('reject_threshold', 0.65),
             ('iou_threshold', 0.4),
             ('margin_delta', 0.07),
             ('confirm_frames', 5),
 
             # Color weight
-            ('body_color_weight', 0.22),
+            ('body_color_weight', 0.25),
             ('hsv_normalize_brightness', True),
             ('similarity_ema_alpha', 0.8),
 
@@ -271,8 +271,8 @@ class PersonDetector(Node):
             ('mb2_onnx_path', MB2_ONNX_PATH),
 
             # Occlusion & Lost handling
-            ('occlusion_threshold', 0.5),
-            ('grace_period_sec', 2.0),
+            ('occlusion_threshold', 0.45),
+            ('grace_period_sec', 3.0),
 
             # UDP Streaming
             ('enable_udp_stream', True),
@@ -285,12 +285,12 @@ class PersonDetector(Node):
             ('run_sound_filename', 'run_viet.wav'),
             
             # === ANTI-ID-SWITCHING PARAMETERS ===
-            ('depth_filter_margin', 0.8),       # Loại bỏ detection gần hơn target X meters
+            ('depth_filter_margin', 0.5),       # Loại bỏ detection gần hơn target X meters
             ('overlap_iou_thr', 0.20),          # IoU threshold để xét intruder
-            ('overlap_depth_margin', 0.5),      # Depth margin cho overlapping detection
-            ('depth_jump_threshold', 0.8),      # Ngưỡng depth jump để phát hiện intruder
-            ('track_switch_margin', 0.15),      # Margin cần để switch track (cao hơn = khó switch hơn)
-            ('pre_filter_appearance_thr', 0.6), # Ngưỡng similarity để lọc detection trước khi đưa vào tracker
+            ('overlap_depth_margin', 0.3),      # Depth margin cho overlapping detection
+            ('depth_jump_threshold', 0.6),      # Ngưỡng depth jump để phát hiện intruder
+            ('track_switch_margin', 0.2),      # Margin cần để switch track (cao hơn = khó switch hơn)
+            ('pre_filter_appearance_thr', 0.70), # Ngưỡng similarity để lọc detection trước khi đưa vào tracker
         ])
 
         # QoS
@@ -348,10 +348,10 @@ class PersonDetector(Node):
         
         # --- DEEPSORT TRACKER với stricter parameters ---
         self.deepsort = DeepSORTTracker(
-            max_age=30,
-            n_init=3,
-            max_cosine_distance=0.10,  # STRICTER: 0.10 thay vì 0.15
-            lambda_weight=0.8          # ANTI-HIJACK: Tăng trọng số ReID (0.2 -> 0.8) để ưu tiên đặc điểm nhận dạng
+            max_age=20,
+            n_init=5,
+            max_cosine_distance=0.08,  # STRICTER: 0.10 thay vì 0.15
+            lambda_weight=0.85          # ANTI-HIJACK: Tăng trọng số ReID (0.2 -> 0.8) để ưu tiên đặc điểm nhận dạng
         )
         self.current_track_id = None
         
@@ -373,9 +373,9 @@ class PersonDetector(Node):
         self.depth_ema_alpha = 0.3
 
         # --- ADAPTIVE MODEL UPDATE ---
-        self.adaptive_update_threshold = 0.7
+        self.adaptive_update_threshold = 0.75
         self.last_update_time = 0.0
-        self.adaptive_update_interval_sec = 1.0
+        self.adaptive_update_interval_sec = 1.5
 
         # UDP Streaming
         self.enable_udp = bool(self.get_parameter('enable_udp_stream').value)
@@ -667,6 +667,124 @@ class PersonDetector(Node):
 
         self.target_feature /= (np.linalg.norm(self.target_feature) + 1e-8)
 
+    # ---------- Custom Locked Mode Tracking ----------
+    def locked_mode_tracking(self, frame, depth_frame, all_detections, all_features):
+        """
+        Custom tracking logic khi ở trạng thái LOCKED.
+        Ưu tiên tuyệt đối cho target hiện tại, chỉ accept detection
+        nếu thực sự match với target.
+        """
+        if self.current_track_id is None or self.target_box is None:
+            return None, None
+        
+        # Lấy track hiện tại
+        target_track = self.deepsort.get_track_by_id(self.current_track_id)
+        if target_track is None or target_track.is_deleted():
+            return None, None
+        
+        # Predicted position từ Kalman
+        predicted_box = tuple(map(int, target_track.to_tlbr()))
+        
+        # Tìm detection tốt nhất cho target
+        best_detection_idx = None
+        best_score = -1.0
+        
+        anchor = self.original_target_feature if self.original_target_feature is not None else self.target_feature
+        
+        for idx, (det_box, det_feat) in enumerate(zip(all_detections, all_features)):
+            # Score 1: Appearance similarity với Anchor
+            appearance_score = np.dot(det_feat, anchor) if anchor is not None else 0.0
+            
+            # Score 2: IoU với predicted box
+            iou_score = iou(det_box, predicted_box)
+            
+            # Score 3: Depth consistency
+            det_depth = self.get_median_depth_at_box(det_box, depth_frame)
+            depth_score = 0.0
+            if det_depth is not None and self.last_known_depth is not None:
+                depth_diff = abs(det_depth - self.last_known_depth)
+                depth_score = max(0, 1.0 - depth_diff / 1.0)  # 1m tolerance
+            
+            # Combined score (weighted)
+            combined_score = (
+                0.60 * appearance_score +  # Appearance quan trọng nhất
+                0.25 * iou_score +          # Position thứ hai
+                0.15 * depth_score          # Depth bổ sung
+            )
+            
+            # Thresholds
+            MIN_APPEARANCE = 0.70
+            MIN_IOU = 0.20
+            MIN_COMBINED = 0.65
+            
+            if (appearance_score >= MIN_APPEARANCE and 
+                iou_score >= MIN_IOU and 
+                combined_score > best_score and
+                combined_score >= MIN_COMBINED):
+                best_score = combined_score
+                best_detection_idx = idx
+                
+                self.get_logger().info(
+                    f"LOCKED matching: det[{idx}] score={combined_score:.3f} "
+                    f"(app={appearance_score:.3f}, iou={iou_score:.3f}, depth={depth_score:.3f})"
+                )
+        
+        if best_detection_idx is not None:
+            # Chỉ update DeepSORT với detection này
+            matched_det = [all_detections[best_detection_idx]]
+            matched_feat = [all_features[best_detection_idx]]
+            return matched_det, matched_feat
+        else:
+            # Không có detection match → predict only
+            self.get_logger().warn("LOCKED: No matching detection, predict only")
+            return [], []
+
+    # ---------- Proactive Occlusion Check ----------
+    def detect_potential_occlusion(self, target_box, detections, depth_frame):
+        """
+        Phát hiện TRƯỚC khi có occlusion thực sự.
+        Trả về True nếu có người đang tiến đến gần và có nguy cơ che khuất.
+        """
+        if target_box is None or depth_frame is None or self.last_known_depth is None:
+            return False
+        
+        target_depth = self.last_known_depth
+        tx1, ty1, tx2, ty2 = target_box
+        
+        # Ngưỡng để xác định "approaching intruder"
+        APPROACH_DEPTH_MARGIN = 0.6  # Gần hơn target 0.6m
+        APPROACH_HORIZONTAL_OVERLAP = 0.3  # Overlap ngang 30%
+        
+        for det_box in detections:
+            det_depth = self.get_median_depth_at_box(det_box, depth_frame)
+            if det_depth is None:
+                continue
+            
+            # Check 1: Detection gần hơn target đáng kể
+            if (target_depth - det_depth) < APPROACH_DEPTH_MARGIN:
+                continue
+            
+            # Check 2: Detection có overlap ngang với target không?
+            dx1, dy1, dx2, dy2 = det_box
+            
+            # Tính horizontal overlap
+            overlap_left = max(tx1, dx1)
+            overlap_right = min(tx2, dx2)
+            
+            if overlap_right > overlap_left:
+                overlap_width = overlap_right - overlap_left
+                target_width = tx2 - tx1
+                overlap_ratio = overlap_width / target_width
+                
+                if overlap_ratio > APPROACH_HORIZONTAL_OVERLAP:
+                    self.get_logger().warn(
+                        f"⚠️ POTENTIAL OCCLUSION: Intruder at {det_depth:.2f}m "
+                        f"(target at {target_depth:.2f}m), overlap={overlap_ratio:.2%}"
+                    )
+                    return True
+        
+        return False
+
     # ---------- Debug Publisher ----------
     def publish_debug(self, frame, pboxes, target_box, vmean, depth_m):
         publish_debug_image = bool(self.get_parameter('publish_debug_image').value)
@@ -814,65 +932,165 @@ class PersonDetector(Node):
             self.publish_debug(frame, pboxes, self.target_box, vmean, None)
             return
 
-        # ===== ANTI-ID-SWITCHING #2: DEPTH PRE-FILTER =====
-        # Loại bỏ detection gần hơn target TRƯỚC khi đưa vào DeepSORT
+        # ===== PROACTIVE OCCLUSION CHECK =====
+        potential_occlusion = False
+        if self.state == 'LOCKED' and self.target_box is not None:
+            potential_occlusion = self.detect_potential_occlusion(
+                self.target_box, pboxes, depth_frame
+            )
+
+        if potential_occlusion:
+            self.get_logger().warn("🛑 FREEZE MODE: Potential occlusion detected")
+            
+            # FREEZE: Không update DeepSORT với detection mới
+            tracks = self.deepsort.update([], [])  # Empty detections = chỉ predict
+            
+            # Giữ predicted box
+            target_track = self.deepsort.get_track_by_id(self.current_track_id) if self.current_track_id is not None else None
+            if target_track is not None and not target_track.is_deleted():
+                self.target_box = tuple(map(int, target_track.to_tlbr()))
+            
+            # Dừng robot
+            self.cmd_pub.publish(Twist())
+            self.state_pub.publish(String(data="FREEZE"))
+            self.flag_pub.publish(Bool(data=False))
+            self.centered_pub.publish(Bool(data=False))
+            self.publish_debug(frame, pboxes, self.target_box, vmean, None)
+            return
+
+        # ===== ENHANCED DEPTH PRE-FILTER =====
         filtered_pboxes = pboxes
         if self.state == 'LOCKED' and self.last_known_depth is not None and depth_frame is not None:
-            depth_filter_margin = float(self.get_parameter('depth_filter_margin').value)
-            overlap_iou_thr = float(self.get_parameter('overlap_iou_thr').value)
-            overlap_depth_margin = float(self.get_parameter('overlap_depth_margin').value)
-
+            depth_filter_margin = 0.5  # Giảm từ 0.8 → 0.5 (strict hơn)
+            overlap_iou_thr = 0.15     # Giảm từ 0.20 → 0.15 (phát hiện overlap sớm hơn)
+            overlap_depth_margin = 0.3 # Giảm từ 0.5 → 0.3 (strict hơn)
+            
+            # THÊM: Depth range tolerance
+            depth_range_tolerance = 0.4  # ±0.4m từ target depth
+            
             filtered_pboxes = []
             for box in pboxes:
                 det_depth = self.get_median_depth_at_box(box, depth_frame)
-
-                if det_depth is not None and self.target_box is not None:
-                    # Loại bỏ detection chồng lấn và gần hơn
-                    if iou(box, self.target_box) >= overlap_iou_thr and (self.last_known_depth - det_depth) > overlap_depth_margin:
+                
+                if det_depth is None:
+                    # Nếu không đo được depth → REJECT (an toàn hơn)
+                    self.get_logger().warn("DEPTH FILTER: Rejected detection with no depth")
+                    continue
+                
+                if self.target_box is not None:
+                    box_iou = iou(box, self.target_box)
+                    depth_diff = self.last_known_depth - det_depth
+                    
+                    # Rule 1: Loại bỏ overlap + gần hơn
+                    if box_iou >= overlap_iou_thr and depth_diff > overlap_depth_margin:
                         self.get_logger().warn(
-                            f"DEPTH FILTER: Dropped overlapping intruder det={det_depth:.2f}m vs target={self.last_known_depth:.2f}m"
+                            f"DEPTH FILTER [OVERLAP]: IoU={box_iou:.2f}, "
+                            f"depth_diff={depth_diff:.2f}m → REJECTED"
                         )
                         continue
-
-                    # Loại bỏ detection gần hơn nhiều
-                    if (self.last_known_depth - det_depth) > depth_filter_margin:
+                    
+                    # Rule 2: Loại bỏ detection gần hơn nhiều (intruder từ phía trước)
+                    if depth_diff > depth_filter_margin:
                         self.get_logger().warn(
-                            f"DEPTH FILTER: Dropped closer detection {det_depth:.2f}m vs target={self.last_known_depth:.2f}m"
+                            f"DEPTH FILTER [TOO CLOSE]: det={det_depth:.2f}m vs "
+                            f"target={self.last_known_depth:.2f}m → REJECTED"
                         )
                         continue
-
+                    
+                    # Rule 3 (MỚI): Loại bỏ detection xa hơn nhiều (người ở phía sau)
+                    if depth_diff < -depth_filter_margin:
+                        self.get_logger().warn(
+                            f"DEPTH FILTER [TOO FAR]: det={det_depth:.2f}m vs "
+                            f"target={self.last_known_depth:.2f}m → REJECTED"
+                        )
+                        continue
+                    
+                    # Rule 4 (MỚI): Chỉ chấp nhận detection trong range hợp lý
+                    # Nếu detection không overlap với target box, phải trong depth range
+                    if box_iou < 0.3:  # Không overlap đáng kể
+                        if abs(depth_diff) > depth_range_tolerance:
+                            self.get_logger().warn(
+                                f"DEPTH FILTER [OUT OF RANGE]: det={det_depth:.2f}m, "
+                                f"target={self.last_known_depth:.2f}m, "
+                                f"diff={abs(depth_diff):.2f}m → REJECTED"
+                            )
+                            continue
+                
                 filtered_pboxes.append(box)
             
-            if len(filtered_pboxes) == 0:
-                filtered_pboxes = pboxes
+            # Fallback: Nếu filter quá strict, giữ ít nhất detection gần target nhất
+            if len(filtered_pboxes) == 0 and len(pboxes) > 0:
+                self.get_logger().warn("DEPTH FILTER: All detections rejected, keeping closest one")
+                closest_box = min(pboxes, 
+                    key=lambda b: abs(self.get_median_depth_at_box(b, depth_frame) - self.last_known_depth)
+                    if self.get_median_depth_at_box(b, depth_frame) is not None else float('inf')
+                )
+                filtered_pboxes = [closest_box]
 
-        # === Extract features & ANTI-HIJACK #1: APPEARANCE PRE-FILTER ===
+        # === STRICT APPEARANCE PRE-FILTER ===
         final_pboxes = []
         detection_features = []
         
         anchor = self.original_target_feature if self.original_target_feature is not None else self.target_feature
-        pre_filter_thr = float(self.get_parameter('pre_filter_appearance_thr').value)
+        pre_filter_thr = 0.72  # TĂNG từ 0.6 → 0.72 (strict hơn nhiều)
+
+        # THÊM: Dynamic threshold based on state
+        if self.state == 'LOCKED':
+            # Khi LOCKED, yêu cầu similarity cao hơn để chống ID switch
+            pre_filter_thr = 0.75
+        elif self.state == 'SEARCHING':
+            # Khi SEARCHING, có thể lỏng hơn một chút
+            pre_filter_thr = 0.70
 
         for box in filtered_pboxes:
             feat = enhanced_body_feature(frame, box, depth_frame, 
                                           self.mb2_sess, color_weight=self._dynamic_color_weight)
             
-            # Nếu feature lỗi, dùng zero (nhưng thường sẽ bị lọc nếu có anchor)
+            # Nếu extract feature lỗi → REJECT (an toàn hơn)
             if feat is None:
-                feat = np.zeros(1280 + 48 + 256, dtype=np.float32)
-
-            # LỌC CỨNG: Nếu đang LOCKED và có Anchor, detection phải giống Anchor mới được giữ
+                self.get_logger().warn("APPEARANCE FILTER: Rejected detection with invalid feature")
+                continue
+            
+            # Lọc CỨNG: Chỉ giữ detection giống với Anchor
             if self.state == 'LOCKED' and anchor is not None:
                 sim = np.dot(feat, anchor)
-                if sim < pre_filter_thr:
-                    # Bỏ qua detection này (người lạ)
+                
+                # THÊM: Kiểm tra cả với target_feature hiện tại
+                sim_with_current = np.dot(feat, self.target_feature) if self.target_feature is not None else 0.0
+                
+                # Phải pass CẢ HAI threshold
+                if sim < pre_filter_thr or sim_with_current < (pre_filter_thr - 0.05):
+                    self.get_logger().info(
+                        f"APPEARANCE FILTER: Rejected detection "
+                        f"(anchor_sim={sim:.3f}, current_sim={sim_with_current:.3f})"
+                    )
                     continue
             
             final_pboxes.append(box)
             detection_features.append(feat)
+
+        # THÊM: Log để debug
+        self.get_logger().info(
+            f"Detection pipeline: {len(pboxes)} → "
+            f"depth_filter: {len(filtered_pboxes)} → "
+            f"appearance_filter: {len(final_pboxes)}"
+        )
         
         # === Update DeepSORT tracker ===
-        tracks = self.deepsort.update(final_pboxes, detection_features)
+        if self.state == 'LOCKED':
+            # Custom matching logic cho LOCKED state
+            matched_dets, matched_feats = self.locked_mode_tracking(
+                frame, depth_frame, final_pboxes, detection_features
+            )
+            
+            if matched_dets is None:  # Track lost or invalid state
+                tracks = self.deepsort.update(final_pboxes, detection_features)
+            else:
+                tracks = self.deepsort.update(matched_dets, matched_feats)
+        else:
+            # Normal update cho SEARCHING/LOST
+            tracks = self.deepsort.update(final_pboxes, detection_features)
+
         confirmed_tracks = self.deepsort.get_confirmed_tracks()
         
         # Biến cờ để check xem track có được update thực sự không (Chống Ghost)
