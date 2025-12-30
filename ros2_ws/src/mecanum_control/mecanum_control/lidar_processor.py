@@ -21,8 +21,6 @@ LiDAR Processor (ROS2)
 """
 
 import os
-import subprocess
-import threading
 from pathlib import Path
 from typing import Optional, Tuple
 import numpy as np
@@ -168,31 +166,6 @@ class LidarProcessor(Node):
         self.dynamic_front_unsafe: bool = False
         self.dynamic_front_ttc: Optional[float] = None
 
-    # ---------- (FIX K) Audio Helpers với subprocess ----------
-    def _play_aplay(self, path):
-        """Helper để play audio không blocking."""
-        try:
-            return subprocess.Popen(
-                ["aplay", path],
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL
-            )
-        except FileNotFoundError:
-            self.get_logger().error("aplay not found")
-            return None
-
-    def play_sound_async(self, path, repeat=1):
-        """Helper cho sound one-shot."""
-        if not os.path.exists(path):
-            return
-        def worker():
-            for _ in range(repeat):
-                proc = self._play_aplay(path)
-                if proc is None:
-                    return
-                proc.wait()
-        threading.Thread(target=worker, daemon=True).start()
-
         # -------- ROS I/O --------
         qos = QoSProfile(
             history=HistoryPolicy.KEEP_LAST,
@@ -322,6 +295,12 @@ class LidarProcessor(Node):
         ranges = np.array(scan.ranges, dtype=np.float32)
         ranges = np.where(np.isfinite(ranges), ranges, np.inf)
 
+        # (FIX A) Lọc ranges theo range_min/range_max (bắt 0.0/invalid)
+        rmin = float(scan.range_min) if scan.range_min > 0 else 0.05
+        rmax = float(scan.range_max) if scan.range_max > 0 else np.inf
+        valid = (ranges >= rmin) & (ranges <= rmax)
+        ranges = np.where(valid, ranges, np.inf)
+
         n = ranges.size
         ang_min = scan.angle_min
         ang_inc = scan.angle_increment
@@ -373,8 +352,8 @@ class LidarProcessor(Node):
         side_both_unsafe = (left_unsafe and right_unsafe)
         unsafe_any   = bool(front_unsafe or side_unsafe)
 
-        # Track front-clear time (chỉ theo khoảng cách tĩnh)
-        if not (front_min < self.min_front):
+        # Track front-clear time (FIX 6: track theo front_unsafe gồm cả động)
+        if not front_unsafe:
             if self._last_front_clear_t is None:
                 self._last_front_clear_t = tnow
         else:
@@ -412,19 +391,29 @@ class LidarProcessor(Node):
 
         # ===== Front unsafe -> kích bypass =====
         if front_unsafe and not self.bypass_active:
-            # né sang bên có không gian rộng hơn
-            self.bypass_dir = +1 if left_min > right_min else -1
-            self.bypass_active = True
-            self.bypass_start_t = tnow
+            # (FIX C - Patch an toàn) Sửa tie-break để không "auto né phải"
+            if abs(left_min - right_min) < 0.05:
+                # Không chắc hướng -> dừng ngang, giữ unsafe -> RETURN LUÔN
+                self.bypass_active = False
+                self.bypass_dir = 0
+                vy_cmd = self._slew(0.0, tnow)
+                return True, vy_cmd, 0.0, unsafe_any, front_unsafe
+            else:
+                # né sang bên có không gian rộng hơn
+                self.bypass_dir = +1 if left_min > right_min else -1
+                self.bypass_active = True
+                self.bypass_start_t = tnow
             
-            # Play obstacle warning sound once
-            if not self.obstacle_audio_played:
-                self.play_sound_async(self.obstacle_sound_file)
-                self.get_logger().info("Playing obstacle warning sound")
+            # (FIX 4) Chỉ play sound khi bypass thực sự bật
+            if self.bypass_active and not self.obstacle_audio_played:
+                if os.path.exists(self.obstacle_sound_file):
+                    os.system(f"aplay {self.obstacle_sound_file} &")
+                    self.get_logger().info("Playing obstacle warning sound")
                 self.obstacle_audio_played = True
 
-        # ===== Strict release khi trước thoáng (theo khoảng cách) =====
-        if self.bypass_active and self.release_on_clear_immediate and (not (front_min < self.min_front)):
+        # ===== Strict release khi trước thoáng (theo front_unsafe) =====
+        # (FIX 6) Check front_unsafe thay vì chỉ front_min
+        if self.bypass_active and self.release_on_clear_immediate and (not front_unsafe):
             if (self._last_front_clear_t is not None) and \
                ((tnow - self._last_front_clear_t) >= self.clear_debounce_s):
                 self.bypass_active = False
@@ -444,7 +433,13 @@ class LidarProcessor(Node):
         # ===== Duy trì / nhả bypass =====
         if self.bypass_active:
             held_enough = (tnow - self.bypass_start_t) >= self.bypass_min_time_s
-            clear_enough = (front_min >= (self.min_front + self.bypass_release_hyst))
+            # (FIX 6) clear_enough cũng phải dựa trên front_unsafe
+            # Tuy nhiên front_unsafe là bool, nên ta check ngược lại:
+            # Nếu front_unsafe == True -> chưa clear.
+            # Nếu front_unsafe == False -> check thêm hysteresis nếu cần (hoặc đơn giản là !front_unsafe)
+            # Ở đây ta dùng !front_unsafe cho an toàn nhất với dynamic
+            clear_enough = (not front_unsafe)
+            
             timeout = (tnow - self.bypass_start_t) >= self.bypass_timeout_s
 
             if (held_enough and clear_enough) or timeout:
@@ -466,11 +461,16 @@ class LidarProcessor(Node):
             return False, vy_cmd, 0.0, unsafe_any, front_unsafe
 
         # ===== Corridor centering =====
-        if self.enable_center and np.isfinite(left_avg) and np.isfinite(right_avg):
-            err_c = (right_avg - left_avg)
-            desired_vy = clamp(self.center_k * err_c, -self.center_vy_cap, self.center_vy_cap)
-            vy_cmd = self._slew(desired_vy, tnow)
-            return False, vy_cmd, 0.0, unsafe_any, front_unsafe
+        # (FIX B) Chỉ bật khi thật sự "trong corridor" (2 bên < 2.5m)
+        # (FIX 3.1) Chỉ centering khi front safe và không bypass
+        MAX_CORRIDOR = 2.5
+        if (not front_unsafe) and (not self.bypass_active) and self.enable_center and \
+           (left_min < MAX_CORRIDOR) and (right_min < MAX_CORRIDOR):
+            if np.isfinite(left_avg) and np.isfinite(right_avg):
+                err_c = (right_avg - left_avg)
+                desired_vy = clamp(self.center_k * err_c, -self.center_vy_cap, self.center_vy_cap)
+                vy_cmd = self._slew(desired_vy, tnow)
+                return False, vy_cmd, 0.0, unsafe_any, front_unsafe
 
         # ===== Default: không strafe =====
         vy_cmd = self._slew(0.0, tnow)
