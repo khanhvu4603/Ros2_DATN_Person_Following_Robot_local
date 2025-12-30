@@ -21,6 +21,8 @@ LiDAR Processor (ROS2)
 """
 
 import os
+import subprocess
+import threading
 from pathlib import Path
 from typing import Optional, Tuple
 import numpy as np
@@ -165,6 +167,31 @@ class LidarProcessor(Node):
         # -------- Dynamic obstacle state --------
         self.dynamic_front_unsafe: bool = False
         self.dynamic_front_ttc: Optional[float] = None
+
+    # ---------- (FIX K) Audio Helpers với subprocess ----------
+    def _play_aplay(self, path):
+        """Helper để play audio không blocking."""
+        try:
+            return subprocess.Popen(
+                ["aplay", path],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
+        except FileNotFoundError:
+            self.get_logger().error("aplay not found")
+            return None
+
+    def play_sound_async(self, path, repeat=1):
+        """Helper cho sound one-shot."""
+        if not os.path.exists(path):
+            return
+        def worker():
+            for _ in range(repeat):
+                proc = self._play_aplay(path)
+                if proc is None:
+                    return
+                proc.wait()
+        threading.Thread(target=worker, daemon=True).start()
 
         # -------- ROS I/O --------
         qos = QoSProfile(
@@ -392,9 +419,8 @@ class LidarProcessor(Node):
             
             # Play obstacle warning sound once
             if not self.obstacle_audio_played:
-                if os.path.exists(self.obstacle_sound_file):
-                    os.system(f"aplay {self.obstacle_sound_file} &")
-                    self.get_logger().info("Playing obstacle warning sound")
+                self.play_sound_async(self.obstacle_sound_file)
+                self.get_logger().info("Playing obstacle warning sound")
                 self.obstacle_audio_played = True
 
         # ===== Strict release khi trước thoáng (theo khoảng cách) =====
