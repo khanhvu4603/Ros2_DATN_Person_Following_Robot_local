@@ -274,7 +274,7 @@ class PersonDetector(Node):
 
             # Detector/ReID thresholds
             ('person_conf', 0.35),
-            ('accept_threshold', 0.75),
+            ('accept_threshold', 0.73),
             ('reject_threshold', 0.63),
             ('iou_threshold', 0.4),
             ('margin_delta', 0.07),
@@ -286,6 +286,9 @@ class PersonDetector(Node):
             ('body_color_weight_lowlight_scale', 0.6),
             ('hsv_normalize_brightness', True),
             ('similarity_ema_alpha', 0.8),
+            
+            # (FIX 3) EMA Smoothing variables
+            # self.sim_smooth sẽ được init khi vào LOCKED
 
             # Auto-enroll
             ('auto_timeout_sec', 30.0),
@@ -379,9 +382,10 @@ class PersonDetector(Node):
         # --- Occlusion/Recover thresholds ---
         self.MISS_TO_SEARCH = 12      # mất ~12 frame mà không occlusion → SEARCHING
         self.OCCL_MAX_SEC = 3.0       # che tối đa 3s vẫn cố giữ
-        self.RECOVER_CONFIRM = 4      # cần 4 frame match liên tiếp → LOCKED
-        self.RECOVER_THR = 0.82       # similarity threshold khi recover (chặt)
-        self.RECOVER_DEPTH_THR = 0.35 # depth gate khi recover
+        self.RECOVER_CONFIRM = 3      # cần 4 frame match liên tiếp → LOCKED
+        self.RECOVER_THR = 0.74       # similarity threshold khi recover (chặt)
+        self.RECOVER_DEPTH_THR = 0.6  # depth gate khi recover
+        self.RECOVER_TIMEOUT = 3.0    # timeout cho RECOVER state
         
         # --- DEEPSORT TRACKER với stricter parameters ---
         self.deepsort = DeepSORTTracker(
@@ -813,10 +817,10 @@ class PersonDetector(Node):
                 best_score = combined_score
                 best_detection_idx = idx
                 
-                self.get_logger().info(
-                    f"LOCKED matching: det[{idx}] score={combined_score:.3f} "
-                    f"(app={appearance_score:.3f}, iou={iou_score:.3f}, depth={depth_score:.3f})"
-                )
+                # self.get_logger().info(
+                #     f"LOCKED matching: det[{idx}] score={combined_score:.3f} "
+                #     f"(app={appearance_score:.3f}, iou={iou_score:.3f}, depth={depth_score:.3f})"
+                # )
         
         if best_detection_idx is not None:
             # Chỉ update DeepSORT với detection này
@@ -1032,27 +1036,18 @@ class PersonDetector(Node):
         # ===== PROACTIVE OCCLUSION CHECK =====
         potential_occlusion = False
         if self.state == 'LOCKED' and self.target_box is not None:
-            potential_occlusion = self.detect_potential_occlusion(
-                self.target_box, pboxes, depth_frame
-            )
-
+            potential_occlusion = self.detect_potential_occlusion(self.target_box, pboxes, depth_frame)
         if potential_occlusion:
-            self.get_logger().warn("🛑 FREEZE MODE: Potential occlusion detected")
+            self.get_logger().warn("Potential occlusion -> OCCLUDED")
+            self.state = 'OCCLUDED'
+            if self.occl_start_time is None:
+                self.occl_start_time = time.time()
+            self.recover_count = 0
             
-            # (FIX 5) FREEZE là state thật - giống y ảnh (Hướng A)
-            self.state = 'FREEZE'
-            
-            # FREEZE: Không update DeepSORT với detection mới
-            tracks = self.deepsort.update([], [])  # Empty detections = chỉ predict
-            
-            # Giữ predicted box
-            target_track = self.deepsort.get_track_by_id(self.current_track_id) if self.current_track_id is not None else None
-            if target_track is not None and not target_track.is_deleted():
-                self.target_box = tuple(map(int, target_track.to_tlbr()))
-            
-            # Dừng robot
+            # Không return sớm nữa, để code chạy xuống logic OCCLUDED bên dưới
+            # Nhưng cần đảm bảo robot dừng ngay lập tức
             self.cmd_pub.publish(Twist())
-            self.state_pub.publish(String(data=self.state))  # Publish self.state thay vì hardcode
+            self.state_pub.publish(String(data=self.state))
             self.flag_pub.publish(Bool(data=False))
             self.centered_pub.publish(Bool(data=False))
             self.publish_debug(frame, pboxes, self.target_box, vmean, None)
@@ -1106,7 +1101,7 @@ class PersonDetector(Node):
                 det_depths[b] = det_depth
                 
                 if det_depth is None:
-                    self.get_logger().warn("DEPTH FILTER: Rejected detection with no depth")
+                    # self.get_logger().warn("DEPTH FILTER: Rejected detection with no depth")
                     continue
                 
                 if self.target_box is not None:
@@ -1115,35 +1110,35 @@ class PersonDetector(Node):
                     
                     # Rule 1: Loại bỏ overlap + gần hơn
                     if box_iou >= overlap_iou_thr and depth_diff > overlap_depth_margin:
-                        self.get_logger().warn(
-                            f"DEPTH FILTER [OVERLAP]: IoU={box_iou:.2f}, "
-                            f"depth_diff={depth_diff:.2f}m → REJECTED"
-                        )
+                        # self.get_logger().warn(
+                        #     f"DEPTH FILTER [OVERLAP]: IoU={box_iou:.2f}, "
+                        #     f"depth_diff={depth_diff:.2f}m → REJECTED"
+                        # )
                         continue
                     
                     # Rule 2: Loại bỏ detection gần hơn nhiều
                     if depth_diff > depth_filter_margin:
-                        self.get_logger().warn(
-                            f"DEPTH FILTER [TOO CLOSE]: det={det_depth:.2f}m vs "
-                            f"target={self.last_known_depth:.2f}m → REJECTED"
-                        )
+                        # self.get_logger().warn(
+                        #     f"DEPTH FILTER [TOO CLOSE]: det={det_depth:.2f}m vs "
+                        #     f"target={self.last_known_depth:.2f}m → REJECTED"
+                        # )
                         continue
                     
                     # Rule 3: Loại bỏ detection xa hơn nhiều
                     if depth_diff < -depth_filter_margin:
-                        self.get_logger().warn(
-                            f"DEPTH FILTER [TOO FAR]: det={det_depth:.2f}m vs "
-                            f"target={self.last_known_depth:.2f}m → REJECTED"
-                        )
+                        # self.get_logger().warn(
+                        #     f"DEPTH FILTER [TOO FAR]: det={det_depth:.2f}m vs "
+                        #     f"target={self.last_known_depth:.2f}m → REJECTED"
+                        # )
                         continue
                     
                     # Rule 4: Chỉ chấp nhận detection trong range hợp lý
                     if box_iou < 0.3:
                         if abs(depth_diff) > depth_range_tolerance:
-                            self.get_logger().warn(
-                                f"DEPTH FILTER [OUT OF RANGE]: det={det_depth:.2f}m, "
-                                f"target={self.last_known_depth:.2f}m → REJECTED"
-                            )
+                            # self.get_logger().warn(
+                            #     f"DEPTH FILTER [OUT OF RANGE]: det={det_depth:.2f}m, "
+                            #     f"target={self.last_known_depth:.2f}m → REJECTED"
+                            # )
                             continue
                 
                 filtered_pboxes.append(box)
@@ -1171,7 +1166,7 @@ class PersonDetector(Node):
                                               self.mb2_sess, color_weight=self._dynamic_color_weight)
                 
                 if feat is None:
-                    self.get_logger().warn("APPEARANCE FILTER: Rejected detection with invalid feature")
+                    # self.get_logger().warn("APPEARANCE FILTER: Rejected detection with invalid feature")
                     continue
                 
                 if self.state == 'LOCKED' and anchor is not None:
@@ -1179,21 +1174,21 @@ class PersonDetector(Node):
                     sim_with_current = np.dot(feat, self.target_feature) if self.target_feature is not None else 0.0
                     
                     if sim < pre_filter_thr or sim_with_current < (pre_filter_thr - 0.05):
-                        self.get_logger().info(
-                            f"APPEARANCE FILTER: Rejected detection "
-                            f"(anchor_sim={sim:.3f}, current_sim={sim_with_current:.3f})"
-                        )
+                        # self.get_logger().info(
+                        #     f"APPEARANCE FILTER: Rejected detection "
+                        #     f"(anchor_sim={sim:.3f}, current_sim={sim_with_current:.3f})"
+                        # )
                         continue
                 
                 final_pboxes.append(box)
                 detection_features.append(feat)
 
         # THÊM: Log để debug
-        self.get_logger().info(
-            f"Detection pipeline: {len(pboxes)} → "
-            f"depth_filter: {len(filtered_pboxes)} → "
-            f"appearance_filter: {len(final_pboxes)} | predict_only={predict_only}"
-        )
+        # self.get_logger().info(
+        #     f"Detection pipeline: {len(pboxes)} → "
+        #     f"depth_filter: {len(filtered_pboxes)} → "
+        #     f"appearance_filter: {len(final_pboxes)} | predict_only={predict_only}"
+        # )
         
         # === OCCLUSION CHECK (bổ sung sau depth filter) ===
         if self.state == 'LOCKED' and self.target_box is not None and depth_frame is not None and not predict_only:
@@ -1237,6 +1232,10 @@ class PersonDetector(Node):
                 self.current_track_id = best_track.track_id
                 self.target_box = tuple(map(int, best_track.to_tlbr()))
                 self.last_known_depth = self.get_median_depth_at_box(self.target_box, depth_frame)
+                
+                # Init EMA
+                self.sim_smooth = self.current_similarity
+                
                 self.get_logger().info(f"Target LOCKED track_id={self.current_track_id}, score={self.current_similarity:.2f}")
                 self.stop_lost_sound_loop()
 
@@ -1303,8 +1302,23 @@ class PersonDetector(Node):
                     track_feature = target_track.get_feature()
                     anchor = self.original_target_feature if self.original_target_feature is not None else self.target_feature
                     if track_feature is not None and anchor is not None:
-                        self.current_similarity = float(np.dot(track_feature, anchor))
-                        self.get_logger().info(f"LOCKED: track_id={self.current_track_id}, Similarity={self.current_similarity:.3f}")
+                        raw_sim = float(np.dot(track_feature, anchor))
+                        
+                        # (FIX 3) EMA Smoothing
+                        alpha = self.get_parameter('similarity_ema_alpha').value
+                        if not hasattr(self, 'sim_smooth'): self.sim_smooth = raw_sim
+                        self.sim_smooth = alpha * self.sim_smooth + (1 - alpha) * raw_sim
+                        
+                        self.current_similarity = self.sim_smooth
+                        
+                        # (FIX 4) Log chi tiết "ngưỡng thật"
+                        if self.current_similarity < reject_thr:
+                            self.get_logger().warn(
+                                f"Low Similarity: raw={raw_sim:.3f}, smooth={self.sim_smooth:.3f} < thr={reject_thr} "
+                                f"(margin={self.get_parameter('margin_delta').value})"
+                            )
+                        
+                        # self.get_logger().info(f"LOCKED: track_id={self.current_track_id}, Sim={self.current_similarity:.3f} (raw={raw_sim:.3f})")
                         
                         # (FIX J-2) Siết điều kiện trong LOCKED - giống y ảnh
                         if is_real_update and (not self.is_target_occluded(self.target_box, depth_frame, self.last_known_depth)):
@@ -1384,6 +1398,7 @@ class PersonDetector(Node):
                 self.get_logger().info("Occlusion cleared -> RECOVER")
                 self.state = 'RECOVER'
                 self.recover_count = 0
+                self.recover_start_time = time.time() # Bắt đầu tính giờ RECOVER
                 # tùy bạn: reset timer để lần occlusion sau tính lại
                 self.occl_start_time = None
             else:
@@ -1403,6 +1418,15 @@ class PersonDetector(Node):
 
         # ===== STATE: RECOVER (New) =====
         elif self.state == 'RECOVER':
+            # Check timeout cho RECOVER
+            if hasattr(self, 'recover_start_time') and (time.time() - self.recover_start_time > self.RECOVER_TIMEOUT):
+                self.get_logger().warn(f"RECOVER timeout ({self.RECOVER_TIMEOUT}s) -> SEARCHING")
+                self.state = 'SEARCHING'
+                self.target_box = None
+                self.current_track_id = None
+                self.start_lost_sound_loop()
+                return
+
             # Trong RECOVER: chọn detection match cực chặt (appearance + depth), cần N frame liên tiếp
             best_box, best_score = self.find_best_match_by_reid(final_pboxes, frame, depth_frame)
             
@@ -1422,7 +1446,7 @@ class PersonDetector(Node):
                         self.deepsort.update([], [])
                     
                     self.recover_count += 1
-                    self.get_logger().info(f"RECOVER: Frame {self.recover_count}/{self.RECOVER_CONFIRM} (score={best_score:.3f})")
+                    # self.get_logger().info(f"RECOVER: Frame {self.recover_count}/{self.RECOVER_CONFIRM} (score={best_score:.3f})")
                     
                     if self.recover_count >= self.RECOVER_CONFIRM:
                         self.get_logger().info(f"RECOVER confirmed -> LOCKED (score={best_score:.3f})")
