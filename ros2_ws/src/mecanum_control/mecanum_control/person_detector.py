@@ -346,9 +346,21 @@ class PersonDetector(Node):
         self.lost_start_time = None
         self.current_similarity = 0.0
         
+        # --- Occlusion State Machine counters ---
+        self.miss_count = 0           # số frame liên tiếp track không update thật
+        self.occl_start_time = None   # timestamp bắt đầu bị che
+        self.recover_count = 0        # số frame liên tiếp match tốt khi recover
+        
+        # --- Occlusion/Recover thresholds ---
+        self.MISS_TO_SEARCH = 12      # mất ~12 frame mà không occlusion → SEARCHING
+        self.OCCL_MAX_SEC = 3.0       # che tối đa 3s vẫn cố giữ
+        self.RECOVER_CONFIRM = 4      # cần 4 frame match liên tiếp → LOCKED
+        self.RECOVER_THR = 0.82       # similarity threshold khi recover (chặt)
+        self.RECOVER_DEPTH_THR = 0.35 # depth gate khi recover
+        
         # --- DEEPSORT TRACKER với stricter parameters ---
         self.deepsort = DeepSORTTracker(
-            max_age=20,
+            max_age=60,
             n_init=5,
             max_cosine_distance=0.08,  # STRICTER: 0.10 thay vì 0.15
             lambda_weight=0.85          # ANTI-HIJACK: Tăng trọng số ReID (0.2 -> 0.8) để ưu tiên đặc điểm nhận dạng
@@ -913,21 +925,27 @@ class PersonDetector(Node):
             occluded_pre = self.is_target_occluded(self.target_box, depth_frame, self.last_known_depth)
 
         if occluded_pre:
-            # FREEZE: Chỉ predict, không update với detection
-            self.get_logger().info("OCCLUSION FREEZE: Không update tracker.")
-            tracks = self.deepsort.update([], [])  # Empty detections = chỉ predict
-            self.state = 'LOST'
-            self.lost_start_time = time.time()
-
-            # Giữ predicted box nếu track còn tồn tại
+            # OCCLUDED: predict-only, stop robot (không chuyển LOST)
+            self.get_logger().info("OCCLUDED: predict-only, stop robot (không LOST).")
+            
+            self.state = 'OCCLUDED'
+            if self.occl_start_time is None:
+                self.occl_start_time = time.time()
+            self.recover_count = 0
+            
+            # predict-only
+            self.deepsort.update([], [])
+            
+            # giữ predicted box nếu track còn
             target_track = self.deepsort.get_track_by_id(self.current_track_id) if self.current_track_id is not None else None
             if target_track is not None and (not target_track.is_deleted()):
                 self.target_box = tuple(map(int, target_track.to_tlbr()))
 
+            # stop robot
+            self.cmd_pub.publish(Twist())
             self.state_pub.publish(String(data=self.state))
             self.flag_pub.publish(Bool(data=False))
             self.centered_pub.publish(Bool(data=False))
-            self.cmd_pub.publish(Twist())  # Robot dừng
             self.publish_debug(frame, pboxes, self.target_box, vmean, None)
             return
 
@@ -1017,9 +1035,10 @@ class PersonDetector(Node):
                 
                 filtered_pboxes.append(box)
             
-            # Fallback: Nếu filter quá strict, giữ ít nhất detection gần target nhất
-            if len(filtered_pboxes) == 0 and len(pboxes) > 0:
-                self.get_logger().warn("DEPTH FILTER: All detections rejected, keeping closest one")
+            # FIX #4: Fallback chỉ cho phép khi SEARCHING (chưa lock ai)
+            # Khi LOCKED/OCCLUDED, fallback sẽ phá anti-switch
+            if self.state == 'SEARCHING' and len(filtered_pboxes) == 0 and len(pboxes) > 0:
+                self.get_logger().warn("DEPTH FILTER: All detections rejected, keeping closest one (SEARCHING only)")
                 closest_box = min(pboxes, 
                     key=lambda b: abs(self.get_median_depth_at_box(b, depth_frame) - self.last_known_depth)
                     if self.get_median_depth_at_box(b, depth_frame) is not None else float('inf')
@@ -1110,16 +1129,12 @@ class PersonDetector(Node):
         # ===== STATE: LOCKED =====
         elif self.state == 'LOCKED':
             if self.is_target_occluded(self.target_box, depth_frame, self.last_known_depth):
-                self.get_logger().info("Target occluded. → LOST")
-                self.state = 'LOST'
-                self.lost_start_time = time.time()
-
-                self.state_pub.publish(String(data=self.state))
-                self.flag_pub.publish(Bool(data=False))
-                self.centered_pub.publish(Bool(data=False))
-                self.cmd_pub.publish(Twist())
-                self.publish_debug(frame, pboxes, self.target_box, vmean, None)
-                return
+                self.get_logger().info("Target occluded. → OCCLUDED")
+                self.state = 'OCCLUDED'
+                if self.occl_start_time is None:
+                    self.occl_start_time = time.time()
+                self.recover_count = 0
+                # không return LOST nữa, xử lý OCCLUDED ở phần state bên dưới
 
             target_track = self.deepsort.get_track_by_id(self.current_track_id)
             reject_thr = self.get_parameter('reject_threshold').value
@@ -1127,6 +1142,22 @@ class PersonDetector(Node):
             if target_track is not None and not target_track.is_deleted():
                 # GHOST FIX: Kiểm tra xem track có vừa được update bởi detection thật không
                 is_real_update = (target_track.time_since_update == 0)
+                
+                # FIX #6: miss_count để điều hướng SEARCHING khi không phải occlusion
+                if is_real_update:
+                    self.miss_count = 0
+                else:
+                    self.miss_count += 1
+                
+                # Nếu miss quá lâu mà KHÔNG phải occlusion → SEARCHING
+                if self.miss_count >= self.MISS_TO_SEARCH:
+                    if not self.is_target_occluded(self.target_box, depth_frame, self.last_known_depth):
+                        self.get_logger().warn(f"Miss too long ({self.miss_count} frames, not occluded) -> SEARCHING")
+                        self.state = 'SEARCHING'
+                        self.current_track_id = None
+                        self.target_box = None
+                        self.miss_count = 0
+                        # Không return ở đây, để phần dưới publish state
 
                 new_box = tuple(map(int, target_track.to_tlbr()))
                 new_depth = self.get_median_depth_at_box(new_box, depth_frame)
@@ -1149,7 +1180,8 @@ class PersonDetector(Node):
                     return
                 else:
                     self.target_box = new_box
-                    if new_depth is not None:
+                    # FIX #3: Chỉ update last_known_depth khi is_real_update
+                    if is_real_update and (new_depth is not None):
                         self.last_known_depth = new_depth
                 
                 # Tính similarity với ANCHOR
@@ -1207,12 +1239,88 @@ class PersonDetector(Node):
                     self.current_track_id = None
                     self.start_lost_sound_loop()
 
+        # ===== STATE: OCCLUDED =====
+        elif self.state == 'OCCLUDED':
+            target_track = self.deepsort.get_track_by_id(self.current_track_id)
+            
+            # FIX #5.1: Check timeout → SEARCHING (không phải LOST)
+            if self.occl_start_time is not None:
+                occl_duration = time.time() - self.occl_start_time
+                if occl_duration > self.OCCL_MAX_SEC:
+                    self.get_logger().warn(f"OCCLUDED timeout ({occl_duration:.1f}s > {self.OCCL_MAX_SEC}s). → SEARCHING")
+                    self.state = 'SEARCHING'
+                    self.occl_start_time = None
+                    self.recover_count = 0
+                    self.current_track_id = None
+                    self.target_box = None
+            else:
+                # Check nếu target lộ lại (không còn bị che) → RECOVER
+                if target_track is not None and not target_track.is_deleted():
+                    self.target_box = tuple(map(int, target_track.to_tlbr()))
+                    is_still_occluded = self.is_target_occluded(self.target_box, depth_frame, self.last_known_depth)
+                    
+                    if not is_still_occluded:
+                        self.get_logger().info("Occlusion cleared -> RECOVER")
+                        self.state = 'RECOVER'
+                        self.recover_count = 0
+            
+            # stop robot trong OCCLUDED (twist sẽ bị set 0 ở cuối)
+
+        # ===== STATE: RECOVER (New) =====
+        elif self.state == 'RECOVER':
+            # Trong RECOVER: chọn detection match cực chặt (appearance + depth), cần N frame liên tiếp
+            best_box, best_score = self.find_best_match_by_reid(final_pboxes, frame, depth_frame)
+            
+            if best_box is not None and best_score >= self.RECOVER_THR:
+                det_depth = self.get_median_depth_at_box(best_box, depth_frame)
+                
+                # Check depth gate
+                if (det_depth is not None and self.last_known_depth is not None and
+                    abs(det_depth - self.last_known_depth) <= self.RECOVER_DEPTH_THR):
+                    
+                    # Update tracker với box này (cần feature tương ứng)
+                    try:
+                        idx = final_pboxes.index(best_box)
+                        self.deepsort.update([best_box], [detection_features[idx]])
+                    except (ValueError, IndexError):
+                        # Nếu không tìm được idx, update với empty
+                        self.deepsort.update([], [])
+                    
+                    self.recover_count += 1
+                    self.get_logger().info(f"RECOVER: Frame {self.recover_count}/{self.RECOVER_CONFIRM} (score={best_score:.3f})")
+                    
+                    if self.recover_count >= self.RECOVER_CONFIRM:
+                        self.get_logger().info(f"RECOVER confirmed -> LOCKED (score={best_score:.3f})")
+                        self.state = 'LOCKED'
+                        self.occl_start_time = None
+                        self.miss_count = 0
+                        self.recover_count = 0
+                        self.target_box = best_box
+                        self.last_known_depth = det_depth
+                        self.current_similarity = best_score
+                else:
+                    # Depth không match - reset counter
+                    self.recover_count = 0
+            else:
+                # Không có detection match đủ tốt - reset counter
+                self.recover_count = 0
+            
+            # Nếu lại bị che -> quay lại OCCLUDED
+            if self.target_box is not None:
+                if self.is_target_occluded(self.target_box, depth_frame, self.last_known_depth):
+                    self.get_logger().info("RECOVER: Occluded again -> OCCLUDED")
+                    self.state = 'OCCLUDED'
+                    if self.occl_start_time is None:
+                        self.occl_start_time = time.time()
+                    self.recover_count = 0
+
         # --- Command & Publishing ---
         twist, detected, depth_m = self.compute_cmd(W, H, self.target_box)
         
         # GHOST FIX: Nếu đang LOCKED mà chỉ là dự đoán (không có real update) -> Dừng robot
-        if self.state == 'LOCKED' and not is_real_update:
-            twist = Twist() # Vận tốc 0
+        # OCCLUDED/RECOVER: Luôn dừng robot khi đang OCCLUDED hoặc RECOVER
+        if self.state in ('OCCLUDED', 'RECOVER') or (self.state == 'LOCKED' and not is_real_update):
+            twist = Twist()  # Vận tốc 0
             
         self.cmd_pub.publish(twist)
         self.flag_pub.publish(Bool(data=(self.state == 'LOCKED')))

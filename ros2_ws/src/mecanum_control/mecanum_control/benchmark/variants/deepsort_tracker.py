@@ -209,9 +209,10 @@ class Tracker:
 
 class DeepSORTTracker(BaseTracker):
     """
-    DeepSORT tracker variant for benchmark.
+    DeepSORT tracker variant for benchmark with FULL FEATURES.
     
     Wraps full DeepSORT implementation to fit BaseTracker interface.
+    Uses MobileNetV2 + HSV + Depth features (1584-D total).
     Adapted for single-target tracking by selecting and following one target.
     """
 
@@ -222,9 +223,12 @@ class DeepSORTTracker(BaseTracker):
         max_iou_distance: float = 0.7,
         max_age: int = 30,
         n_init: int = 3,
+        shape_weight: float = 0.70,
+        hsv_weight: float = 0.20,
+        depth_weight: float = 0.10,
     ):
         """
-        Initialize DeepSORT tracker.
+        Initialize DeepSORT tracker with full features.
 
         Args:
             max_cosine_distance: Gating threshold for cosine distance metric
@@ -232,8 +236,16 @@ class DeepSORTTracker(BaseTracker):
             max_iou_distance: Gating threshold for IOU distance
             max_age: Maximum number of misses before track deletion
             n_init: Number of frames to confirm new track
+            shape_weight: Weight for MobileNetV2 features (default 0.7)
+            hsv_weight: Weight for HSV histogram features (default 0.2)
+            depth_weight: Weight for depth features (default 0.1)
         """
         super().__init__()
+        
+        # Feature weights (matching person_detector.py)
+        self.shape_weight = shape_weight
+        self.hsv_weight = hsv_weight
+        self.depth_weight = depth_weight
         
         # DeepSORT components
         metric = NearestNeighborDistanceMetric(
@@ -253,12 +265,15 @@ class DeepSORTTracker(BaseTracker):
         depth_frame: Optional[np.ndarray] = None
     ) -> Tuple[Optional[Tuple[int, int, int, int]], str, int]:
         """
-        Process single frame with DeepSORT tracking.
+        Process single frame with DeepSORT tracking using FULL FEATURES.
+
+        Features: MobileNetV2 (1280-D) + HSV (48-D) + Depth (256-D) = 1584-D
+        Matches person_detector.py feature extraction.
 
         Args:
             frame_id: Frame number
             rgb_frame: RGB image
-            depth_frame: Depth image (optional, not used in vanilla DeepSORT)
+            depth_frame: Depth image (used for depth features)
 
         Returns:
             (box, state, track_id):
@@ -277,37 +292,19 @@ class DeepSORTTracker(BaseTracker):
             self.state = 'LOST' if self.target_id else 'SEARCHING'
             return None, self.state, self.target_id or -1
         
-        # Extract features for all detections
+        # Extract FULL features for all detections
         detections = []
         for (x1, y1, x2, y2) in detections_raw:
             # Convert to tlwh format
             tlwh = [x1, y1, x2 - x1, y2 - y1]
-            
-            # Extract MobileNetV2 feature
             box = (x1, y1, x2, y2)
             
-            # Preprocess for MobileNetV2 (resized_w 224, normalize)
-            x1_box, y1_box, x2_box, y2_box = box
-            roi = rgb_frame[y1_box:y2_box, x1_box:x2_box]
+            # Extract full feature (1584-D)
+            feature = self._extract_full_feature(rgb_frame, box, depth_frame)
             
-            if roi.size > 0:
-                roi_resized = cv2.resize(roi, (224, 224))
-                roi_rgb = cv2.cvtColor(roi_resized, cv2.COLOR_BGR2RGB)
-                roi_norm = (roi_rgb / 255.0).astype(np.float32)
-                roi_input = np.expand_dims(roi_norm, axis=0)
-                
-                # MobileNetV2 inference
-                ort_inputs = {self.mb2_sess.get_inputs()[0].name: roi_input}
-                features_2d = self.mb2_sess.run(None, ort_inputs)[0]
-                feature = features_2d.flatten()
-                
-                # L2 normalize
-                norm = np.linalg.norm(feature)
-                if norm > 0:
-                    feature = feature / norm
-            else:
-                # Empty ROI, use zero vector
-                feature = np.zeros(1280, dtype=np.float32)
+            if feature is None:
+                # Fallback to zero vector
+                feature = np.zeros(1584, dtype=np.float32)
             
             # Use fixed confidence for detections
             confidence = 1.0
@@ -320,6 +317,45 @@ class DeepSORTTracker(BaseTracker):
         
         # Get target track (single-target adaptation)
         return self._get_target_box()
+    
+    def _extract_full_feature(
+        self,
+        frame: np.ndarray,
+        box: Tuple[int, int, int, int],
+        depth_frame: Optional[np.ndarray]
+    ) -> Optional[np.ndarray]:
+        """
+        Extract full features: MobileNetV2 (1280-D) + HSV (48-D) + Depth (256-D) = 1584-D.
+        Same as enhanced_body_feature() in person_detector.py.
+        """
+        roi_padded, _ = self._body_arr_preserve_aspect_ratio(frame, box)
+        if roi_padded is None:
+            return None
+        
+        # 1. MobileNetV2 features (1280-D)
+        roi_rgb = cv2.cvtColor(roi_padded, cv2.COLOR_BGR2RGB)
+        arr = self._mb2_preprocess(roi_rgb)[None, ...]
+        
+        inp_name = self.mb2_sess.get_inputs()[0].name
+        shape_feat = self.mb2_sess.run(None, {inp_name: arr.astype(np.float32)})[0]
+        shape_feat = shape_feat.reshape(-1).astype(np.float32)
+        shape_feat /= (np.linalg.norm(shape_feat) + 1e-8)
+        shape_feat *= self.shape_weight
+        
+        # 2. HSV histogram (48-D)
+        hsv_feat = self._extract_hsv_histogram(roi_padded)
+        hsv_feat *= self.hsv_weight
+        
+        # 3. Depth feature (256-D)
+        depth_feat = self._extract_depth_feature(box, depth_frame)
+        depth_feat /= (np.linalg.norm(depth_feat) + 1e-8)
+        depth_feat *= self.depth_weight
+        
+        # 4. Concatenate all features
+        feat = np.concatenate([shape_feat, hsv_feat, depth_feat], axis=0).astype(np.float32)
+        feat /= (np.linalg.norm(feat) + 1e-8)
+        
+        return feat
     
     def _get_target_box(self) -> Tuple[Optional[Tuple[int, int, int, int]], str, int]:
         """

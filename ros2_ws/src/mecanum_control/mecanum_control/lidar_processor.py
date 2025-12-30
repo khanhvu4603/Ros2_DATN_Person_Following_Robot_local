@@ -354,14 +354,13 @@ class LidarProcessor(Node):
             self._last_front_clear_t = None
 
         # ===== GATING THEO YÊU CẦU =====
-        # Nhỏ hơn target & đã ở giữa màn hình -> KHÔNG NÉ
-        # (nhưng đã được chặn dynamic_front_unsafe trong _is_centered_and_near_target)
-        if self._is_centered_and_near_target():
-            self.bypass_active = False
-            self.bypass_dir = 0
-            self.prev_vy_cmd = 0.0
-            vy_cmd = 0.0
-            return False, vy_cmd, 0.0, False, False
+        # Đã disable theo yêu cầu: Luôn né vật cản kể cả khi gần target.
+        # if self._is_centered_and_near_target():
+        #     self.bypass_active = False
+        #     self.bypass_dir = 0
+        #     self.prev_vy_cmd = 0.0
+        #     vy_cmd = 0.0
+        #     return False, vy_cmd, 0.0, False, False
 
         # ===== Suppress avoid khi rất gần người (backup an toàn) =====
         if self.suppress_close and (self.person_dist is not None) and (self.person_dist <= self.suppress_thr):

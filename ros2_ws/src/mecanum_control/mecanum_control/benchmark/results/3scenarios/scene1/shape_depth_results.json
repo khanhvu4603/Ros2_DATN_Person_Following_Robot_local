@@ -1,0 +1,2657 @@
+{
+  "metrics": {
+    "target_lock_rate": 0.9973404255319149,
+    "mean_iou": 0.4327349370327157,
+    "median_iou": 0.5818968053185428,
+    "id_switches": 0,
+    "id_precision": 1.0,
+    "fragmentation": 1,
+    "avg_reacquisition_frames": 1.0,
+    "max_lost_duration": 1,
+    "recovery_success_rate": 1.0,
+    "precision": 0.2399999999936,
+    "recall": 0.9890109889023065,
+    "f1_score": 0.38626609126112105,
+    "mota": 0.23936170212765961,
+    "motp": 0.6671647881635406,
+    "idf1": 0.9986684420639325,
+    "mean_fps": 19.41437672572323,
+    "min_fps": 9.531252698507924,
+    "p95_latency_ms": 88.13297748565674,
+    "total_frames": 376
+  },
+  "frame_results": [
+    {
+      "frame_id": 0,
+      "state": "SEARCHING",
+      "iou": 0.0,
+      "is_correct_id": false,
+      "inference_time_ms": 43.1666374206543
+    },
+    {
+      "frame_id": 1,
+      "state": "LOCKED",
+      "iou": 0.8276691970597139,
+      "is_correct_id": true,
+      "inference_time_ms": 28.391122817993164
+    },
+    {
+      "frame_id": 2,
+      "state": "LOCKED",
+      "iou": 0.8196226415093526,
+      "is_correct_id": true,
+      "inference_time_ms": 67.6722526550293
+    },
+    {
+      "frame_id": 3,
+      "state": "LOCKED",
+      "iou": 0.8036988840253161,
+      "is_correct_id": true,
+      "inference_time_ms": 71.41590118408203
+    },
+    {
+      "frame_id": 4,
+      "state": "LOCKED",
+      "iou": 0.7936260004850068,
+      "is_correct_id": true,
+      "inference_time_ms": 83.0078125
+    },
+    {
+      "frame_id": 5,
+      "state": "LOCKED",
+      "iou": 0.6657530583594524,
+      "is_correct_id": true,
+      "inference_time_ms": 56.516170501708984
+    },
+    {
+      "frame_id": 6,
+      "state": "LOCKED",
+      "iou": 0.6652062588904063,
+      "is_correct_id": true,
+      "inference_time_ms": 62.06083297729492
+    },
+    {
+      "frame_id": 7,
+      "state": "LOCKED",
+      "iou": 0.6604500703234262,
+      "is_correct_id": true,
+      "inference_time_ms": 42.67072677612305
+    },
+    {
+      "frame_id": 8,
+      "state": "LOCKED",
+      "iou": 0.6614699744956493,
+      "is_correct_id": true,
+      "inference_time_ms": 86.66276931762695
+    },
+    {
+      "frame_id": 9,
+      "state": "LOCKED",
+      "iou": 0.6680091533180167,
+      "is_correct_id": true,
+      "inference_time_ms": 47.38903045654297
+    },
+    {
+      "frame_id": 10,
+      "state": "LOCKED",
+      "iou": 0.7612994350281769,
+      "is_correct_id": true,
+      "inference_time_ms": 48.50268363952637
+    },
+    {
+      "frame_id": 11,
+      "state": "LOCKED",
+      "iou": 0.781104539085715,
+      "is_correct_id": true,
+      "inference_time_ms": 48.08831214904785
+    },
+    {
+      "frame_id": 12,
+      "state": "LOCKED",
+      "iou": 0.8214834310089306,
+      "is_correct_id": true,
+      "inference_time_ms": 58.16149711608887
+    },
+    {
+      "frame_id": 13,
+      "state": "LOCKED",
+      "iou": 0.8534623525853389,
+      "is_correct_id": true,
+      "inference_time_ms": 40.1914119720459
+    },
+    {
+      "frame_id": 14,
+      "state": "LOCKED",
+      "iou": 0.8699430317040053,
+      "is_correct_id": true,
+      "inference_time_ms": 19.74773406982422
+    },
+    {
+      "frame_id": 15,
+      "state": "LOCKED",
+      "iou": 0.8892986583581433,
+      "is_correct_id": true,
+      "inference_time_ms": 19.695758819580078
+    },
+    {
+      "frame_id": 16,
+      "state": "LOCKED",
+      "iou": 0.9068921070588145,
+      "is_correct_id": true,
+      "inference_time_ms": 19.133806228637695
+    },
+    {
+      "frame_id": 17,
+      "state": "LOCKED",
+      "iou": 0.868343752353601,
+      "is_correct_id": true,
+      "inference_time_ms": 23.001670837402344
+    },
+    {
+      "frame_id": 18,
+      "state": "LOCKED",
+      "iou": 0.8220099155264355,
+      "is_correct_id": true,
+      "inference_time_ms": 21.56543731689453
+    },
+    {
+      "frame_id": 19,
+      "state": "LOCKED",
+      "iou": 0.7838822408132179,
+      "is_correct_id": true,
+      "inference_time_ms": 18.648862838745117
+    },
+    {
+      "frame_id": 20,
+      "state": "LOCKED",
+      "iou": 0.7716031761135141,
+      "is_correct_id": true,
+      "inference_time_ms": 32.988786697387695
+    },
+    {
+      "frame_id": 21,
+      "state": "LOCKED",
+      "iou": 0.7609075043629213,
+      "is_correct_id": true,
+      "inference_time_ms": 49.31926727294922
+    },
+    {
+      "frame_id": 22,
+      "state": "LOCKED",
+      "iou": 0.7502460083165889,
+      "is_correct_id": true,
+      "inference_time_ms": 45.89343070983887
+    },
+    {
+      "frame_id": 23,
+      "state": "LOCKED",
+      "iou": 0.7397802894263505,
+      "is_correct_id": true,
+      "inference_time_ms": 47.530412673950195
+    },
+    {
+      "frame_id": 24,
+      "state": "LOCKED",
+      "iou": 0.7292036520415157,
+      "is_correct_id": true,
+      "inference_time_ms": 40.00210762023926
+    },
+    {
+      "frame_id": 25,
+      "state": "LOCKED",
+      "iou": 0.7186608030106858,
+      "is_correct_id": true,
+      "inference_time_ms": 42.459964752197266
+    },
+    {
+      "frame_id": 26,
+      "state": "LOCKED",
+      "iou": 0.7081517830702749,
+      "is_correct_id": true,
+      "inference_time_ms": 46.59533500671387
+    },
+    {
+      "frame_id": 27,
+      "state": "LOCKED",
+      "iou": 0.6978998384490378,
+      "is_correct_id": true,
+      "inference_time_ms": 34.88945960998535
+    },
+    {
+      "frame_id": 28,
+      "state": "LOCKED",
+      "iou": 0.6874729314332674,
+      "is_correct_id": true,
+      "inference_time_ms": 24.689912796020508
+    },
+    {
+      "frame_id": 29,
+      "state": "LOCKED",
+      "iou": 0.6770794804864704,
+      "is_correct_id": true,
+      "inference_time_ms": 36.31019592285156
+    },
+    {
+      "frame_id": 30,
+      "state": "LOCKED",
+      "iou": 0.6712756467439073,
+      "is_correct_id": true,
+      "inference_time_ms": 31.939029693603516
+    },
+    {
+      "frame_id": 31,
+      "state": "LOCKED",
+      "iou": 0.046440886032530486,
+      "is_correct_id": true,
+      "inference_time_ms": 43.76411437988281
+    },
+    {
+      "frame_id": 32,
+      "state": "LOCKED",
+      "iou": 0.04752169397058708,
+      "is_correct_id": true,
+      "inference_time_ms": 84.84506607055664
+    },
+    {
+      "frame_id": 33,
+      "state": "LOCKED",
+      "iou": 0.04261514108698811,
+      "is_correct_id": true,
+      "inference_time_ms": 65.01221656799316
+    },
+    {
+      "frame_id": 34,
+      "state": "LOCKED",
+      "iou": 0.04663602865068444,
+      "is_correct_id": true,
+      "inference_time_ms": 66.8632984161377
+    },
+    {
+      "frame_id": 35,
+      "state": "LOCKED",
+      "iou": 0.039252823870108165,
+      "is_correct_id": true,
+      "inference_time_ms": 72.27063179016113
+    },
+    {
+      "frame_id": 36,
+      "state": "LOCKED",
+      "iou": 0.032248759249636605,
+      "is_correct_id": true,
+      "inference_time_ms": 48.86150360107422
+    },
+    {
+      "frame_id": 37,
+      "state": "LOCKED",
+      "iou": 0.08824886858296156,
+      "is_correct_id": true,
+      "inference_time_ms": 72.45635986328125
+    },
+    {
+      "frame_id": 38,
+      "state": "LOCKED",
+      "iou": 0.09266757498416618,
+      "is_correct_id": true,
+      "inference_time_ms": 79.81562614440918
+    },
+    {
+      "frame_id": 39,
+      "state": "LOCKED",
+      "iou": 0.08623168879833977,
+      "is_correct_id": true,
+      "inference_time_ms": 58.25471878051758
+    },
+    {
+      "frame_id": 40,
+      "state": "LOCKED",
+      "iou": 0.08276322882893618,
+      "is_correct_id": true,
+      "inference_time_ms": 80.4595947265625
+    },
+    {
+      "frame_id": 41,
+      "state": "LOCKED",
+      "iou": 0.08871296074975273,
+      "is_correct_id": true,
+      "inference_time_ms": 57.91449546813965
+    },
+    {
+      "frame_id": 42,
+      "state": "LOCKED",
+      "iou": 0.1035259397328336,
+      "is_correct_id": true,
+      "inference_time_ms": 66.55430793762207
+    },
+    {
+      "frame_id": 43,
+      "state": "LOCKED",
+      "iou": 0.13792649406652352,
+      "is_correct_id": true,
+      "inference_time_ms": 95.37315368652344
+    },
+    {
+      "frame_id": 44,
+      "state": "LOCKED",
+      "iou": 0.1588440951703186,
+      "is_correct_id": true,
+      "inference_time_ms": 44.443368911743164
+    },
+    {
+      "frame_id": 45,
+      "state": "LOCKED",
+      "iou": 0.14061750204339546,
+      "is_correct_id": true,
+      "inference_time_ms": 61.498165130615234
+    },
+    {
+      "frame_id": 46,
+      "state": "LOCKED",
+      "iou": 0.13919067863328244,
+      "is_correct_id": true,
+      "inference_time_ms": 44.36373710632324
+    },
+    {
+      "frame_id": 47,
+      "state": "LOCKED",
+      "iou": 0.14907508161044208,
+      "is_correct_id": true,
+      "inference_time_ms": 64.35966491699219
+    },
+    {
+      "frame_id": 48,
+      "state": "LOCKED",
+      "iou": 0.12812242142374572,
+      "is_correct_id": true,
+      "inference_time_ms": 51.447153091430664
+    },
+    {
+      "frame_id": 49,
+      "state": "LOCKED",
+      "iou": 0.0767741935483849,
+      "is_correct_id": true,
+      "inference_time_ms": 79.60939407348633
+    },
+    {
+      "frame_id": 50,
+      "state": "LOCKED",
+      "iou": 0.07848042701577095,
+      "is_correct_id": true,
+      "inference_time_ms": 59.827327728271484
+    },
+    {
+      "frame_id": 51,
+      "state": "LOCKED",
+      "iou": 0.08982427828581406,
+      "is_correct_id": true,
+      "inference_time_ms": 59.04388427734375
+    },
+    {
+      "frame_id": 52,
+      "state": "LOCKED",
+      "iou": 0.09219030520646043,
+      "is_correct_id": true,
+      "inference_time_ms": 59.89241600036621
+    },
+    {
+      "frame_id": 53,
+      "state": "LOCKED",
+      "iou": 0.10745165335621089,
+      "is_correct_id": true,
+      "inference_time_ms": 53.40123176574707
+    },
+    {
+      "frame_id": 54,
+      "state": "LOCKED",
+      "iou": 0.10973871733966428,
+      "is_correct_id": true,
+      "inference_time_ms": 73.52423667907715
+    },
+    {
+      "frame_id": 55,
+      "state": "LOCKED",
+      "iou": 0.11196833102172585,
+      "is_correct_id": true,
+      "inference_time_ms": 51.891326904296875
+    },
+    {
+      "frame_id": 56,
+      "state": "LOCKED",
+      "iou": 0.1252983860997212,
+      "is_correct_id": true,
+      "inference_time_ms": 53.55238914489746
+    },
+    {
+      "frame_id": 57,
+      "state": "LOCKED",
+      "iou": 0.12935252164728972,
+      "is_correct_id": true,
+      "inference_time_ms": 59.25440788269043
+    },
+    {
+      "frame_id": 58,
+      "state": "LOCKED",
+      "iou": 0.10866859139312253,
+      "is_correct_id": true,
+      "inference_time_ms": 44.75116729736328
+    },
+    {
+      "frame_id": 59,
+      "state": "LOCKED",
+      "iou": 0.11673003171018885,
+      "is_correct_id": true,
+      "inference_time_ms": 56.1823844909668
+    },
+    {
+      "frame_id": 60,
+      "state": "LOCKED",
+      "iou": 0.11180393981696624,
+      "is_correct_id": true,
+      "inference_time_ms": 77.27265357971191
+    },
+    {
+      "frame_id": 61,
+      "state": "LOCKED",
+      "iou": 0.10757238307349405,
+      "is_correct_id": true,
+      "inference_time_ms": 52.86145210266113
+    },
+    {
+      "frame_id": 62,
+      "state": "LOCKED",
+      "iou": 0.11914893617020961,
+      "is_correct_id": true,
+      "inference_time_ms": 61.774492263793945
+    },
+    {
+      "frame_id": 63,
+      "state": "LOCKED",
+      "iou": 0.0907589785929097,
+      "is_correct_id": true,
+      "inference_time_ms": 78.90534400939941
+    },
+    {
+      "frame_id": 64,
+      "state": "LOCKED",
+      "iou": 0.09282958262334072,
+      "is_correct_id": true,
+      "inference_time_ms": 57.38019943237305
+    },
+    {
+      "frame_id": 65,
+      "state": "LOCKED",
+      "iou": 0.09904361447769604,
+      "is_correct_id": true,
+      "inference_time_ms": 60.45031547546387
+    },
+    {
+      "frame_id": 66,
+      "state": "LOCKED",
+      "iou": 0.09850114787792631,
+      "is_correct_id": true,
+      "inference_time_ms": 55.284976959228516
+    },
+    {
+      "frame_id": 67,
+      "state": "LOCKED",
+      "iou": 0.10577978089498603,
+      "is_correct_id": true,
+      "inference_time_ms": 47.179222106933594
+    },
+    {
+      "frame_id": 68,
+      "state": "LOCKED",
+      "iou": 0.10795087265675272,
+      "is_correct_id": true,
+      "inference_time_ms": 56.793212890625
+    },
+    {
+      "frame_id": 69,
+      "state": "LOCKED",
+      "iou": 0.11728171256521955,
+      "is_correct_id": true,
+      "inference_time_ms": 66.84541702270508
+    },
+    {
+      "frame_id": 70,
+      "state": "LOCKED",
+      "iou": 0.1194515125812809,
+      "is_correct_id": true,
+      "inference_time_ms": 49.01862144470215
+    },
+    {
+      "frame_id": 71,
+      "state": "LOCKED",
+      "iou": 0.13119187931217688,
+      "is_correct_id": true,
+      "inference_time_ms": 66.07627868652344
+    },
+    {
+      "frame_id": 72,
+      "state": "LOCKED",
+      "iou": 0.1360016743819527,
+      "is_correct_id": true,
+      "inference_time_ms": 54.93044853210449
+    },
+    {
+      "frame_id": 73,
+      "state": "LOCKED",
+      "iou": 0.13646864167547246,
+      "is_correct_id": true,
+      "inference_time_ms": 52.08277702331543
+    },
+    {
+      "frame_id": 74,
+      "state": "LOCKED",
+      "iou": 0.13854756149923197,
+      "is_correct_id": true,
+      "inference_time_ms": 57.14702606201172
+    },
+    {
+      "frame_id": 75,
+      "state": "LOCKED",
+      "iou": 0.144574022968037,
+      "is_correct_id": true,
+      "inference_time_ms": 88.1204605102539
+    },
+    {
+      "frame_id": 76,
+      "state": "LOCKED",
+      "iou": 0.15348580449777502,
+      "is_correct_id": true,
+      "inference_time_ms": 65.36245346069336
+    },
+    {
+      "frame_id": 77,
+      "state": "LOCKED",
+      "iou": 0.14419158673437024,
+      "is_correct_id": true,
+      "inference_time_ms": 48.97952079772949
+    },
+    {
+      "frame_id": 78,
+      "state": "LOCKED",
+      "iou": 0.14535647999916324,
+      "is_correct_id": true,
+      "inference_time_ms": 63.10868263244629
+    },
+    {
+      "frame_id": 79,
+      "state": "LOCKED",
+      "iou": 0.10892467527418596,
+      "is_correct_id": true,
+      "inference_time_ms": 48.46525192260742
+    },
+    {
+      "frame_id": 80,
+      "state": "LOCKED",
+      "iou": 0.10999944134361658,
+      "is_correct_id": true,
+      "inference_time_ms": 50.29463768005371
+    },
+    {
+      "frame_id": 81,
+      "state": "LOCKED",
+      "iou": 0.1094013649986121,
+      "is_correct_id": true,
+      "inference_time_ms": 65.25468826293945
+    },
+    {
+      "frame_id": 82,
+      "state": "LOCKED",
+      "iou": 0.1015225584478683,
+      "is_correct_id": true,
+      "inference_time_ms": 58.88032913208008
+    },
+    {
+      "frame_id": 83,
+      "state": "LOCKED",
+      "iou": 0.09797844404470399,
+      "is_correct_id": true,
+      "inference_time_ms": 63.44938278198242
+    },
+    {
+      "frame_id": 84,
+      "state": "LOCKED",
+      "iou": 0.08686717728376395,
+      "is_correct_id": true,
+      "inference_time_ms": 48.502445220947266
+    },
+    {
+      "frame_id": 85,
+      "state": "LOCKED",
+      "iou": 0.07831436281978314,
+      "is_correct_id": true,
+      "inference_time_ms": 57.262420654296875
+    },
+    {
+      "frame_id": 86,
+      "state": "LOCKED",
+      "iou": 0.07158072299549124,
+      "is_correct_id": true,
+      "inference_time_ms": 56.45275115966797
+    },
+    {
+      "frame_id": 87,
+      "state": "LOCKED",
+      "iou": 0.06779331967889254,
+      "is_correct_id": true,
+      "inference_time_ms": 53.4517765045166
+    },
+    {
+      "frame_id": 88,
+      "state": "LOCKED",
+      "iou": 0.0676254812232134,
+      "is_correct_id": true,
+      "inference_time_ms": 58.08401107788086
+    },
+    {
+      "frame_id": 89,
+      "state": "LOCKED",
+      "iou": 0.04088640025355809,
+      "is_correct_id": true,
+      "inference_time_ms": 62.969207763671875
+    },
+    {
+      "frame_id": 90,
+      "state": "LOCKED",
+      "iou": 0.04035084777030455,
+      "is_correct_id": true,
+      "inference_time_ms": 73.11153411865234
+    },
+    {
+      "frame_id": 91,
+      "state": "LOCKED",
+      "iou": 0.0389917290271752,
+      "is_correct_id": true,
+      "inference_time_ms": 80.78217506408691
+    },
+    {
+      "frame_id": 92,
+      "state": "LOCKED",
+      "iou": 0.032379031754033685,
+      "is_correct_id": true,
+      "inference_time_ms": 83.28866958618164
+    },
+    {
+      "frame_id": 93,
+      "state": "LOCKED",
+      "iou": 0.013939457863094315,
+      "is_correct_id": true,
+      "inference_time_ms": 79.2379379272461
+    },
+    {
+      "frame_id": 94,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 78.82332801818848
+    },
+    {
+      "frame_id": 95,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 81.64691925048828
+    },
+    {
+      "frame_id": 96,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 68.1912899017334
+    },
+    {
+      "frame_id": 97,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 72.4952220916748
+    },
+    {
+      "frame_id": 98,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 104.91800308227539
+    },
+    {
+      "frame_id": 99,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 62.45923042297363
+    },
+    {
+      "frame_id": 100,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 66.76483154296875
+    },
+    {
+      "frame_id": 101,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 64.59784507751465
+    },
+    {
+      "frame_id": 102,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 57.8455924987793
+    },
+    {
+      "frame_id": 103,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 64.58282470703125
+    },
+    {
+      "frame_id": 104,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 65.67096710205078
+    },
+    {
+      "frame_id": 105,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 84.68437194824219
+    },
+    {
+      "frame_id": 106,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 79.2393684387207
+    },
+    {
+      "frame_id": 107,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 66.19429588317871
+    },
+    {
+      "frame_id": 108,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 59.888601303100586
+    },
+    {
+      "frame_id": 109,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 75.1500129699707
+    },
+    {
+      "frame_id": 110,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 70.18733024597168
+    },
+    {
+      "frame_id": 111,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 90.54040908813477
+    },
+    {
+      "frame_id": 112,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 66.33424758911133
+    },
+    {
+      "frame_id": 113,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 70.87111473083496
+    },
+    {
+      "frame_id": 114,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 93.33968162536621
+    },
+    {
+      "frame_id": 115,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 59.97014045715332
+    },
+    {
+      "frame_id": 116,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 104.0341854095459
+    },
+    {
+      "frame_id": 117,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 78.88650894165039
+    },
+    {
+      "frame_id": 118,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 65.23561477661133
+    },
+    {
+      "frame_id": 119,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 52.87003517150879
+    },
+    {
+      "frame_id": 120,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 65.64116477966309
+    },
+    {
+      "frame_id": 121,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 47.27339744567871
+    },
+    {
+      "frame_id": 122,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 90.1939868927002
+    },
+    {
+      "frame_id": 123,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 52.446603775024414
+    },
+    {
+      "frame_id": 124,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 58.15696716308594
+    },
+    {
+      "frame_id": 125,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 95.77727317810059
+    },
+    {
+      "frame_id": 126,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 71.46239280700684
+    },
+    {
+      "frame_id": 127,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 66.67304039001465
+    },
+    {
+      "frame_id": 128,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 77.42977142333984
+    },
+    {
+      "frame_id": 129,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 62.0114803314209
+    },
+    {
+      "frame_id": 130,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 55.599212646484375
+    },
+    {
+      "frame_id": 131,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 55.47285079956055
+    },
+    {
+      "frame_id": 132,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 63.98773193359375
+    },
+    {
+      "frame_id": 133,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 77.45718955993652
+    },
+    {
+      "frame_id": 134,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 88.0732536315918
+    },
+    {
+      "frame_id": 135,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 75.70457458496094
+    },
+    {
+      "frame_id": 136,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 71.02155685424805
+    },
+    {
+      "frame_id": 137,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 70.13058662414551
+    },
+    {
+      "frame_id": 138,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 80.30414581298828
+    },
+    {
+      "frame_id": 139,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 99.43842887878418
+    },
+    {
+      "frame_id": 140,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 88.17052841186523
+    },
+    {
+      "frame_id": 141,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 94.93064880371094
+    },
+    {
+      "frame_id": 142,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 89.95413780212402
+    },
+    {
+      "frame_id": 143,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 92.86904335021973
+    },
+    {
+      "frame_id": 144,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 53.273677825927734
+    },
+    {
+      "frame_id": 145,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 69.2601203918457
+    },
+    {
+      "frame_id": 146,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 44.59357261657715
+    },
+    {
+      "frame_id": 147,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 64.87083435058594
+    },
+    {
+      "frame_id": 148,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 52.32715606689453
+    },
+    {
+      "frame_id": 149,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 71.54369354248047
+    },
+    {
+      "frame_id": 150,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 77.02517509460449
+    },
+    {
+      "frame_id": 151,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 54.02731895446777
+    },
+    {
+      "frame_id": 152,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 74.83267784118652
+    },
+    {
+      "frame_id": 153,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 67.64912605285645
+    },
+    {
+      "frame_id": 154,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 65.2613639831543
+    },
+    {
+      "frame_id": 155,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 77.12769508361816
+    },
+    {
+      "frame_id": 156,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 87.30697631835938
+    },
+    {
+      "frame_id": 157,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 62.7894401550293
+    },
+    {
+      "frame_id": 158,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 54.90255355834961
+    },
+    {
+      "frame_id": 159,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 75.20055770874023
+    },
+    {
+      "frame_id": 160,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 69.66280937194824
+    },
+    {
+      "frame_id": 161,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 71.5792179107666
+    },
+    {
+      "frame_id": 162,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 67.73519515991211
+    },
+    {
+      "frame_id": 163,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 60.02044677734375
+    },
+    {
+      "frame_id": 164,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 95.1852798461914
+    },
+    {
+      "frame_id": 165,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 80.26885986328125
+    },
+    {
+      "frame_id": 166,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 58.91919136047363
+    },
+    {
+      "frame_id": 167,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 75.68144798278809
+    },
+    {
+      "frame_id": 168,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 66.3754940032959
+    },
+    {
+      "frame_id": 169,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 89.62464332580566
+    },
+    {
+      "frame_id": 170,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 90.54279327392578
+    },
+    {
+      "frame_id": 171,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 56.548357009887695
+    },
+    {
+      "frame_id": 172,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 96.66609764099121
+    },
+    {
+      "frame_id": 173,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 83.21213722229004
+    },
+    {
+      "frame_id": 174,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 88.3021354675293
+    },
+    {
+      "frame_id": 175,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 45.46856880187988
+    },
+    {
+      "frame_id": 176,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 76.29871368408203
+    },
+    {
+      "frame_id": 177,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 63.94386291503906
+    },
+    {
+      "frame_id": 178,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 63.18473815917969
+    },
+    {
+      "frame_id": 179,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 90.54684638977051
+    },
+    {
+      "frame_id": 180,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 56.000471115112305
+    },
+    {
+      "frame_id": 181,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 86.3649845123291
+    },
+    {
+      "frame_id": 182,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 45.11666297912598
+    },
+    {
+      "frame_id": 183,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 52.14810371398926
+    },
+    {
+      "frame_id": 184,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 55.50193786621094
+    },
+    {
+      "frame_id": 185,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 69.11277770996094
+    },
+    {
+      "frame_id": 186,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 61.54966354370117
+    },
+    {
+      "frame_id": 187,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 55.3896427154541
+    },
+    {
+      "frame_id": 188,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 32.64451026916504
+    },
+    {
+      "frame_id": 189,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 38.536787033081055
+    },
+    {
+      "frame_id": 190,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 43.70689392089844
+    },
+    {
+      "frame_id": 191,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 56.35261535644531
+    },
+    {
+      "frame_id": 192,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 58.011770248413086
+    },
+    {
+      "frame_id": 193,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 51.68318748474121
+    },
+    {
+      "frame_id": 194,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 67.4586296081543
+    },
+    {
+      "frame_id": 195,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 60.57119369506836
+    },
+    {
+      "frame_id": 196,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 56.627511978149414
+    },
+    {
+      "frame_id": 197,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 37.174224853515625
+    },
+    {
+      "frame_id": 198,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 60.932159423828125
+    },
+    {
+      "frame_id": 199,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 38.8188362121582
+    },
+    {
+      "frame_id": 200,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 60.122013092041016
+    },
+    {
+      "frame_id": 201,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 57.65199661254883
+    },
+    {
+      "frame_id": 202,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 78.53484153747559
+    },
+    {
+      "frame_id": 203,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 57.56402015686035
+    },
+    {
+      "frame_id": 204,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 56.10013008117676
+    },
+    {
+      "frame_id": 205,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 65.92059135437012
+    },
+    {
+      "frame_id": 206,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 73.48299026489258
+    },
+    {
+      "frame_id": 207,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 38.184404373168945
+    },
+    {
+      "frame_id": 208,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 20.91503143310547
+    },
+    {
+      "frame_id": 209,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 19.354581832885742
+    },
+    {
+      "frame_id": 210,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 47.03378677368164
+    },
+    {
+      "frame_id": 211,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 68.7108039855957
+    },
+    {
+      "frame_id": 212,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 57.418107986450195
+    },
+    {
+      "frame_id": 213,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 66.36214256286621
+    },
+    {
+      "frame_id": 214,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 62.149763107299805
+    },
+    {
+      "frame_id": 215,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 72.57080078125
+    },
+    {
+      "frame_id": 216,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 28.629779815673828
+    },
+    {
+      "frame_id": 217,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 44.832468032836914
+    },
+    {
+      "frame_id": 218,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 68.9241886138916
+    },
+    {
+      "frame_id": 219,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 80.64627647399902
+    },
+    {
+      "frame_id": 220,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 56.73933029174805
+    },
+    {
+      "frame_id": 221,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 67.24882125854492
+    },
+    {
+      "frame_id": 222,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 79.54931259155273
+    },
+    {
+      "frame_id": 223,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 100.26955604553223
+    },
+    {
+      "frame_id": 224,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 70.54662704467773
+    },
+    {
+      "frame_id": 225,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 57.248592376708984
+    },
+    {
+      "frame_id": 226,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 58.82978439331055
+    },
+    {
+      "frame_id": 227,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 72.19982147216797
+    },
+    {
+      "frame_id": 228,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 77.04281806945801
+    },
+    {
+      "frame_id": 229,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 62.761545181274414
+    },
+    {
+      "frame_id": 230,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 55.799245834350586
+    },
+    {
+      "frame_id": 231,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 76.14016532897949
+    },
+    {
+      "frame_id": 232,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 63.95411491394043
+    },
+    {
+      "frame_id": 233,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 71.50983810424805
+    },
+    {
+      "frame_id": 234,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 56.448936462402344
+    },
+    {
+      "frame_id": 235,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 49.24893379211426
+    },
+    {
+      "frame_id": 236,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 24.45673942565918
+    },
+    {
+      "frame_id": 237,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 53.9705753326416
+    },
+    {
+      "frame_id": 238,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 61.93208694458008
+    },
+    {
+      "frame_id": 239,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 76.36070251464844
+    },
+    {
+      "frame_id": 240,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 58.73394012451172
+    },
+    {
+      "frame_id": 241,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 67.37995147705078
+    },
+    {
+      "frame_id": 242,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 86.72046661376953
+    },
+    {
+      "frame_id": 243,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 70.73283195495605
+    },
+    {
+      "frame_id": 244,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 69.4584846496582
+    },
+    {
+      "frame_id": 245,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 60.29963493347168
+    },
+    {
+      "frame_id": 246,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 70.32227516174316
+    },
+    {
+      "frame_id": 247,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 60.63723564147949
+    },
+    {
+      "frame_id": 248,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 76.37524604797363
+    },
+    {
+      "frame_id": 249,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 69.87524032592773
+    },
+    {
+      "frame_id": 250,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 67.02899932861328
+    },
+    {
+      "frame_id": 251,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 72.74174690246582
+    },
+    {
+      "frame_id": 252,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 65.24133682250977
+    },
+    {
+      "frame_id": 253,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 77.2089958190918
+    },
+    {
+      "frame_id": 254,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 68.36295127868652
+    },
+    {
+      "frame_id": 255,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 71.15674018859863
+    },
+    {
+      "frame_id": 256,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 58.2890510559082
+    },
+    {
+      "frame_id": 257,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 68.70174407958984
+    },
+    {
+      "frame_id": 258,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 76.42126083374023
+    },
+    {
+      "frame_id": 259,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 56.55646324157715
+    },
+    {
+      "frame_id": 260,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 49.271345138549805
+    },
+    {
+      "frame_id": 261,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 71.36011123657227
+    },
+    {
+      "frame_id": 262,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 43.67232322692871
+    },
+    {
+      "frame_id": 263,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 64.42570686340332
+    },
+    {
+      "frame_id": 264,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 54.98695373535156
+    },
+    {
+      "frame_id": 265,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 63.54856491088867
+    },
+    {
+      "frame_id": 266,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 49.14665222167969
+    },
+    {
+      "frame_id": 267,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 53.69687080383301
+    },
+    {
+      "frame_id": 268,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 57.03401565551758
+    },
+    {
+      "frame_id": 269,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 62.02268600463867
+    },
+    {
+      "frame_id": 270,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 50.80604553222656
+    },
+    {
+      "frame_id": 271,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 55.633544921875
+    },
+    {
+      "frame_id": 272,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 63.66705894470215
+    },
+    {
+      "frame_id": 273,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 69.47708129882812
+    },
+    {
+      "frame_id": 274,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 60.22953987121582
+    },
+    {
+      "frame_id": 275,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 66.91455841064453
+    },
+    {
+      "frame_id": 276,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 56.05959892272949
+    },
+    {
+      "frame_id": 277,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 66.3900375366211
+    },
+    {
+      "frame_id": 278,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 70.33801078796387
+    },
+    {
+      "frame_id": 279,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 56.2894344329834
+    },
+    {
+      "frame_id": 280,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 67.17920303344727
+    },
+    {
+      "frame_id": 281,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 68.87960433959961
+    },
+    {
+      "frame_id": 282,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 59.996843338012695
+    },
+    {
+      "frame_id": 283,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 59.64827537536621
+    },
+    {
+      "frame_id": 284,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 58.74037742614746
+    },
+    {
+      "frame_id": 285,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 49.25084114074707
+    },
+    {
+      "frame_id": 286,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 47.083377838134766
+    },
+    {
+      "frame_id": 287,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 54.502010345458984
+    },
+    {
+      "frame_id": 288,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 58.0594539642334
+    },
+    {
+      "frame_id": 289,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 47.753334045410156
+    },
+    {
+      "frame_id": 290,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 51.82313919067383
+    },
+    {
+      "frame_id": 291,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 63.979387283325195
+    },
+    {
+      "frame_id": 292,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 59.299468994140625
+    },
+    {
+      "frame_id": 293,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 68.20893287658691
+    },
+    {
+      "frame_id": 294,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 65.43874740600586
+    },
+    {
+      "frame_id": 295,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 40.98200798034668
+    },
+    {
+      "frame_id": 296,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 61.734676361083984
+    },
+    {
+      "frame_id": 297,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 49.028635025024414
+    },
+    {
+      "frame_id": 298,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 68.03631782531738
+    },
+    {
+      "frame_id": 299,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 64.18013572692871
+    },
+    {
+      "frame_id": 300,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 59.80801582336426
+    },
+    {
+      "frame_id": 301,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 66.87641143798828
+    },
+    {
+      "frame_id": 302,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 43.12252998352051
+    },
+    {
+      "frame_id": 303,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 15.883684158325195
+    },
+    {
+      "frame_id": 304,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 18.42808723449707
+    },
+    {
+      "frame_id": 305,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 18.178701400756836
+    },
+    {
+      "frame_id": 306,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 17.34137535095215
+    },
+    {
+      "frame_id": 307,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 16.70980453491211
+    },
+    {
+      "frame_id": 308,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 16.13616943359375
+    },
+    {
+      "frame_id": 309,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 21.07548713684082
+    },
+    {
+      "frame_id": 310,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 18.64171028137207
+    },
+    {
+      "frame_id": 311,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 17.858266830444336
+    },
+    {
+      "frame_id": 312,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 18.95618438720703
+    },
+    {
+      "frame_id": 313,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 19.93083953857422
+    },
+    {
+      "frame_id": 314,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 19.010066986083984
+    },
+    {
+      "frame_id": 315,
+      "state": "LOCKED",
+      "iou": 0.0,
+      "is_correct_id": true,
+      "inference_time_ms": 21.0573673248291
+    },
+    {
+      "frame_id": 316,
+      "state": "LOCKED",
+      "iou": 0.6001251042535029,
+      "is_correct_id": true,
+      "inference_time_ms": 40.2677059173584
+    },
+    {
+      "frame_id": 317,
+      "state": "LOCKED",
+      "iou": 0.5791674241046691,
+      "is_correct_id": true,
+      "inference_time_ms": 36.96846961975098
+    },
+    {
+      "frame_id": 318,
+      "state": "LOCKED",
+      "iou": 0.5489905538062241,
+      "is_correct_id": true,
+      "inference_time_ms": 35.00199317932129
+    },
+    {
+      "frame_id": 319,
+      "state": "LOCKED",
+      "iou": 0.5651243348611397,
+      "is_correct_id": true,
+      "inference_time_ms": 46.10872268676758
+    },
+    {
+      "frame_id": 320,
+      "state": "LOCKED",
+      "iou": 0.5388145688897218,
+      "is_correct_id": true,
+      "inference_time_ms": 45.91250419616699
+    },
+    {
+      "frame_id": 321,
+      "state": "LOCKED",
+      "iou": 0.5273282248576816,
+      "is_correct_id": true,
+      "inference_time_ms": 50.06217956542969
+    },
+    {
+      "frame_id": 322,
+      "state": "LOCKED",
+      "iou": 0.5831983805667647,
+      "is_correct_id": true,
+      "inference_time_ms": 58.98571014404297
+    },
+    {
+      "frame_id": 323,
+      "state": "LOCKED",
+      "iou": 0.6008167527551046,
+      "is_correct_id": true,
+      "inference_time_ms": 69.1835880279541
+    },
+    {
+      "frame_id": 324,
+      "state": "LOCKED",
+      "iou": 0.5876278423194948,
+      "is_correct_id": true,
+      "inference_time_ms": 59.33117866516113
+    },
+    {
+      "frame_id": 325,
+      "state": "LOCKED",
+      "iou": 0.5251373758796559,
+      "is_correct_id": true,
+      "inference_time_ms": 57.84940719604492
+    },
+    {
+      "frame_id": 326,
+      "state": "LOCKED",
+      "iou": 0.5378002916570409,
+      "is_correct_id": true,
+      "inference_time_ms": 57.72089958190918
+    },
+    {
+      "frame_id": 327,
+      "state": "LOCKED",
+      "iou": 0.5625440334322555,
+      "is_correct_id": true,
+      "inference_time_ms": 50.57573318481445
+    },
+    {
+      "frame_id": 328,
+      "state": "LOCKED",
+      "iou": 0.5495092647686032,
+      "is_correct_id": true,
+      "inference_time_ms": 39.87479209899902
+    },
+    {
+      "frame_id": 329,
+      "state": "LOCKED",
+      "iou": 0.5531761456002986,
+      "is_correct_id": true,
+      "inference_time_ms": 46.349287033081055
+    },
+    {
+      "frame_id": 330,
+      "state": "LOCKED",
+      "iou": 0.5491905802088303,
+      "is_correct_id": true,
+      "inference_time_ms": 52.130699157714844
+    },
+    {
+      "frame_id": 331,
+      "state": "LOCKED",
+      "iou": 0.584260886545563,
+      "is_correct_id": true,
+      "inference_time_ms": 60.546159744262695
+    },
+    {
+      "frame_id": 332,
+      "state": "LOCKED",
+      "iou": 0.6171441512852102,
+      "is_correct_id": true,
+      "inference_time_ms": 54.883718490600586
+    },
+    {
+      "frame_id": 333,
+      "state": "LOCKED",
+      "iou": 0.6692365919986167,
+      "is_correct_id": true,
+      "inference_time_ms": 60.94527244567871
+    },
+    {
+      "frame_id": 334,
+      "state": "LOCKED",
+      "iou": 0.6421395904646142,
+      "is_correct_id": true,
+      "inference_time_ms": 51.60164833068848
+    },
+    {
+      "frame_id": 335,
+      "state": "LOCKED",
+      "iou": 0.6103536131253683,
+      "is_correct_id": true,
+      "inference_time_ms": 51.24711990356445
+    },
+    {
+      "frame_id": 336,
+      "state": "LOCKED",
+      "iou": 0.6346422358542028,
+      "is_correct_id": true,
+      "inference_time_ms": 55.34958839416504
+    },
+    {
+      "frame_id": 337,
+      "state": "LOCKED",
+      "iou": 0.6488351831076979,
+      "is_correct_id": true,
+      "inference_time_ms": 47.29008674621582
+    },
+    {
+      "frame_id": 338,
+      "state": "LOCKED",
+      "iou": 0.5653624176844145,
+      "is_correct_id": true,
+      "inference_time_ms": 53.183555603027344
+    },
+    {
+      "frame_id": 339,
+      "state": "LOCKED",
+      "iou": 0.6004813128823334,
+      "is_correct_id": true,
+      "inference_time_ms": 62.10017204284668
+    },
+    {
+      "frame_id": 340,
+      "state": "LOCKED",
+      "iou": 0.605843915670042,
+      "is_correct_id": true,
+      "inference_time_ms": 60.407161712646484
+    },
+    {
+      "frame_id": 341,
+      "state": "LOCKED",
+      "iou": 0.6004905912430268,
+      "is_correct_id": true,
+      "inference_time_ms": 52.190303802490234
+    },
+    {
+      "frame_id": 342,
+      "state": "LOCKED",
+      "iou": 0.6277094791329304,
+      "is_correct_id": true,
+      "inference_time_ms": 55.14860153198242
+    },
+    {
+      "frame_id": 343,
+      "state": "LOCKED",
+      "iou": 0.6396264855687244,
+      "is_correct_id": true,
+      "inference_time_ms": 49.97611045837402
+    },
+    {
+      "frame_id": 344,
+      "state": "LOCKED",
+      "iou": 0.7166879523200939,
+      "is_correct_id": true,
+      "inference_time_ms": 56.75697326660156
+    },
+    {
+      "frame_id": 345,
+      "state": "LOCKED",
+      "iou": 0.6585775914909627,
+      "is_correct_id": true,
+      "inference_time_ms": 55.93061447143555
+    },
+    {
+      "frame_id": 346,
+      "state": "LOCKED",
+      "iou": 0.7175067737738146,
+      "is_correct_id": true,
+      "inference_time_ms": 50.586700439453125
+    },
+    {
+      "frame_id": 347,
+      "state": "LOCKED",
+      "iou": 0.6953049871577525,
+      "is_correct_id": true,
+      "inference_time_ms": 58.97212028503418
+    },
+    {
+      "frame_id": 348,
+      "state": "LOCKED",
+      "iou": 0.7219240524941659,
+      "is_correct_id": true,
+      "inference_time_ms": 60.84442138671875
+    },
+    {
+      "frame_id": 349,
+      "state": "LOCKED",
+      "iou": 0.7157275179686018,
+      "is_correct_id": true,
+      "inference_time_ms": 52.413225173950195
+    },
+    {
+      "frame_id": 350,
+      "state": "LOCKED",
+      "iou": 0.6841782647128598,
+      "is_correct_id": true,
+      "inference_time_ms": 62.38985061645508
+    },
+    {
+      "frame_id": 351,
+      "state": "LOCKED",
+      "iou": 0.6505907710909451,
+      "is_correct_id": true,
+      "inference_time_ms": 50.35805702209473
+    },
+    {
+      "frame_id": 352,
+      "state": "LOCKED",
+      "iou": 0.7290343074967751,
+      "is_correct_id": true,
+      "inference_time_ms": 59.61298942565918
+    },
+    {
+      "frame_id": 353,
+      "state": "LOCKED",
+      "iou": 0.6988457293314605,
+      "is_correct_id": true,
+      "inference_time_ms": 54.4588565826416
+    },
+    {
+      "frame_id": 354,
+      "state": "LOCKED",
+      "iou": 0.646810348965539,
+      "is_correct_id": true,
+      "inference_time_ms": 72.51167297363281
+    },
+    {
+      "frame_id": 355,
+      "state": "LOCKED",
+      "iou": 0.6768313528148424,
+      "is_correct_id": true,
+      "inference_time_ms": 47.0736026763916
+    },
+    {
+      "frame_id": 356,
+      "state": "LOCKED",
+      "iou": 0.64145605431908,
+      "is_correct_id": true,
+      "inference_time_ms": 50.98366737365723
+    },
+    {
+      "frame_id": 357,
+      "state": "LOCKED",
+      "iou": 0.6556622101975437,
+      "is_correct_id": true,
+      "inference_time_ms": 47.522783279418945
+    },
+    {
+      "frame_id": 358,
+      "state": "LOCKED",
+      "iou": 0.6610144217454742,
+      "is_correct_id": true,
+      "inference_time_ms": 75.3622055053711
+    },
+    {
+      "frame_id": 359,
+      "state": "LOCKED",
+      "iou": 0.6629703305539804,
+      "is_correct_id": true,
+      "inference_time_ms": 53.130388259887695
+    },
+    {
+      "frame_id": 360,
+      "state": "LOCKED",
+      "iou": 0.6513672983092695,
+      "is_correct_id": true,
+      "inference_time_ms": 52.858591079711914
+    },
+    {
+      "frame_id": 361,
+      "state": "LOCKED",
+      "iou": 0.6440725596818386,
+      "is_correct_id": true,
+      "inference_time_ms": 62.667131423950195
+    },
+    {
+      "frame_id": 362,
+      "state": "LOCKED",
+      "iou": 0.6449289126198112,
+      "is_correct_id": true,
+      "inference_time_ms": 61.52081489562988
+    },
+    {
+      "frame_id": 363,
+      "state": "LOCKED",
+      "iou": 0.6453242932070667,
+      "is_correct_id": true,
+      "inference_time_ms": 51.29098892211914
+    },
+    {
+      "frame_id": 364,
+      "state": "LOCKED",
+      "iou": 0.6642434379824538,
+      "is_correct_id": true,
+      "inference_time_ms": 41.86415672302246
+    },
+    {
+      "frame_id": 365,
+      "state": "LOCKED",
+      "iou": 0.6357671407098626,
+      "is_correct_id": true,
+      "inference_time_ms": 42.046546936035156
+    },
+    {
+      "frame_id": 366,
+      "state": "LOCKED",
+      "iou": 0.6049437016185341,
+      "is_correct_id": true,
+      "inference_time_ms": 58.09664726257324
+    },
+    {
+      "frame_id": 367,
+      "state": "LOCKED",
+      "iou": 0.610100323074262,
+      "is_correct_id": true,
+      "inference_time_ms": 79.48088645935059
+    },
+    {
+      "frame_id": 368,
+      "state": "LOCKED",
+      "iou": 0.6083243923193157,
+      "is_correct_id": true,
+      "inference_time_ms": 42.484283447265625
+    },
+    {
+      "frame_id": 369,
+      "state": "LOCKED",
+      "iou": 0.58489688788897,
+      "is_correct_id": true,
+      "inference_time_ms": 39.2613410949707
+    },
+    {
+      "frame_id": 370,
+      "state": "LOCKED",
+      "iou": 0.590041256361566,
+      "is_correct_id": true,
+      "inference_time_ms": 44.65794563293457
+    },
+    {
+      "frame_id": 371,
+      "state": "LOCKED",
+      "iou": 0.5950404554989065,
+      "is_correct_id": true,
+      "inference_time_ms": 57.27648735046387
+    },
+    {
+      "frame_id": 372,
+      "state": "LOCKED",
+      "iou": 0.5941851924027797,
+      "is_correct_id": true,
+      "inference_time_ms": 32.52291679382324
+    },
+    {
+      "frame_id": 373,
+      "state": "LOCKED",
+      "iou": 0.5933291340471675,
+      "is_correct_id": true,
+      "inference_time_ms": 18.40829849243164
+    },
+    {
+      "frame_id": 374,
+      "state": "LOCKED",
+      "iou": 0.5818968053185428,
+      "is_correct_id": true,
+      "inference_time_ms": 23.074626922607422
+    },
+    {
+      "frame_id": 375,
+      "state": "LOCKED",
+      "iou": 0.5730633292774369,
+      "is_correct_id": true,
+      "inference_time_ms": 17.84062385559082
+    }
+  ]
+}

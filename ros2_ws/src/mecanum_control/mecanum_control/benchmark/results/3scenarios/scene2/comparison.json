@@ -1,0 +1,14 @@
+{
+  "deepsort": {
+    "target_lock_rate": 0.3114754098360656,
+    "mean_iou": 0.7573029338277463,
+    "mota": 0.3114754098360656,
+    "motp": 0.7573029338277463,
+    "idf1": 0.474999999988125,
+    "id_switches": 0,
+    "fragmentation": 1,
+    "mean_fps": 35.05960592044934,
+    "p95_latency_ms": 87.5586986541748,
+    "total_frames": 305
+  }
+}

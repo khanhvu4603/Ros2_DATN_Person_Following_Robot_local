@@ -19,7 +19,7 @@ export function ManualControl({ isConnected, isRunning, controlMode, onSendComma
   };
 
   const toggleMode = () => {
-    if (!isConnected || !isRunning) return;
+    if (!isConnected) return;
     const newMode = isManual ? 'auto' : 'manual';
     onSendCommand({ type: 'command', action: 'set_mode', mode: newMode });
   };
@@ -52,11 +52,11 @@ export function ManualControl({ isConnected, isRunning, controlMode, onSendComma
           </span>
           <button
             onClick={toggleMode}
-            disabled={!isConnected || !isRunning}
+            disabled={!isConnected}
             className={`
                     relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
                     ${isManual ? 'bg-blue-600' : 'bg-gray-200'}
-                    ${(!isConnected || !isRunning) ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
+                    ${(!isConnected) ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
                 `}
           >
             <span
