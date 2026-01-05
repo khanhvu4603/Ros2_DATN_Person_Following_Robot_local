@@ -1,0 +1,200 @@
+<svg width="1400" height="800" xmlns="http://www.w3.org/2000/svg" style="background-color:white">
+  <!-- Definitions for arrowheads and gradients -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#555" />
+    </marker>
+    <linearGradient id="gradInput" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e1f5fe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b3e5fc;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradBackbone" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff9c4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fff59d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradFusion" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8f5e9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c8e6c9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradTrack" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f3e5f5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e1bee7;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradControl" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffebee;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffcdd2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+      <feOffset dx="2" dy="2" result="offsetblur" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="700" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">Single-Target Person Following Pipeline (CVPR Architecture)</text>
+
+  <!-- ==================== GROUPS ==================== -->
+  
+  <!-- 1. INPUT LAYER -->
+  <g transform="translate(50, 100)">
+    <rect x="0" y="0" width="180" height="600" rx="10" fill="#f5f5f5" stroke="#ccc" stroke-dasharray="5,5" />
+    <text x="90" y="30" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#555">INPUT DATA</text>
+    
+    <!-- RGB -->
+    <rect x="20" y="80" width="140" height="60" rx="5" fill="url(#gradInput)" stroke="#0277bd" stroke-width="2" filter="url(#dropShadow)" />
+    <text x="90" y="115" font-family="Arial" font-size="14" text-anchor="middle" fill="#01579b">RGB Image</text>
+    
+    <!-- Depth -->
+    <rect x="20" y="250" width="140" height="60" rx="5" fill="url(#gradInput)" stroke="#0277bd" stroke-width="2" filter="url(#dropShadow)" />
+    <text x="90" y="285" font-family="Arial" font-size="14" text-anchor="middle" fill="#01579b">Depth Map</text>
+    
+    <!-- LiDAR -->
+    <rect x="20" y="450" width="140" height="60" rx="5" fill="url(#gradInput)" stroke="#0277bd" stroke-width="2" filter="url(#dropShadow)" />
+    <text x="90" y="485" font-family="Arial" font-size="14" text-anchor="middle" fill="#01579b">LiDAR Scan</text>
+  </g>
+
+  <!-- 2. PERCEPTION LAYER -->
+  <g transform="translate(280, 100)">
+    <rect x="0" y="0" width="220" height="600" rx="10" fill="#f5f5f5" stroke="#ccc" stroke-dasharray="5,5" />
+    <text x="110" y="30" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#555">PERCEPTION</text>
+    
+    <!-- SSD -->
+    <rect x="30" y="80" width="160" height="50" rx="5" fill="url(#gradBackbone)" stroke="#f9a825" stroke-width="2" filter="url(#dropShadow)" />
+    <text x="110" y="110" font-family="Arial" font-size="14" text-anchor="middle" fill="#f57f17">MobileNet-SSD</text>
+    
+    <!-- ROI -->
+    <rect x="30" y="160" width="160" height="40" rx="5" fill="url(#gradBackbone)" stroke="#f9a825" stroke-width="2" />
+    <text x="110" y="185" font-family="Arial" font-size="14" text-anchor="middle" fill="#f57f17">ROI Alignment</text>
+    
+    <!-- Feature Heads -->
+    <g transform="translate(10, 240)">
+        <!-- Shape -->
+        <rect x="10" y="0" width="200" height="40" rx="5" fill="url(#gradBackbone)" stroke="#f9a825" stroke-width="2" />
+        <text x="110" y="25" font-family="Arial" font-size="12" text-anchor="middle" fill="#f57f17">MobileNetV2 (Shape 1280D)</text>
+        
+        <!-- Color -->
+        <rect x="10" y="60" width="200" height="40" rx="5" fill="url(#gradBackbone)" stroke="#f9a825" stroke-width="2" />
+        <text x="110" y="85" font-family="Arial" font-size="12" text-anchor="middle" fill="#f57f17">HSV Histogram (Color 48D)</text>
+        
+        <!-- Depth -->
+        <rect x="10" y="120" width="200" height="40" rx="5" fill="url(#gradBackbone)" stroke="#f9a825" stroke-width="2" />
+        <text x="110" y="145" font-family="Arial" font-size="12" text-anchor="middle" fill="#f57f17">Depth Encoder (Depth 256D)</text>
+    </g>
+  </g>
+
+  <!-- 3. FUSION LAYER -->
+  <g transform="translate(550, 100)">
+    <rect x="0" y="0" width="180" height="600" rx="10" fill="#f5f5f5" stroke="#ccc" stroke-dasharray="5,5" />
+    <text x="90" y="30" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#555">FUSION</text>
+    
+    <!-- Concat -->
+    <rect x="20" y="240" width="140" height="160" rx="5" fill="url(#gradFusion)" stroke="#2e7d32" stroke-width="2" filter="url(#dropShadow)" />
+    <text x="90" y="270" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">Concatenation</text>
+    <line x1="30" y1="320" x2="150" y2="320" stroke="#2e7d32" stroke-width="1" />
+    <text x="90" y="300" font-family="Arial" font-size="12" text-anchor="middle" fill="#1b5e20">L2 Normalization</text>
+    <text x="90" y="360" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">Vector 1584-D</text>
+  </g>
+
+  <!-- 4. TRACKING LAYER -->
+  <g transform="translate(780, 100)">
+    <rect x="0" y="0" width="240" height="600" rx="10" fill="#f5f5f5" stroke="#ccc" stroke-dasharray="5,5" />
+    <text x="120" y="30" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#555">DEEPSORT TRACKING</text>
+    
+    <!-- Kalman -->
+    <rect x="40" y="60" width="160" height="50" rx="5" fill="url(#gradTrack)" stroke="#6a1b9a" stroke-width="2" filter="url(#dropShadow)" />
+    <text x="120" y="90" font-family="Arial" font-size="14" text-anchor="middle" fill="#4a148c">Kalman Filter (8D)</text>
+    
+    <!-- Matching Block -->
+    <rect x="20" y="150" width="200" height="200" rx="5" fill="#fff" stroke="#6a1b9a" stroke-width="2" stroke-dasharray="2,2" />
+    <text x="120" y="170" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#6a1b9a">Matching Cascade</text>
+    
+    <rect x="40" y="180" width="160" height="40" rx="5" fill="url(#gradTrack)" stroke="#6a1b9a" stroke-width="1" />
+    <text x="120" y="205" font-family="Arial" font-size="12" text-anchor="middle" fill="#4a148c">Cost Matrix (App+Motion)</text>
+    
+    <rect x="40" y="230" width="160" height="40" rx="5" fill="url(#gradTrack)" stroke="#6a1b9a" stroke-width="1" />
+    <text x="120" y="255" font-family="Arial" font-size="12" text-anchor="middle" fill="#4a148c">Gating and Anti-Switch</text>
+    
+    <rect x="40" y="280" width="160" height="40" rx="5" fill="url(#gradTrack)" stroke="#6a1b9a" stroke-width="1" />
+    <text x="120" y="305" font-family="Arial" font-size="12" text-anchor="middle" fill="#4a148c">Hungarian Algorithm</text>
+    
+    <!-- Update -->
+    <rect x="40" y="400" width="160" height="50" rx="5" fill="url(#gradTrack)" stroke="#6a1b9a" stroke-width="2" filter="url(#dropShadow)" />
+    <text x="120" y="430" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#4a148c">Track Update</text>
+  </g>
+
+  <!-- 5. CONTROL LAYER -->
+  <g transform="translate(1070, 100)">
+    <rect x="0" y="0" width="220" height="600" rx="10" fill="#f5f5f5" stroke="#ccc" stroke-dasharray="5,5" />
+    <text x="110" y="30" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#555">DECISION and CONTROL</text>
+    
+    <!-- State Machine -->
+    <rect x="30" y="80" width="160" height="120" rx="5" fill="#e0f2f1" stroke="#00695c" stroke-width="2" filter="url(#dropShadow)" />
+    <text x="110" y="110" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#004d40">State Machine</text>
+    <text x="110" y="140" font-family="Arial" font-size="12" text-anchor="middle" fill="#004d40">LOCKED / SEARCHING</text>
+    <text x="110" y="160" font-family="Arial" font-size="12" text-anchor="middle" fill="#004d40">OCCLUDED / RECOVER</text>
+    <text x="110" y="180" font-family="Arial" font-size="12" text-anchor="middle" fill="#004d40">AUTO-ENROLL / LOST</text>
+    
+    <!-- Obstacle Avoidance -->
+    <rect x="30" y="300" width="160" height="60" rx="5" fill="url(#gradControl)" stroke="#c62828" stroke-width="2" filter="url(#dropShadow)" />
+    <text x="110" y="335" font-family="Arial" font-size="14" text-anchor="middle" fill="#b71c1c">Obstacle Avoidance</text>
+    
+    <!-- PID -->
+    <rect x="30" y="450" width="160" height="60" rx="5" fill="url(#gradControl)" stroke="#c62828" stroke-width="2" filter="url(#dropShadow)" />
+    <text x="110" y="485" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#b71c1c">PID Controller</text>
+    
+    <!-- Output -->
+    <path d="M 110 510 L 110 560" stroke="#333" stroke-width="3" marker-end="url(#arrow)" />
+    <text x="110" y="580" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">/cmd_vel_person</text>
+  </g>
+
+  <!-- ==================== CONNECTIONS ==================== -->
+  
+  <!-- RGB to SSD -->
+  <path d="M 230 210 L 255 210 L 255 105 L 310 105" stroke="#555" stroke-width="2" marker-end="url(#arrow)" fill="none" />
+  
+  <!-- RGB to ROI -->
+  <path d="M 230 210 L 255 210 L 255 180 L 310 180" stroke="#555" stroke-width="2" marker-end="url(#arrow)" fill="none" />
+  
+  <!-- Depth to ROI -->
+  <path d="M 230 380 L 255 380 L 255 180 L 310 180" stroke="#555" stroke-width="2" marker-end="url(#arrow)" fill="none" />
+  
+  <!-- SSD to ROI (BBox) -->
+  <path d="M 390 130 L 390 160" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- ROI to Features -->
+  <path d="M 390 200 L 390 240" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- Features to Fusion -->
+  <path d="M 500 260 L 525 260 L 525 320 L 570 320" stroke="#555" stroke-width="2" marker-end="url(#arrow)" fill="none" /> <!-- Shape -->
+  <path d="M 500 320 L 570 320" stroke="#555" stroke-width="2" marker-end="url(#arrow)" /> <!-- Color -->
+  <path d="M 500 380 L 525 380 L 525 320 L 570 320" stroke="#555" stroke-width="2" marker-end="url(#arrow)" fill="none" /> <!-- Depth -->
+  
+  <!-- Fusion to Tracking -->
+  <path d="M 730 320 L 820 320 L 820 250" stroke="#555" stroke-width="2" marker-end="url(#arrow)" fill="none" />
+  
+  <!-- Kalman to Matching -->
+  <path d="M 900 110 L 900 150" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- Matching to Update -->
+  <path d="M 900 350 L 900 400" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- Update to State Machine -->
+  <path d="M 1020 425 L 1045 425 L 1045 140 L 1100 140" stroke="#555" stroke-width="2" marker-end="url(#arrow)" fill="none" />
+  
+  <!-- State Machine to PID -->
+  <path d="M 1180 200 L 1180 450" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- LiDAR to Avoidance -->
+  <path d="M 230 580 L 1045 580 L 1045 330 L 1100 330" stroke="#555" stroke-width="2" marker-end="url(#arrow)" fill="none" />
+  
+  <!-- Avoidance to PID -->
+  <path d="M 1180 360 L 1180 450" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
+
+</svg>

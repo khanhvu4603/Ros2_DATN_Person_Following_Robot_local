@@ -186,6 +186,30 @@ Kết quả cho thấy **IoU Only** có efficiency score cao nhất nếu chỉ 
 
 ---
 
+## Phân tích các hạn chế còn tồn đọng
+
+Bên cạnh những kết quả tích cực, hệ thống thực nghiệm vẫn tồn tại một số hạn chế nhất định cần được ghi nhận và khắc phục trong các nghiên cứu tiếp theo:
+
+### 1. Độ mượt của chuyển động (Smoothness)
+Hệ thống vận hành chưa đạt độ mượt mà tối ưu trong mọi tình huống.
+- **Hiện tượng:** Robot đôi khi có phản ứng giật cục hoặc dao động nhẹ khi bám theo mục tiêu.
+- **Nguyên nhân:** Việc chuyển đổi giữa các trạng thái điều khiển và độ trễ trong vòng lặp phản hồi (feedback loop) của hệ thống cơ khí chưa được xử lý triệt để. Bộ lọc nhiễu cho tín hiệu điều khiển vận tốc cần được tinh chỉnh thêm để phù hợp với quán tính của robot thực tế.
+
+### 2. Khả năng duy trì Tracking trong điều kiện khó
+Mặc dù thuật toán có độ ổn định cao (Lock Rate > 96%), việc mất dấu mục tiêu (Lost Target) vẫn xảy ra trong các trường hợp cực đoan:
+
+- **Môi trường quá đông người (Crowded Scenes):** Khi mật độ người quá cao, các hiện tượng che khuất (occlusion) diễn ra liên tục và chồng chéo. Nếu mục tiêu bị che khuất hoàn toàn trong thời gian dài (vượt quá ngưỡng `OCCL_MAX_SEC`), hệ thống buộc phải chuyển sang trạng thái LOST để đảm bảo an toàn, dẫn đến gián đoạn quá trình theo dõi.
+- **Điều kiện ánh sáng khắc nghiệt (Extreme Lighting):** Trong môi trường quá tối, nhiễu cảm biến trên camera RGB gia tăng đáng kể. Ngược lại, trong môi trường quá chói hoặc ngược sáng (backlight), hiện tượng lóa (glare) và cháy sáng (overexposure) làm mất thông tin chi tiết. Cả hai trường hợp đều làm suy giảm chất lượng đặc trưng từ MobileNetV2 feature embedding cũng như histogram màu, khiến độ tin cậy của bước so khớp (matching) giảm và dễ dẫn đến mất bám.
+- **Mục tiêu di chuyển nhanh (Fast Motion):** Khi mục tiêu di chuyển đột ngột với tốc độ cao hoặc đổi hướng gấp, hiện tượng mờ chuyển động (motion blur) làm giảm chất lượng hình ảnh đầu vào. Đồng thời, bộ lọc Kalman Filter có thể không kịp thích nghi với sự thay đổi vận tốc đột ngột, dẫn đến sai lệch trong dự đoán vị trí.
+
+### 3. Cơ chế phục hồi (Recovery)
+- **Ưu điểm:** Hệ thống có khả năng tự phục hồi (Self-Recovery) tốt. Nếu bị mất track (do che khuất hoặc ánh sáng), robot sẽ không bị "đứng hình" mãi mãi mà có thể nhận diện và khóa lại mục tiêu khi điều kiện tốt hơn.
+- **Hạn chế:** Quá trình phục hồi vẫn có độ trễ nhất định do cần xác nhận lại độ tin cậy qua nhiều frame (Confirm Frames) để tránh nhầm lẫn, khiến trải nghiệm chưa thực sự liền mạch trong các pha chuyển tiếp này.
+
+### 4. Giới hạn về Phần cứng và Tài nguyên (Hardware Constraints)
+Một trong những mục tiêu thiết kế quan trọng của hệ thống là khả năng triển khai trên các thiết bị biên giá rẻ (Low-cost Edge Devices) để tăng tính tiếp cận người dùng. Do đó, nhóm nghiên cứu đã tối ưu hóa thuật toán để chạy hoàn toàn trên CPU của Orange Pi 5 Plus mà không sử dụng các bộ gia tốc AI đắt tiền.
+- **Hệ quả:** Việc giới hạn tài nguyên phần cứng đôi khi dẫn đến hiện tượng trễ (lag) cục bộ khi hệ thống phải xử lý đồng thời nhiều tác vụ nặng. Tốc độ khung hình (FPS) tuy đạt mức real-time nhưng chưa đạt mức cao lý tưởng để đảm bảo độ mượt mà tuyệt đối trong mọi chuyển động của robot. Đây là sự đánh đổi chấp nhận được giữa hiệu năng và chi phí phần cứng.
+
 ## Kết luận và lựa chọn phương pháp
 
 Dựa trên kết quả thực nghiệm toàn diện, nhóm lựa chọn **Full Features** làm phương pháp chính cho hệ thống robot bám theo người vì các lý do sau:
